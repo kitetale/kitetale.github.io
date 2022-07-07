@@ -1,0 +1,17 @@
+.appHeader {
+  margin: 3rem;
+  font-family: Lato, "Open Sans", Calibri, "Trebuchet MS", sans-serif;
+  
+}
+
+.navLink {
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+  font-size: 20px;
+  justify-content: right;
+}
+.navLinkItem {
+  max-width: 650px;
+  padding-right: 2rem;
+}

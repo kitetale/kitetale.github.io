@@ -1,12 +1,12 @@
 import React from "react";
-import "./App.scss";
+import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import AppHeader from "./component/AppHeader/AppHeader";
-import LandingPage from "./pages/LandingPage";
-import ProjectPage from "./pages/ProjectPage";
-import AboutPage from "./pages/AboutPage";
-import ResumePage from "./pages/ResumePage";
-import ScrollToTop from "./component/ScrollToTop";
+import AppHeader from "../component/AppHeader/AppHeader";
+import LandingPage from "./LandingPage";
+import ProjectPage from "./ProjectPage";
+import AboutPage from "./AboutPage";
+import ResumePage from "./ResumePage";
+import ScrollToTop from "../component/ScrollToTop";
 
 function App() {
   return (
