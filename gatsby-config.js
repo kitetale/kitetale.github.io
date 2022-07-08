@@ -25,5 +25,15 @@ module.exports = {
       },
       __key: "pages",
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Imbue\:700,800,900`,
+          `Inter`,
+        ],
+        display: 'swap'
+      }
+    },
   ],
 };

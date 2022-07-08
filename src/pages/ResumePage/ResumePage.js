@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import { content, title } from "./ResumePage.module.css";
 
 const ResumePage = () => {
   return (
-    <div>ResumePage</div>
-  )
-}
+    <div className={content}>
+      <div className={title}>RESUME</div>
+    </div>
+  );
+};
 
-export default ResumePage
+export default ResumePage;

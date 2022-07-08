@@ -1,0 +1,17 @@
+.content {
+    max-width: 1440px;
+    display: flex;
+    padding: 0rem 3.5rem;
+    margin: auto;
+  }
+  
+  .title {
+    font-family: "Imbue", "Impact", "Times New Roman", Times, serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 130px;
+    line-height: 180px;
+    display: flex;
+    align-items: center;
+    color: #e8e8e8;
+  }
