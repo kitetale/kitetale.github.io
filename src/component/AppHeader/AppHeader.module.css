@@ -1,17 +1,39 @@
 .appHeader {
-  margin: 3rem;
-  font-family: Lato, "Open Sans", Calibri, "Trebuchet MS", sans-serif;
-  
+  padding: 2rem 2.5rem;
+  margin: auto;
+  font-family: Lato, "Lato", Inter, "Inter", "Open Sans", Calibri,
+    "Trebuchet MS", sans-serif;
+  display: flex;
+  flex-direction: row;
+  max-width: 1440px;
+
+  justify-content: space-between;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.logo {
+  max-width: 200px;
 }
 
 .navLink {
   list-style: none;
   display: flex;
-  gap: 3rem;
-  font-size: 20px;
+  flex-direction: row;
+  align-items: center;
+  font-size: 22px;
+  font-weight: 400;
   justify-content: right;
+  margin-top: 0rem;
+  margin-right: 1.5rem;
+  align-self: flex-end;
 }
-.navLinkItem {
-  max-width: 650px;
-  padding-right: 2rem;
+.navLinkItem a {
+  display: flex;
+  text-decoration: none;
+  color: black;
+  margin-left: 5rem;
 }
