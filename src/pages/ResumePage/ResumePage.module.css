@@ -1,17 +1,40 @@
 .content {
-    max-width: 1440px;
-    display: flex;
-    padding: 0rem 3.5rem;
-    margin: auto;
-  }
-  
-  .title {
-    font-family: "Imbue", "Impact", "Times New Roman", Times, serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 130px;
-    line-height: 180px;
-    display: flex;
-    align-items: center;
-    color: #e8e8e8;
-  }
+  max-width: 1440px;
+  padding: 0rem 3.5rem;
+  margin: auto;
+  font-family: Lato, "Lato", Inter, "Inter", "Open Sans", Calibri,
+    "Trebuchet MS", sans-serif;
+}
+
+.title {
+  font-family: "Imbue", "Impact", "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 130px;
+  line-height: 180px;
+  display: flex;
+  align-items: center;
+  color: #e8e8e8;
+}
+
+.resumeStyle {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  border-radius: 25px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+.center {
+  margin: 3rem;
+  margin-bottom: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 34px;
+  color: #555555;
+}
