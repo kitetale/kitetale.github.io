@@ -8,11 +8,14 @@ import {
 } from "./ProjectPage.module.css";
 import Carousel from "../../component/Carousel/Carousel";
 import placeholder from "../../images/me.png";
+import AppHeader from "../../component/AppHeader/AppHeader";
+
 
 const ProjectPage = () => {
   
   return (
     <div>
+      <AppHeader/>
       <div className={content}>
         <div className={top}>
           <div className={title}>WORKS</div>

@@ -13,10 +13,16 @@ import email from "../../images/email.png";
 import insta from "../../images/insta.png";
 import github from "../../images/github.png";
 import linkedin from "../../images/linkedin.png";
+import AppHeader from "../../component/AppHeader/AppHeader";
+
 
 const AboutPage = () => {
   return (
+    <div>
+      <AppHeader/>
+    
     <div className={content}>
+      
       <div className={title}>
         <div className={hello}>"Hello! I'm Ashley."</div>
         ABOUT
@@ -56,6 +62,7 @@ const AboutPage = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
