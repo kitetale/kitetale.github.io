@@ -1,12 +1,13 @@
 import React from "react";
-import App from "./App";
+import AppHeader from "../component/AppHeader/AppHeader";
 
-const index = () => {
+const LandingPage = () => {
   return (
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
+    <div>
+      <AppHeader />
+      LandingPage
+    </div>
   );
 };
 
-export default index;
+export default LandingPage;

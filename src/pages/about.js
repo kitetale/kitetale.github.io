@@ -8,12 +8,12 @@ import {
   aboutMe,
   connect,
 } from "./AboutPage.module.css";
-import me from "../../images/me.png";
-import email from "../../images/email.png";
-import insta from "../../images/insta.png";
-import github from "../../images/github.png";
-import linkedin from "../../images/linkedin.png";
-import AppHeader from "../../component/AppHeader/AppHeader";
+import me from "../images/me.png";
+import email from "../images/email.png";
+import insta from "../images/insta.png";
+import github from "../images/github.png";
+import linkedin from "../images/linkedin.png";
+import AppHeader from "../component/AppHeader/AppHeader";
 
 
 const AboutPage = () => {

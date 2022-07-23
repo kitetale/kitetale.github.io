@@ -5,10 +5,10 @@ import {
   title,
   tabs,
   images,
-} from "./ProjectPage.module.css";
-import Carousel from "../../component/Carousel/Carousel";
-import placeholder from "../../images/me.png";
-import AppHeader from "../../component/AppHeader/AppHeader";
+} from "./WorkPage.module.css";
+import Carousel from "../component/Carousel/Carousel";
+import placeholder from "../images/me.png";
+import AppHeader from "../component/AppHeader/AppHeader";
 
 
 const ProjectPage = () => {

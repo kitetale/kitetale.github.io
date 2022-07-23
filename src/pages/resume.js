@@ -1,7 +1,7 @@
 import React from "react";
 import { content, title, resumeStyle, center } from "./ResumePage.module.css";
-import resume from "../../images/AshleyKimResume.png";
-import AppHeader from "../../component/AppHeader/AppHeader";
+import resume from "../images/AshleyKimResume.png";
+import AppHeader from "../component/AppHeader/AppHeader";
 
 const ResumePage = () => {
   return (

@@ -6,7 +6,7 @@ import {
   navLinkItem,
   logo,
 } from "./AppHeader.module.css";
-import { Link } from "react-router-dom";
+import { Link } from "gatsby";
 import AshleyKim from "../../images/AshleyKim.svg";
 
 const AppHeader = () => {
@@ -21,7 +21,7 @@ const AppHeader = () => {
       <nav className={navLink}>
         <ul className={navLink}>
           <li className={navLinkItem}>
-            <Link to="/projects">works</Link>
+            <Link to="/works">works</Link>
           </li>
           <li className={navLinkItem}>
             <Link to="/about">about</Link>
