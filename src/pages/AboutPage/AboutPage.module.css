@@ -36,6 +36,7 @@
   max-width: 265px;
   margin: 0 5rem 0 0;
   border-radius: 25px;
+  pointer-events: none;
 }
 
 .aboutMe p {

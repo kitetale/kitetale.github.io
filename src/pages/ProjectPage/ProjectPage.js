@@ -4,13 +4,13 @@ import {
   top,
   title,
   tabs,
-  tab,
   images,
 } from "./ProjectPage.module.css";
 import Carousel from "../../component/Carousel/Carousel";
 import placeholder from "../../images/me.png";
 
 const ProjectPage = () => {
+  
   return (
     <div>
       <div className={content}>
@@ -19,14 +19,16 @@ const ProjectPage = () => {
           <div className={tabs}> hi</div>
         </div>
       </div>
-      <Carousel>
-        <img className={images} src={placeholder} alt="placeholder" />
-        <img className={images} src={placeholder} alt="placeholder" />
-        <img className={images} src={placeholder} alt="placeholder" />
-        <img className={images} src={placeholder} alt="placeholder" />
-        <img className={images} src={placeholder} alt="placeholder" />
-      </Carousel>
-    </div>
+      
+        <Carousel>
+          <img className={images} src={placeholder} alt="placeholder" />
+          <img className={images} src={placeholder} alt="placeholder" />
+          <img className={images} src={placeholder} alt="placeholder" />
+          <img className={images} src={placeholder} alt="placeholder" />
+          <img className={images} src={placeholder} alt="placeholder" />
+        </Carousel>
+      </div>
+      
   );
 };
 

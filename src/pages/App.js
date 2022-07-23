@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <AppHeader />
+      <AppHeader/>
         <ScrollToTop>
           <Routes>
             <Route exact path="/" element={<LandingPage />} />
