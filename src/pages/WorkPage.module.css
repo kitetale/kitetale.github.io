@@ -22,6 +22,11 @@
   color: #e8e8e8;
 }
 
+.carousel {
+  max-width: 1200px;
+  margin: auto;
+}
+
 .tabs {
   font-family: Lato, "Lato", Inter, "Inter", "Open Sans", Calibri,
     "Trebuchet MS", sans-serif;
