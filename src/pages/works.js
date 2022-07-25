@@ -1,11 +1,17 @@
 import React from "react";
-import { content, top, title, tabs, images, carousel } from "./WorkPage.module.css";
+import {
+  content,
+  top,
+  title,
+  tabs,
+  images,
+  carousel,
+} from "./WorkPage.module.css";
 import Carousel from "../component/Carousel/Carousel";
 import placeholder from "../images/me.png";
 import AppHeader from "../component/AppHeader/AppHeader";
 
 const ProjectPage = () => {
-
   return (
     <div>
       <AppHeader />
@@ -15,11 +21,8 @@ const ProjectPage = () => {
           <div className={tabs}> hi</div>
         </div>
       </div>
-      <div
-        className={carousel}
-      >
-        <Carousel >
-         
+      <div className={carousel}>
+        <Carousel>
           <img className={images} src={placeholder} alt="placeholder" />
           <img className={images} src={placeholder} alt="placeholder" />
           <img className={images} src={placeholder} alt="placeholder" />

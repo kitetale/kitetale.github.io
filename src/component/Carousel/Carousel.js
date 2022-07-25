@@ -6,6 +6,7 @@ import {
   right,
   contentWrapper,
   caroContent,
+  flip,
 } from "./Carousel.module.css";
 
 const Carousel = (props) => {
@@ -34,7 +35,7 @@ const Carousel = (props) => {
       <div className={wrapper}>
         {currentIndex > 0 && (
           <button className={left} onClick={prev}>
-            &lt;
+            <div className={flip}>➜</div>
           </button>
         )}
 
@@ -51,7 +52,7 @@ const Carousel = (props) => {
         </div>
         {currentIndex < length - 1 && (
           <button className={right} onClick={next}>
-            &gt;
+            ➜
           </button>
         )}
       </div>
