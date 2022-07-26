@@ -24,7 +24,7 @@ const ProjectPage = ({ data }) => {
         </div>
       </div>
       <div className={carousel}>
-        <Carousel show={4.3}>
+        <Carousel show={4.3} infiniteLoop={true}>
           {data.allMdx.nodes.map((node) => (
             <article
               key={node.id}
