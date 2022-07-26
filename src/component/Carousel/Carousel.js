@@ -10,7 +10,7 @@ import {
 } from "./Carousel.module.css";
 
 const Carousel = (props) => {
-  const { children } = props;
+  const {children, show} = props;
   const [currentIndex, setCurrentIndex] = useState(0);
   const [length, setLength] = useState(children.length);
 
@@ -43,7 +43,7 @@ const Carousel = (props) => {
           <div
             className={caroContent}
             style={{
-              transform: `translateX(-${currentIndex * 100}%)`,
+              transform: `translateX(-${currentIndex * (100 / show)}%)`,
               transition: "1.5s",
             }}
           >
