@@ -1,0 +1,102 @@
+---
+title: "SHAKE2BREAK"
+description: "Shake2Break is a quick competitive phone shaking game that could be used to solve a minor dispute by deciding the rank/order of people."
+hero_img: "../src/images/telematic/cover.png"
+hero_img_alt: "SHAKE 2 BREAK title page: Two jellybeans (one in pink, one in navy-blue) arguing about doing the dishes and suggesting to use the game to decide who'll do the dishes."
+hero_img_description: "SHAKE 2 BREAK title image"
+date: "10-28-2020"
+order: "4"
+color: "#A284D6"
+tag: "tech"
+local_imgs:
+  - ../src/images/telematic/cover.png
+---
+import {getImage, GatsbyImage} from 'gatsby-plugin-image';
+import start from '../src/images/telematic/start.mp4';
+import mid from '../src/images/telematic/mid.mp4';
+import end from '../src/images/telematic/end.mp4';
+
+
+## Shake2Break is a quick competitive phone shaking game that could be used to solve a minor dispute by deciding the rank/order of people. ##
+<br/>
+
+ (2 players required to play)
+<br/>
+
+**Duration: ** 2 weeks (Oct 14 - Oct 26, 2020)<br/>
+**Tools:** p5.js <br/>
+
+[ [app](https://tale-shake2break.glitch.me/) | [code](https://glitch.com/edit/#!/tale-shake2break?path=README.md%3A5%3A169) ]
+ 
+<br/>
+<div>
+<GatsbyImage alt="telematic art 'shake to break' cover image " image={getImage(props.local[0])} />
+</div>
+<br/><br/>
+
+### GamePlay ###
+#### Starting the Game ####
+<div className='three-grid2'>
+<video className='elem' autoplay='true' loop playsinline allowfullscreen="false" className='video'> <source src={start} type="video/mp4" /> </video>
+
+<div className='elem'>
+
+Two players are required for this game to begin. Until the second player arrives, the first player would be placed in a waiting room.
+
+Each shake is counted only when the player shook the phone “hard enough” (i.e. the acceleration in the z-axis is greater than 70). The circle’s radius is drawn in the intention of helping the player visualize the acceleration of the phone.
+
+There are **10 rounds of 10 counts** to fulfill (hence total of 100 shakes), and the progress of the player is both **numerically and visually** (filling up the square) represented.
+
+As a player, you could see both your progress (indicated as “ME” on the top left corner) and opponent’s progress.
+</div>
+</div>
+<br/>
+
+<div className='aligning'>
+
+#### Mid-Game : Game in Progress ####
+</div>
+<div className='three-grid'>
+<div className='elem'>
+
+**Shake as fast as you could!**
+
+( Fun Fact: I was playing against myself to record this
+-- Definitely got both of my arms worked out! )
+</div>
+
+<video className='elem' autoplay='true' loop playsinline allowfullscreen="false" className='video'> <source src={mid} type="video/mp4" /> </video>
+
+</div>
+
+#### Ending the Game ####
+
+<div className='three-grid2'>
+<video className='elem' autoplay='true' loop playsinline allowfullscreen="false" className='video'> <source src={end} type="video/mp4" /> </video>
+
+<div className='elem'>
+
+Once the player **reaches 100 shakes**, the rank is assigned and shown based on who has reached 100 counts first.
+
+As you could see in the moving image, the progress also is shown visually (in addition to the number on the top right corner) via the square filling up. 
+
+</div>
+</div>
+<br/>
+<br/>
+
+## Demo Video ##
+
+<br/> 
+<iframe className='video1' style='margin:auto;'
+    src="https://www.youtube.com/embed/SlGx4suct6A?playlist=SlGx4suct6A&loop=1&autoplay=1" 
+    title={'Shake2Break demo'}
+    frameBorder='0'
+    allow="encrypted-media; gyroscope" 
+    allowfullscreen
+/>
+<br/><br/>
+
+## Reflection: ##
+
+This project was a nice opportunity for me to learn how to implement client data / server data in server.js, as well as how to utilize sensor data from a mobile device. Although I was initially intimidated by the idea of using server.js and mobile sensor data (as I’ve never used nor seen a code for either of them before), I found implementing server.js and manipulating mobile sensor data very interesting and fun to play with. Since it’s my first time using those, I wanted to begin with a project that is simple yet to the point: an active synchronous shaking game. The server requires two players synchronously present to begin the game. Once there are two players, the competition begins, where each player can shake their mobile device back and forth to engage with the accelerometer inside the device, specifically the accelerometer data along the z-axis.

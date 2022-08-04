@@ -1,0 +1,132 @@
+---
+title: "PORTAL (AR)"
+description: "An augmented portal the user can use to explore a virtual mountain area and find a hidden item."
+date: "12-09-2020"
+hero_img: "../src/images/portal/cover.png"
+hero_img_alt: "A screenshot of a blue AR portal hole on the floor of a brick sidewalk"
+hero_img_description: "A screenshot of an activated AR Portal on a sidewalk"
+order: "64"
+color: "#A284D6"
+tag: "tech"
+local_imgs:
+  - ../src/images/portal/cliff.png
+  - ../src/images/portal/cliff2.png
+  - ../src/images/portal/down.png
+  - ../src/images/portal/still-dark.png
+  - ../src/images/portal/still.png
+---
+import {getImage, GatsbyImage} from 'gatsby-plugin-image';
+
+import demoportal from '../src/images/portal/portalmain.mp4';
+import getkey from '../src/images/portal/getkey.mp4';
+import key from '../src/images/portal/key.mp4';
+import close from '../src/images/portal/closer.mp4';
+
+## This project is an AR portal to the top of a cliff that the user can use to explore a virtual mountain area and find a hidden item (key).
+
+<br/>
+
+** Duration:** 3 weeks (Nov - Dec 2020) <br/>
+** Tools: ** Android Studio, Blender, and Unity. <br/>
+
+<br/>
+<div className='three-equal-grid'>
+    <div style='padding:.5rem;'>
+        <GatsbyImage alt="AR Portal on a sidewalk" image={getImage(props.local[4])} />
+    </div>
+    <div style='padding:.5rem;'>
+        <GatsbyImage alt="AR Portal on a sidewalk under a roof" image={getImage(props.local[3])} />
+    </div>
+    <div style='padding:.5rem;'>
+        <GatsbyImage alt="looking down at the AR Portal" image={getImage(props.local[2])} />
+    </div>
+</div>
+
+<br/><br/>
+
+## Inspirations: ##
+I used to explore the apartment complex with my friends when I was little. With great creativity, we imagined different worlds and put ourselves into the shoes of various people and living creatures. One of the scenarios was a **treasure hunter**, a common recreational game that **asks for the teamwork among players** to obtain hints and **find the hidden items**.
+
+Inspired by it, I visualized the **portal to another world** that hid one of the keys (the item the players have to find and collect). Instead of making it vertical like a door to another world, I located the gate on the floor. This was inspired by my another **childhood curiosity and creativity regarding manholes**. I always wondered what’s at the end of the manhole, as I’ve heard of different usages of manholes like “it’s for sewage” or “it’s a path to access buried cables,” but have never been inside one. As a child, I would imagine the manhole to be something more grand than its actual usage, like serving as a **secret transportational tunnel** for spies or a portal to another weird interesting world like Wonderland.
+
+
+<br/><br/>
+
+## Process: ##
+<div className='two-grid'>
+
+<div style='padding:.5rem .5rem 0 0'>
+<GatsbyImage alt="AR Portal cliff 3d model" image={getImage(props.local[0])} />
+</div>
+
+<div style='padding:.5rem 0 0 .5rem'>
+<GatsbyImage alt="AR Portal cliff 3d model" image={getImage(props.local[1])} />
+</div>
+</div>
+<br/>
+
+I modified free 3D models I downloaded from online in Blender into a shape I visualized to create the virtual world beyond the portal. Then, I imported those to unity and scripted accordingly using the AR template.
+
+Because it was my first time using Unity to create my own AR project, I spent a large number of hours looking up how to obtain certain effects I wanted. Although I have an experience coding in C, I found myself getting confused in the process of applying the scripts in C# to an Unity game object for an effect. However, I think situations like this would less frequently occur in the future as I work on more projects using Unity and get use to C# language syntax.
+
+Texturing also took a good amount of time because one of the models refused to show the texture in Unity. Thanks to Hochi, our TA, I was able to learn and apply UV mapping and unwrapping in Blender, which I found it very interesting and effective. It also helped me understand why computer graphics course is requiring students to take 3D calculus and matrices as prerequisites.
+
+<br/><br/>
+
+## Building & Testing ##
+Once I exported the Unity build to Google Pixel 4 mobile device, I walked around outside and tested the portal's interaction with the outdoor environment.
+
+<div className='three-grid2'>
+<div>
+    <video className='elem' autoplay='true' loop disablePictureInPicture controlsList="nodownload" playsinline muted allowfullscreen="false" className='video'> <source src={demoportal} type="video/mp4" /> </video>
+</div>
+<div className='elem'>
+
+I first **defined the floor area** by tapping the desired autocaptured floor region. The portal then augmentally appears on the mobile device as shown in the moving image. Based on where the camera is pointing at, the visible portion of the portal alters on the mobile screen.
+</div>
+</div>
+
+<div className='three-grid'>
+<div className='elem'>
+
+To further enhance the augmented experince, I designed the portal in such a way that the lighting on the 3d model (portal) is defined **based on the amount of lighting captured by the camera**. This way, the portal entrace **blends better** to the environment.
+</div>
+
+<div>
+    <video className='elem' autoplay='true' loop disablePictureInPicture controlsList="nodownload" playsinline muted allowfullscreen="false" className='video'> <source src={close} type="video/mp4" /> </video>
+</div>
+</div>
+
+<div className='three-grid2'>
+<div>
+    <video className='elem' autoplay='true' loop disablePictureInPicture controlsList="nodownload" playsinline muted allowfullscreen="false" className='video'> <source src={key} type="video/mp4" /> </video>
+</div>
+<div className='elem'>
+
+From a certain angle, a glowing golden key on the bottom of the cliff is visible. The **key is animated** to move from side to side, and the **halo effect** is applied to highlight its location.
+</div>
+</div>
+
+<div className='three-grid'>
+<div className='elem'>
+
+This **golden key is interactive** -- the user can 'collect' the key by dragging down the screen. As mentioned earlier, this project is **designed with my childhood games in mind**, from which this interactive collecting hidden keys is inspired. 
+</div>
+
+<div>
+    <video className='elem' autoplay='true' loop disablePictureInPicture controlsList="nodownload" playsinline muted allowfullscreen="false" className='video'> <source src={getkey} type="video/mp4" /> </video>
+</div>
+</div>
+
+<br/><br/><br/>
+
+## Demo Video ##
+
+Reflecting these childhood imaginations, I narrated the demo video as if I’m part of a team of two and am following the hints to collect all three keys before other players do.
+
+<iframe className='video1' style='margin:auto;' src="https://www.youtube.com/embed/aYqcIMs5gj4?playlist=aYqcIMs5gj4&loop=1&autoplay=1" title={'AR Portal demo'} frameBorder='0' allow="encrypted-media; gyroscope" allowfullscreen />
+
+<br/><br/>
+
+## Reflection: ##
+Overall, I enjoyed learning Unity and working on this very first AR project, and I’m happy with the outcome of the project. I want to thank everyone in 60-212 F20 course for being supportive and providing opportunities to observe and try new things. Special thanks to prof. Golan for always cheering me up and giving me mental, technical, and creative support throughout this entirely remote semester with 14-hour difference.

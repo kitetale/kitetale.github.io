@@ -1,0 +1,100 @@
+---
+title: "Rapid Prototyping"
+description: "Rapid prototypes generated with CAD programs and python scripts."
+hero_img: "../src/images/rapid-proto/moon_bunnies_e.JPG"
+hero_img_alt: "A rendering image of an automaton with two bunnies using Jeolgu back and forth."
+hero_img_description: "Moon Bunnies"
+date: "05-14-2021"
+order: "65"
+color: "#F39222"
+tag: "art"
+local_imgs:
+  - ../src/images/rapid-proto/moon_bunnies_a.JPG
+  - ../src/images/rapid-proto/moon_bunnies_b.JPG
+  - ../src/images/rapid-proto/moon_bunnies_c.JPG
+  - ../src/images/rapid-proto/moon_bunnies_d.JPG
+  - ../src/images/rapid-proto/moon_bunnies_e.JPG
+  - ../src/images/rapid-proto/moon_bunnies_f.JPG
+  - ../src/images/rapid-proto/exterior_a.jpg
+  - ../src/images/rapid-proto/exterior_b.jpg
+  - ../src/images/rapid-proto/exterior_c.jpg
+  - ../src/images/rapid-proto/wavyArc_a.jpg
+  - ../src/images/rapid-proto/wavyArc_b.jpg
+  - ../src/images/rapid-proto/chair_a.jpg
+  - ../src/images/rapid-proto/chair_b.jpg
+  - ../src/images/rapid-proto/mechenism_a.JPG
+  - ../src/images/rapid-proto/mechenism_b.JPG
+  - ../src/images/rapid-proto/turtle_a.png
+  - ../src/images/rapid-proto/turtle_b.png
+  - ../src/images/rapid-proto/turtle_c.png
+  - ../src/images/rapid-proto/spirograph.png
+---
+
+import {getImage, GatsbyImage} from 'gatsby-plugin-image';
+
+Rapid prototypes generated with python codes and/or Solidworks
+
+---
+
+###                         n   n             n   n ###
+### Moon Bunnies  (๑╹ᆺ╹)   (╹ᆺ╹๑) ###
+<picture>
+  <div className='image-grid'>
+  <GatsbyImage alt="moon bunnies rendering shot" image={getImage(props.local[0])} />
+  <GatsbyImage alt="moon bunnies rendering shot" image={getImage(props.local[1])} />
+  <GatsbyImage alt="moon bunnies rendering shot" image={getImage(props.local[2])} />
+  <GatsbyImage alt="moon bunnies rendering shot" image={getImage(props.local[3])} />
+  <GatsbyImage alt="moon bunnies rendering shot" image={getImage(props.local[4])} />
+  <GatsbyImage alt="moon bunnies rendering shot" image={getImage(props.local[5])} />
+  </div>
+</picture>
+
+An automaton using cams and gears that brings life to the two moon bunnies making rice cakes. 
+I was inspired by a Korean traditional fable about rabbits living in the moon. The automaton mimics the motion of hitting a rice cake dough in a Jeolgu (a type of traditional Korean mortar and pestle set).
+
+---
+
+### Arc, Surface, Design Studies with Grasshopper & Rhino ###
+<div className='image-grid'>
+<GatsbyImage alt="Building exterior surface design rending shot" image={getImage(props.local[6])} />
+<GatsbyImage alt="Building exterior surface design rending shot" image={getImage(props.local[8])} />
+<GatsbyImage alt="Building exterior surface design rending shot" image={getImage(props.local[7])} />
+</div>
+<div className='image-grid4'>
+<GatsbyImage alt="wavy arch surface design rendering shot" image={getImage(props.local[9])} />
+<GatsbyImage alt="wavy arch surface design rending shot" image={getImage(props.local[10])} />
+<GatsbyImage alt="chair design rending shot" image={getImage(props.local[11])} />
+<GatsbyImage alt="chair design rending shot" image={getImage(props.local[12])} />
+</div>
+
+---
+
+### Mechanism Motion Study ###
+<div>
+<GatsbyImage alt="mechanism motion study render" image={getImage(props.local[13])} />
+</div>
+
+> 'Intended as a substitute for the crank. Reciprocating rectilinear motion of the double rack gives a continuous rotary motion to the center gear. The teeth on the rack act upon those of the two semi-circular toothed sectors, and the spur-gears attached to the sectors operate upon the center gear. The two stops on the rack shown by dotted lines are caught by the curved piece on the center gear, and lead the toothed sectors alternately into gear with the double rack.' 
+
+> \- no.123 from 507 Mechanical Movements \-
+
+---
+
+### Turtle Draws Trees ◝( ˙ ꒳ ˙ )◜ ###
+<div className='image-grid'>
+<GatsbyImage alt="tree rendering file A" image={getImage(props.local[15])} />
+<GatsbyImage alt="a photo of laser cutted acrylic assembly" image={getImage(props.local[17])} />
+<GatsbyImage alt="tree rendering file B" image={getImage(props.local[16])} />
+</div>
+
+I wrote functions that would draw hexagons, donuts, and stars as the end nodes (leaf) in the tree generator python file. The main code then randomly draws either a leaf of a randomly selected shape or continue generating by creating a branch in the shape of "V". 
+
+---
+
+### ✿ Spirograph Gears ✿ ###
+<div>
+<GatsbyImage alt="a photo of spirograph gears with one example of spirograph drawn on paper in pink." image={getImage(props.local[18])} />
+</div>
+Created three gears with different tooth number and size, as well as the outer circular frame in Solidworks.
+
+---
