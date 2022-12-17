@@ -4,12 +4,12 @@ import {MDXRenderer} from 'gatsby-plugin-mdx';
 import "./WorkPage.module.css";
 
 
-const WorkPage = ({data}) => {
+const WorkPage = ({data, children}) => {
     return (
         <div>
             <MDXRenderer
-                local={data.mdx.frontmatter.local_imgs}>
-                {data.mdx.body}
+                local={data.mdx.frontmatter.hero_img}>
+                {children}
             </MDXRenderer>
         </div>
     );

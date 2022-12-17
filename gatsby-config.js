@@ -13,17 +13,22 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
-        path: "./src/images/",
+        path: `./src/images/`,
       },
       __key: "images",
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "pages",
-        path: "./src/pages/",
+        name: `works`,
+        path: `${__dirname}/works/`,
+      }
+    },
+    {
+      resolve: `gatsby-plugin-page-creator`,
+      options: {
+        path: `${__dirname}/works/`,
       },
-      __key: "pages",
     },
     {
       resolve: `gatsby-plugin-google-fonts`,
