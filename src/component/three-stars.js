@@ -8,9 +8,9 @@ const ThreeStars = () => {
 
   const [sphere] = useState(() => random.inSphere(new Float32Array(5000), { radius: 3.5 }));
 
-  useFrame((state, delta) => {
-    ref.current.rotation.x -= delta / 10;
-    ref.current.rotation.y -= delta / 15;
+  useFrame(({mouse}) => {
+    ref.current.rotation.x += mouse.x/500;
+    ref.current.rotation.y += mouse.y/500;
   });
 
   return (
