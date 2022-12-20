@@ -9,7 +9,7 @@
 }
 
 .words{
-  max-width: 1440px;
+  /* max-width: 1440px; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
