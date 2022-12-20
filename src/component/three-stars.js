@@ -1,16 +1,19 @@
 import React, { useRef, useState } from 'react';
-import { useFrame } from '@react-three/fiber';
+import { useThree, useFrame } from '@react-three/fiber';
+// import { useDrag } from 'react-use-gesture';
 import { Points, PointMaterial } from '@react-three/drei';
 import * as random from 'maath/random/dist/maath-random.cjs';
 
 const ThreeStars = () => {
-  const ref = useRef(null);
+  const ref = useRef();
+  const { size, viewport } = useThree();
+  const aspect = size.width / viewport.width;
 
   const [sphere] = useState(() => random.inSphere(new Float32Array(5000), { radius: 3.5 }));
 
-  useFrame(({mouse}) => {
-    ref.current.rotation.x += mouse.x/500;
-    ref.current.rotation.y += mouse.y/500;
+  useFrame((state, delta) => {
+    ref.current.rotation.x -= delta / 10;
+    ref.current.rotation.y -= delta / 15;
   });
 
   return (
