@@ -1,13 +1,38 @@
 // reference : https://codesandbox.io/s/mvkqs
-import React from 'react'
-import { Color } from 'three'
-import { Canvas, useFrame, useThree } from "@react-three/fiber"
-import { Physics, usePlane, useSphere } from "@react-three/cannon"
-import { EffectComposer, SSAO, Bloom } from "@react-three/postprocessing"
+import React, {useState, useMemo} from "react";
+import { Color } from "three";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { Physics, usePlane, useSphere } from "@react-three/cannon";
+import { EffectComposer, SSAO, Bloom } from "@react-three/postprocessing";
 
 export default function Balls() {
+    const colorChoices = [
+        // "#A2CCB6",
+        // "#FCEEB5",
+        "#EE786E",
+        "#e0feff",
+        "lightpink",
+        "lightblue",
+        "#F97514",
+      ];
+      const [number] = useState(200);
+      const colors = useMemo(() => {
+        const array = new Float32Array(number * 3);
+        const color = new Color();
+        for (let i = 0; i < number; i++)
+          color
+            .set(colorChoices[Math.floor(Math.random() * 5)])
+            .convertSRGBToLinear()
+            .toArray(array, i * 3);
+        return array;
+      }, [number]);
+      
   return (
-    <Canvas shadows gl={{ stencil: false, antialias: true }} camera={{ position: [0, 0, 20], fov: 50, near: 17, far: 40 }}>
+    <Canvas
+      shadows
+      gl={{ alpha: false, stencil: false, antialias: true }}
+      camera={{ position: [0, 0, 20], fov: 50, near: 17, far: 40 }}
+    >
       <fog attach="fog" args={["#F97514", 25, 35]} />
       {/* <color attach="background" args={["#feef8a"]} /> */}
       <ambientLight intensity={1.5} />
@@ -22,53 +47,91 @@ export default function Balls() {
         shadow-camera-top={10}
         shadow-camera-bottom={-10}
       />
-      <Physics gravity={[0, -50, 0]} defaultContactMaterial={{ restitution: 0.5 }}>
+      <Physics
+        gravity={[0, -50, 0]}
+        defaultContactMaterial={{ restitution: 0.5 }}
+      >
         <group position={[0, 0, -10]}>
           <Mouse />
           <Borders />
-          <InstancedSpheres />
+          <InstancedSpheres {...{ number, colors }}/>
         </group>
       </Physics>
       <EffectComposer>
-        <SSAO radius={0.4} intensity={10} luminanceInfluence={0.1} color="red" />
+        <SSAO
+          radius={0.4}
+          intensity={10}
+          luminanceInfluence={0.1}
+          color="red"
+        />
         {/* <Bloom intensity={1.25} kernelSize={3} luminanceThreshold={0.5} luminanceSmoothing={0.0} /> */}
       </EffectComposer>
     </Canvas>
-  )
+  );
 }
 
-function InstancedSpheres({ count = 200 }) {
-  const { viewport } = useThree()
-  const colors = ['#A2CCB6', '#FCEEB5', '#EE786E', '#e0feff', 'lightpink', 'lightblue',"#F97514"]
-  const [ref] = useSphere((index) => ({ mass: 100, position: [4 - Math.random() * 8, viewport.height, 0, 0], args: [1.2] }))
+
+function InstancedSpheres({ count = 200, colors }) {
+  const { viewport } = useThree();
+
+  const [ref] = useSphere((index) => ({
+    mass: 100,
+    position: [4 - Math.random() * 8, viewport.height, 0, 0],
+    args: [1.2],
+  }));
   return (
-    <instancedMesh ref={ref} castShadow receiveShadow args={[null, null, count]}>
-      <sphereBufferGeometry args={[1.2, 32, 48]} />
-      <meshLambertMaterial color="#F97514" />
+    <instancedMesh
+      ref={ref}
+      castShadow
+      receiveShadow
+      args={[null, null, count]}
+    >
+      <sphereBufferGeometry args={[1.2, 32, 32]}>
+        <instancedBufferAttribute
+          attach="attributes-color"
+          args={["#F97514", 3]}
+        />
+      </sphereBufferGeometry>
+      <meshLambertMaterial vertexColors />
     </instancedMesh>
-  )
+  );
 }
 
 function Borders() {
-  const { viewport } = useThree()
+  const { viewport } = useThree();
   return (
     <>
-      <Plane position={[0, -viewport.height / 2, 0]} rotation={[-Math.PI / 2, 0, 0]} />
-      <Plane position={[-viewport.width / 2 - 1, 0, 0]} rotation={[0, Math.PI / 2, 0]} />
-      <Plane position={[viewport.width / 2 + 1, 0, 0]} rotation={[0, -Math.PI / 2, 0]} />
+      <Plane
+        position={[0, -viewport.height / 2, 0]}
+        rotation={[-Math.PI / 2, 0, 0]}
+      />
+      <Plane
+        position={[-viewport.width / 2 - 1, 0, 0]}
+        rotation={[0, Math.PI / 2, 0]}
+      />
+      <Plane
+        position={[viewport.width / 2 + 1, 0, 0]}
+        rotation={[0, -Math.PI / 2, 0]}
+      />
       <Plane position={[0, 0, -1]} rotation={[0, 0, 0]} />
       <Plane position={[0, 0, 12]} rotation={[0, -Math.PI, 0]} />
     </>
-  )
+  );
 }
 
 function Plane({ color, ...props }) {
-  usePlane(() => ({ ...props }))
-  return null
+  usePlane(() => ({ ...props }));
+  return null;
 }
 
 function Mouse() {
-  const { viewport } = useThree()
-  const [, api] = useSphere(() => ({ type: "Kinematic", args: [6] }))
-  return useFrame((state) => api.position.set((state.mouse.x * viewport.width) / 2, (state.mouse.y * viewport.height) / 2, 7))
+  const { viewport } = useThree();
+  const [, api] = useSphere(() => ({ type: "Kinematic", args: [6] }));
+  return useFrame((state) =>
+    api.position.set(
+      (state.mouse.x * viewport.width) / 2,
+      (state.mouse.y * viewport.height) / 2,
+      7
+    )
+  );
 }
