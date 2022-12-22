@@ -1,4 +1,6 @@
+// reference : https://codesandbox.io/s/mvkqs
 import React from 'react'
+import { Color } from 'three'
 import { Canvas, useFrame, useThree } from "@react-three/fiber"
 import { Physics, usePlane, useSphere } from "@react-three/cannon"
 import { EffectComposer, SSAO, Bloom } from "@react-three/postprocessing"
@@ -6,7 +8,7 @@ import { EffectComposer, SSAO, Bloom } from "@react-three/postprocessing"
 export default function Balls() {
   return (
     <Canvas shadows gl={{ stencil: false, antialias: true }} camera={{ position: [0, 0, 20], fov: 50, near: 17, far: 40 }}>
-      <fog attach="fog" args={["red", 25, 35]} />
+      <fog attach="fog" args={["#F97514", 25, 35]} />
       {/* <color attach="background" args={["#feef8a"]} /> */}
       <ambientLight intensity={1.5} />
       <directionalLight position={[-10, -10, -5]} intensity={0.5} />
@@ -37,12 +39,12 @@ export default function Balls() {
 
 function InstancedSpheres({ count = 200 }) {
   const { viewport } = useThree()
+  const colors = ['#A2CCB6', '#FCEEB5', '#EE786E', '#e0feff', 'lightpink', 'lightblue',"#F97514"]
   const [ref] = useSphere((index) => ({ mass: 100, position: [4 - Math.random() * 8, viewport.height, 0, 0], args: [1.2] }))
-  const colors = ['#A2CCB6', '#FCEEB5', '#EE786E', '#e0feff', 'lightpink', 'lightblue']
   return (
     <instancedMesh ref={ref} castShadow receiveShadow args={[null, null, count]}>
-      <sphereBufferGeometry args={[1.2, 32, 32]} />
-      <meshLambertMaterial color="#ff7b00" />
+      <sphereBufferGeometry args={[1.2, 32, 48]} />
+      <meshLambertMaterial color="#F97514" />
     </instancedMesh>
   )
 }
