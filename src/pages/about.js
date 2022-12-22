@@ -8,14 +8,17 @@ import {
   photo,
   aboutMe,
   connect,
+  connectLogo,
   footDescrip,
-  footer
+  footer,
 } from "./AboutPage.module.css";
+import { Link } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
 import me from "../images/me.png";
-import email from "../images/email.png";
-import insta from "../images/insta.png";
-import github from "../images/github.png";
-import linkedin from "../images/linkedin.png";
+import email from "../images/email.svg";
+import insta from "../images/insta.svg";
+import github from "../images/github.svg";
+import linkedin from "../images/linkedin.svg";
 import AppHeader from "../component/AppHeader/AppHeader";
 import AppFooter from "../component/AppFooter/AppFooter";
 
@@ -53,16 +56,16 @@ const AboutPage = () => {
               <h3>You can reach me through..</h3>
               <div className={connect}>
                 <a href="mailto:kitetale248@gmail.com">
-                  <img scr={email} alt="email: kitetale248@gmail.com" />
+                  <img src={email} alt="kitetale248@gmail.com" />
                 </a>
                 <a href="https://www.instagram.com/kitetale/">
-                  <img scr={insta} alt="Instagram: @kitetale" />
+                  <img src={insta} alt="Instagram: @kitetale" />
                 </a>
                 <a href="https://github.com/kitetale">
-                  <img scr={github} alt="Github: @kitetale" />
+                  <img src={github} alt="Github: @kitetale" />
                 </a>
                 <a href="https://www.linkedin.com/in/ashleykim8170">
-                  <img scr={linkedin} alt="LinkedIn: /ashleykim8170" />
+                  <img src={linkedin} alt="LinkedIn: /ashleykim8170" />
                 </a>
               </div>
             </div>
