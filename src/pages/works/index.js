@@ -7,68 +7,103 @@ import {
   tabs,
   images,
   carousel,
+  cardGrid,
+  workCard,
+  noMargin,
+  workCardInner,
+  workCardImg,
+  overlayTitle,
+  workCardDescription,
+  smaller,
   footer,
-  footDescrip
+  footDescrip,
 } from "./WorkPage.module.css";
 import Carousel from "../../component/Carousel/Carousel";
 import placeholder from "../../images/me.png";
 import AppHeader from "../../component/AppHeader/AppHeader";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { Link, graphql } from "gatsby";
+import { Grid } from "@react-three/postprocessing";
 
 const ProjectPage = ({ data }) => {
   return (
     <div>
-    <div className={overall}>
-      <AppHeader />
-      <div className={content}>
-        <div className={top}>
-          <div className={title}>WORKS</div>
-          <div className={tabs}> hi</div>
+      <div className={overall}>
+        <AppHeader />
+        <div className={content}>
+          <div className={top}>
+            <div className={title}>WORKS</div>
+            {/* <div className={tabs}> hi</div> */}
+          </div>
+        </div>
+        <div className={cardGrid}>
+          {data.allMdx.nodes.map((node) => (
+            <article
+              key={node.id}
+              className={`filterArt ${node.frontmatter.tag}`}
+            >
+              <div className={workCard}>
+                <Link className={noMargin} to={`/works/${node.slug}`}>
+                  <div
+                    className={workCardInner}
+                  >
+                    <GatsbyImage
+                      className={workCardImg}
+                      image={getImage(node.frontmatter.hero_img)}
+                      alt={node.frontmatter.hero_img_alt}
+                    />
+                    <div className={overlayTitle}>
+                      <h4>{node.frontmatter.title}</h4>
+                    </div>
+                    <div className={workCardDescription}>
+                      <h2 className={smaller}>{node.frontmatter.title}</h2>
+                      {node.frontmatter.description}
+                      <p> </p>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
-      <div className={carousel}>
-        <Carousel show={4.3} infiniteLoop={true}>
-          <img className={images} src={placeholder} alt="placeholder" />
-          <img className={images} src={placeholder} alt="placeholder" />
-          <img className={images} src={placeholder} alt="placeholder" />
-          <img className={images} src={placeholder} alt="placeholder" />
-          <img className={images} src={placeholder} alt="placeholder" />
-
-          {/* {data.allMdx.nodes.map((node) => (
-            <Link to={`/works/${node.frontmatter.slug}`}>
-              <img
-                className={images}
-                src={node.frontmatter.hero_img}
-                alt={node.frontmatter.hero_img_alt}
-              />
-            </Link>
-          ))} */}
-        </Carousel>
-      </div>
+      <footer className={footer}>(ง˙∇˙)ว © 2023 Ashley Kim (ว˙∇˙)ง</footer>
+      <footer className={footDescrip}>
+        Built with Gatsby {"&"} React! Last updated in January 2023.
+      </footer>
     </div>
-    <footer className={footer}>(ง˙∇˙)ว © 2023 Ashley Kim (ว˙∇˙)ง</footer>
-    <footer className={footDescrip}>
-      Built with Gatsby {"&"} React! Last updated in January 2023.
-    </footer>
-  </div>
   );
 };
 
 export const query = graphql`
   query {
-    allMdx(sort: { order: DESC, fields: frontmatter___order }) {
+    allMdx(sort: { fields: frontmatter___order, order: DESC }) {
       nodes {
         frontmatter {
+          description
+          order
           title
+          date
           hero_img_alt
           hero_img_description
+          color
           tag
-          order
-          local_imgs {
-            absolutePath
+          hero_img {
+            childImageSharp {
+              gatsbyImageData
+              fluid(maxWidth: 800, maxHeight: 650, quality: 75) {
+                base64
+                tracedSVG
+                srcWebp
+                srcSetWebp
+                originalImg
+                originalName
+              }
+            }
           }
         }
+        id
+        slug
       }
     }
   }
