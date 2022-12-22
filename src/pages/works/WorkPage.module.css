@@ -1,3 +1,12 @@
+.overall {
+  font-family: Lato, Avenir, Montserrat, Roboto, Helvetica Neue, Arial,
+    sans-serif;
+  margin: auto;
+  max-width: 1440px;
+  position: relative;
+  height: 100%;
+}
+
 .content {
   max-width: 1440px;
   padding: 0rem 3.5rem;
@@ -49,4 +58,18 @@
 .works {
   max-width: 1440px;
   margin: auto;
+}
+
+.footer{
+  padding: 75px 50px 0px 50px; 
+  text-align: center;
+  font-size:0.9rem;
+  margin:auto;
+}
+.footDescrip {
+  color:#778899;
+  text-align: center;
+  font-size:0.9rem;
+  padding: 0px 50px 25px 50px;
+  margin:auto;
 }
