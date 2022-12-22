@@ -7,13 +7,13 @@ import { EffectComposer, SSAO, Bloom } from "@react-three/postprocessing";
 
 export default function Balls() {
     const colorChoices = [
-        // "#A2CCB6",
-        // "#FCEEB5",
-        "#EE786E",
-        "#e0feff",
+        "#66CD97", //green
+        "#F7ED86", //orange yellow
+        "#EE786E", //pink
+        "#A1F3F5", //skyblue
         "lightpink",
         "lightblue",
-        "#F97514",
+        "#F78A39", //orange
       ];
       const [number] = useState(200);
       const colors = useMemo(() => {
@@ -21,7 +21,7 @@ export default function Balls() {
         const color = new Color();
         for (let i = 0; i < number; i++)
           color
-            .set(colorChoices[Math.floor(Math.random() * 5)])
+            .set(colorChoices[Math.floor(Math.random() * colorChoices.length)])
             .convertSRGBToLinear()
             .toArray(array, i * 3);
         return array;
@@ -33,9 +33,9 @@ export default function Balls() {
       gl={{ alpha: false, stencil: false, antialias: true }}
       camera={{ position: [0, 0, 20], fov: 50, near: 17, far: 40 }}
     >
-      <fog attach="fog" args={["#F97514", 25, 35]} />
-      {/* <color attach="background" args={["#feef8a"]} /> */}
-      <ambientLight intensity={1.5} />
+      {/* <fog attach="fog" args={["#F97514", 25, 35]} /> */}
+      <color attach="background" args={["#ffffff"]} />
+      <ambientLight intensity={1} />
       <directionalLight position={[-10, -10, -5]} intensity={0.5} />
       <directionalLight
         castShadow
@@ -54,7 +54,7 @@ export default function Balls() {
         <group position={[0, 0, -10]}>
           <Mouse />
           <Borders />
-          <InstancedSpheres {...{ number, colors }}/>
+          <InstancedSpheres number={number} colorsL={colors} />
         </group>
       </Physics>
       <EffectComposer>
@@ -62,7 +62,7 @@ export default function Balls() {
           radius={0.4}
           intensity={10}
           luminanceInfluence={0.1}
-          color="red"
+        //   color="red"
         />
         {/* <Bloom intensity={1.25} kernelSize={3} luminanceThreshold={0.5} luminanceSmoothing={0.0} /> */}
       </EffectComposer>
@@ -71,7 +71,7 @@ export default function Balls() {
 }
 
 
-function InstancedSpheres({ count = 200, colors }) {
+function InstancedSpheres({ count = 200, colorsL }) {
   const { viewport } = useThree();
 
   const [ref] = useSphere((index) => ({
@@ -88,8 +88,8 @@ function InstancedSpheres({ count = 200, colors }) {
     >
       <sphereBufferGeometry args={[1.2, 32, 32]}>
         <instancedBufferAttribute
-          attach="attributes-color"
-          args={["#F97514", 3]}
+          attachObject={["attributes","color"]}
+          args={[colorsL, 3]}
         />
       </sphereBufferGeometry>
       <meshLambertMaterial vertexColors />
