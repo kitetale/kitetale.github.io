@@ -23,6 +23,12 @@
 }
 .logo {
   max-width: 200px;
+
+}
+.logoUnderline:hover:after { 
+  color: #ffffff;
+  width: 0%; 
+  left: 0; 
 }
 
 .navLink {

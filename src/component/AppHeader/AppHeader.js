@@ -6,6 +6,7 @@ import {
   navLinkItem,
   logo,
   words,
+  logoUnderline,
 } from "./AppHeader.module.css";
 import { Link } from "gatsby";
 import AshleyKim from "../../images/AshleyKim.svg";
@@ -16,7 +17,7 @@ const AppHeader = () => {
       <div className={words}>
         <title>Ashley Kim</title>
         <header className={header}>
-          <Link to="/">
+          <Link to="/" className={logoUnderline}>
             <img src={AshleyKim} alt="Ashley Kim" className={logo} />
           </Link>
         </header>
