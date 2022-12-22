@@ -6,6 +6,13 @@
     "Trebuchet MS", sans-serif;
 }
 
+.overall {
+  font-family: Lato,Avenir,Montserrat,Roboto,Helvetica Neue,Arial,sans-serif;
+  margin: auto;
+  max-width: 1440px;
+  position: relative;
+  height:100%;
+}
 .title {
   font-family: "Imbue", "Impact", "Times New Roman", Times, serif;
   font-style: normal;

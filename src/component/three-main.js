@@ -26,7 +26,7 @@ export default function Shapes() {
         <BlueShape />
       </Float>
       <OrbitControls />
-      <ContactShadows resolution={1024} scale={20} position={[0, -1.02, 0]} blur={0.75} opacity={0.5} far={1.05} color="#1A5AaF" />
+      <ContactShadows resolution={1024} scale={20} position={[0, -1.02, 0]} blur={0.75} opacity={0.5} far={1.05} color="#f39222" />
       <Environment preset="warehouse" />
     </Canvas>
   )
@@ -86,8 +86,8 @@ function WhiteShape(props) {
         </Brush>
       </Subtraction>
       <LayerMaterial lighting="standard" color="white" toneMapped={true}>
-        <Depth colorA="#2A8AFF" colorB="white" alpha={1} mode="multiply" near={0.0} far={0.6} origin={[0, 0, 0]} />
-        <Depth colorA="#2A8AFF" colorB="white" alpha={1.0} mode="multiply" near={0.0} far={0.6} origin={[0, -0.25, -0.1]} />
+        <Depth colorA="#f39222" colorB="white" alpha={1} mode="multiply" near={0.0} far={0.6} origin={[0, 0, 0]} />
+        <Depth colorA="#f39222" colorB="white" alpha={1.0} mode="multiply" near={0.0} far={0.6} origin={[0, -0.25, -0.1]} />
       </LayerMaterial>
     </mesh>
   )

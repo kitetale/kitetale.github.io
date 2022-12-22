@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  overall,
   content,
   title,
   hello,
@@ -18,7 +19,7 @@ import AppHeader from "../component/AppHeader/AppHeader";
 
 const AboutPage = () => {
   return (
-    <div>
+    <div className={overall}>
       <AppHeader/>
     
     <div className={content}>
@@ -33,19 +34,22 @@ const AboutPage = () => {
         </div>
         <div className={aboutMe}>
           <p>
-            I'm a senior at Carnegie Mellon University, <br />
-            studying Computer Science and Arts. I'm pursuing <br />
-            an additional major in Human-Computer Interaction as well.
+            I'm a senior at Carnegie Mellon University, 
+            studying Computer Science and Arts with an additional major in 
+            Human-Computer Interaction.
           </p>
           <p>
-            My main interests are interactive design, visual effects, and
-            immersive entertainment.
+            Anything between Art and Computer Science is of my interest! Among the vast range of Art and CS, I'm particularly drawn to real-time interaction, visual effects, and
+            immersive media.
           </p>
           <p>
             In my free time, I enjoy visiting museums, galleries, and art fairs.
             Let me know if you have any exhibition recommendations both
             on/offline!
           </p>
+          <h3>
+            You can reach me through..
+          </h3>
           <div className={connect}>
             <a href="mailto:kitetale248@gmail.com">
               <img scr={email} alt="email: kitetale248@gmail.com" />

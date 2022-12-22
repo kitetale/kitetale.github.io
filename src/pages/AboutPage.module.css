@@ -1,3 +1,12 @@
+.overall {
+  font-family: Lato, Avenir, Montserrat, Roboto, Helvetica Neue, Arial,
+    sans-serif;
+  margin: auto;
+  max-width: 1440px;
+  position: relative;
+  height: 100%;
+}
+
 .content {
   max-width: 1440px;
   padding: 0rem 3.5rem;
@@ -19,13 +28,18 @@
 }
 
 .hello {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 46px;
+  font-family: Montserrat;
+  font-size: 60px;
+  margin: 0 0 0.5rem 0;
   line-height: 68px;
   margin-top: 3.7rem;
-  color: #636363;
+  color: #e8e8e8;
+}
+
+h3{
+  margin-top: 3rem;
+  font-size: 20px;
+  font-family: Avenir, Lato, Montserrat;
 }
 
 .frame {

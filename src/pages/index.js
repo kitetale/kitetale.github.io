@@ -5,6 +5,7 @@ import { overall, fullsize, msg } from "./LandingPage.module.css";
 
 import ThreeLazy from "../component/three-lazy";
 import Shapes from "../component/three-main";
+import Balls from "../component/three-balls";
 //import Type from '../component/type-cloud';
 
 const LandingPage = () => {
@@ -15,7 +16,8 @@ const LandingPage = () => {
         <div className={fullsize}>
           {/* <Type/> */}
           {/* <ThreeLazy/> */}
-          <Shapes />
+          {/* <Shapes /> */}
+          <Balls/>
         </div>
         <div className={msg}>
           <h1>Hello! I'm Ashley &#128526;</h1>
