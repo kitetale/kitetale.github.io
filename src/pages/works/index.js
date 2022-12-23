@@ -37,16 +37,11 @@ const ProjectPage = ({ data }) => {
           </div>
         </div>
         <div className={cardGrid}>
-          {data.allMdx.nodes.map((node) => (
-            <article
-              key={node.id}
-              className={`filterArt ${node.frontmatter.tag}`}
-            >
+          {data.allMdx.nodes.map(node => (
+            <article key={node.id}>
               <div className={workCard}>
                 <Link className={noMargin} to={`/works/${node.slug}`}>
-                  <div
-                    className={workCardInner}
-                  >
+                  <div className={workCardInner}>
                     <GatsbyImage
                       className={workCardImg}
                       image={getImage(node.frontmatter.hero_img)}
@@ -77,30 +72,18 @@ const ProjectPage = ({ data }) => {
 
 export const query = graphql`
   query {
-    allMdx(sort: { fields: frontmatter___order, order: DESC }) {
+    allMdx {
       nodes {
         frontmatter {
           description
-          order
-          title
-          date
           hero_img_alt
-          hero_img_description
-          color
-          tag
           hero_img {
             childImageSharp {
               gatsbyImageData
-              fluid(maxWidth: 800, maxHeight: 650, quality: 75) {
-                base64
-                tracedSVG
-                srcWebp
-                srcSetWebp
-                originalImg
-                originalName
-              }
             }
           }
+          hero_img_description
+          title
         }
         id
         slug
