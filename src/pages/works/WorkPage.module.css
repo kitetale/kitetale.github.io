@@ -4,9 +4,13 @@
   --text: rgb(47, 67, 79);
 }
 
+body{
+  margin:0;
+}
+
 .fullsize {
   background-size: cover;
-  width: 99vw;
+  width: 100vw;
   height: 100vh;
   z-index: -1;
   padding: 0;
@@ -24,7 +28,7 @@
   max-width: 1440px;
   position: relative;
   height: 100%;
-  font-size: 2px;
+  font-size: 20px;
 }
 
 .content {
@@ -81,6 +85,35 @@
   width: 0%;
   left: 0;
 }
+
+.infogrid{
+  display: grid;
+  grid-template-columns: 5fr 4fr;
+  line-height: 1.8;
+  margin:auto;
+}
+.overview {
+  padding:1rem;
+  padding-right:5rem;
+  
+}
+.closerLineHeight{
+  line-height: 1.7;
+}
+.infos{
+  padding:1rem 1.5rem;
+  padding-right: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+}
+.info{
+  padding:0 0.5rem;
+  margin:0 0.5rem;
+  padding-bottom: 1rem;
+}
+
+/* -------------------------------------------------------------------------- */
 
 .carousel {
   max-width: 1440px;

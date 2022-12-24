@@ -14,7 +14,6 @@ import {
   footer,
   footDescrip,
 } from "./WorkPage.module.css";
-import "./WorkPage.module.css";
 import AppHeader from "../../component/AppHeader/AppHeader";
 
 const WorkPage = ({ data }) => {
