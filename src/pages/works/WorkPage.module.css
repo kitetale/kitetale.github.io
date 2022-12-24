@@ -1,16 +1,30 @@
 :root {
   --width: 900px;
   --mobile-width: 650px;
-  --text:rgb(47, 67, 79);
+  --text: rgb(47, 67, 79);
+}
+
+.fullsize {
+  background-size: cover;
+  width: 99vw;
+  height: 100vh;
+  z-index: -1;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+.hero_img{
+  position:relative;
 }
 
 .overall {
   font-family: Lato, Avenir, Montserrat, Roboto, Helvetica Neue, Arial,
     sans-serif;
-  margin: auto;
+  margin: 0;
   max-width: 1440px;
   position: relative;
   height: 100%;
+  font-size: 2px;
 }
 
 .content {
@@ -26,7 +40,9 @@
   justify-content: space-between;
 }
 
-.title {
+.title,
+.title2,
+.title3 {
   font-family: "Imbue", "Impact", "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: 700;
@@ -36,11 +52,34 @@
   align-items: center;
   color: #e8e8e8;
 }
+.title3{
+  position:absolute;
+  right:60px;
+  bottom:20px;
+}
 
-.noMargin:hover:after { 
-    color: #ffffff;
-    width: 0%; 
-    left: 0; 
+.title2,
+.descrip {
+  font-family: Lato, Avenir, Montserrat, Roboto, Helvetica Neue, Arial,
+    sans-serif;
+  font-size: 80px;
+  justify-content: center;
+  align-items: center;
+  color: rgb(30, 30, 30);
+}
+
+.descrip {
+  font-size: 30px;
+  font-weight: 400;
+  margin: 0 auto 4rem;
+  text-align: center;
+  width: 70%;
+}
+
+.noMargin:hover:after {
+  color: #ffffff;
+  width: 0%;
+  left: 0;
 }
 
 .carousel {
@@ -93,7 +132,7 @@
   -webkit-border-radius: 4%;
   -moz-border-radius: 4%;
 }
-.noMargin{
+.noMargin {
   margin: 0;
   width: 100%;
   /* width: 200px; 180px; */
@@ -120,7 +159,7 @@
   border: 2px solid #e8e8e8;
   border-radius: 5%;
 }
-.work-card-inner:hover{
+.work-card-inner:hover {
   border: 2px solid #000;
 }
 
