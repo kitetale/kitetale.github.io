@@ -15,6 +15,7 @@ body{
   z-index: -1;
   padding: 0;
   margin: 0 0 1rem;
+  left:0;
 }
 
 .hero_img{
@@ -24,7 +25,7 @@ body{
 .overall {
   font-family: Lato, Avenir, Montserrat, Roboto, Helvetica Neue, Arial,
     sans-serif;
-  margin: 0;
+  margin: auto;
   max-width: 1440px;
   position: relative;
   height: 100%;
@@ -91,6 +92,7 @@ body{
   grid-template-columns: 5fr 4fr;
   line-height: 1.8;
   margin:auto;
+  padding-bottom: 3rem;
 }
 .overview {
   padding:1rem;

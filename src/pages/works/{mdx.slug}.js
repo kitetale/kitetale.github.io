@@ -21,18 +21,19 @@ const WorkPage = ({ data }) => {
     <div>
       <div className={overall}>
         <AppHeader />
-        
+
         <h1 className={title2}>{data.mdx.frontmatter.title}</h1>
         <h2 className={descrip}>{data.mdx.frontmatter.description}</h2>
-        <div className={hero_img}>
-          <GatsbyImage
-            className={fullsize}
-            image={getImage(data.mdx.frontmatter.hero_img)}
-            alt={data.mdx.frontmatter.hero_img_alt}
-          />
-          <h1 className={title3}>{data.mdx.frontmatter.title}</h1>
-        </div>
-
+      </div>
+      <div className={hero_img}>
+        <GatsbyImage
+          className={fullsize}
+          image={getImage(data.mdx.frontmatter.hero_img)}
+          alt={data.mdx.frontmatter.hero_img_alt}
+        />
+        <h1 className={title3}>{data.mdx.frontmatter.title}</h1>
+      </div>
+      <div className={overall}>
         <div className={content}>
           <MDXRenderer local={data.mdx.frontmatter.local_imgs}>
             {data.mdx.body}
@@ -48,8 +49,8 @@ const WorkPage = ({ data }) => {
 };
 
 export const query = graphql`
-  query ($id: String){
-    mdx (id: {eq: $id}){
+  query ($id: String) {
+    mdx(id: { eq: $id }) {
       body
       frontmatter {
         description
