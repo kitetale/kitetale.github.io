@@ -8,6 +8,10 @@ body{
   margin:0;
 }
 
+.orange{
+  color: #FF8A00;
+}
+
 .fullsize {
   background-size: cover;
   width: 100vw;
@@ -79,6 +83,22 @@ body{
   margin: 0 auto 4rem;
   text-align: center;
   width: 70%;
+}
+
+.subTitle{
+  font-family: Lato, Avenir, Montserrat, Roboto, Helvetica Neue, Arial,
+    sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  padding: 1rem 0;
+  border-bottom: 3px solid #FF8A00!important;
+  width:fit-content;
+  margin-bottom: 2rem;
+}
+
+li{
+  line-height: 1.8;
+  margin:1rem;
 }
 
 .noMargin:hover:after {

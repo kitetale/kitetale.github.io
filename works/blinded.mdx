@@ -10,7 +10,7 @@ local_imgs:
 import {getImage, GatsbyImage} from 'gatsby-plugin-image';
 import {Link} from 'gatsby';
 import "../src/pages/works/WorkPage.module.css";
-import {infogrid, overview, closerLineHeight, infos, info} from "../src/pages/works/WorkPage.module.css";
+import {infogrid, overview, closerLineHeight, infos, info, orange, subTitle} from "../src/pages/works/WorkPage.module.css";
 
 <div className={infogrid}>
 <div className={overview}>
@@ -19,7 +19,7 @@ import {infogrid, overview, closerLineHeight, infos, info} from "../src/pages/wo
 **Overview** 
 </div>
 <div className={closerLineHeight}>
-To bring greater awareness to Australian wildfire and world-wide climate change, Lorem ipsum dolor sit amet, consectetur adipiscing elit. In aliquet egestas ligula, sit amet laoreet ex aliquam et. Morbi fringilla sapien ut nisl facilisis, vitae lacinia sapien euismod. Phasellus ultricies rutrum velit vel tincidunt. Aenean porta tristique ante, vel lacinia nis
+'Blinded' is an original short animation film about wildlife disruption due to wildfire caused by climate change. Motivated by bringing <b className={orange}>greater awareness to wildfire and climate change</b> around the world, this short film aims to help the audience be more conscious of individual acts and energy consumptions. Check below for <b className={orange}> more concrete ways you can contribute</b> to slow down climate change and save wildlife & ecosystems starting today.
 
 </div>
 </div>
@@ -73,12 +73,14 @@ Maya <br/> Premiere Pro
 
 <br/>
 
-#### Here are some of many ways you can help reduce climate change and save wildlife & ecosystems starting today: ####
-* Use renewable energy.
-* Reduce energy use.
-* Respect and protect green spaces.
-* Cut down meat and dairy consumption.
-* Support rewilding and environmental projects.
+<div className={subTitle}>
+Things you can do starting today to save wildlife & ecosystems
+</div>
+<li> Use renewable energy. </li>
+<li> Reduce energy use </li>
+<li> Respect and protect green spaces </li>
+<li> Cut down meat and dairy consumption </li>
+<li> Support rewilding and environmental projects </li>
 <br/><br/><br/>
 
 Original film by Ashley Kim, Nina Duan, Justin Lee, Magda Gourinchas
