@@ -136,6 +136,25 @@ li{
   padding-bottom: 1rem;
 }
 
+.three-grid, .three-grid2 {
+  position:relative;
+  margin: auto;
+  margin-bottom: 3rem;
+  padding: 0;
+  display:grid;
+  max-width: 1400px;
+  vertical-align:center;
+}
+.three-grid {
+  grid-template-columns: 4fr 3fr;
+}
+.three-grid2 {
+  grid-template-columns: 3fr 4fr;
+}
+.elem2{
+  margin: auto;
+  padding: 0 3rem;
+}
 /* -------------------------------------------------------------------------- */
 
 .carousel {
@@ -363,6 +382,22 @@ li{
     padding: 1rem;
     margin: 0 1rem;
   }
+  .three-grid, .three-grid2 {
+    margin: auto;
+    padding: 3rem 5rem;
+    display:grid;
+    width:auto;
+    max-width: 900px;
+    vertical-align:center;
+  }
+  .three-grid {
+    grid-template-rows: 2fr 1fr;
+    grid-template-columns: none;
+  }
+  .three-grid2 {
+    grid-template-columns: none;
+    grid-template-rows: 2fr 1fr;
+  }
   .card-grid {
     width: 100%;
     margin: 1rem auto;
@@ -453,6 +488,21 @@ li{
   .filter {
     display: none;
   }
+  .three-grid, .three-grid2 {
+    margin: 0;
+    padding: 1.5rem;
+    position:relative;
+    display:grid;
+    width:auto;
+    max-width: 650px;
+    vertical-align:center;
+  }
+  .three-grid {
+    grid-template-rows: 1fr auto;
+  }
+  .three-grid2 {
+    grid-template-rows: 1fr auto;
+  }
   .card-grid {
     width: 100%;
     margin: 1rem auto;
@@ -461,9 +511,6 @@ li{
     max-width: 100%;
   }
   .work-card {
-    width: 140px; /* 180px; */
-    height: 12rem;
-    /* height: 168px; */
     margin: 0.6rem 0.3rem 0.6rem 0.3rem;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     opacity: 100%;

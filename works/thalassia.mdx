@@ -1,267 +1,218 @@
 ---
 title: "Thalassia"
 description: "An interactive projection that explores hallucination and solipsism under varying degrees of underwater pressure."
-date: "12-03-2021"
-hero_img: "../src/images/thalassia/installation.jpg"
-hero_img_alt: "A photo from Thalassia immersive exhibition."
-hero_img_description: "A photo from Thalassia immersive exhibition."
-order: "91"
-color: "#A284D6"
-tag: "tech"
+hero_img: "../src/images/thalassia/main.jpg"
+hero_img_alt: "One output of snapshot taken in a bedroom"
+hero_img_description: "Snapshot Example"
 local_imgs:
-  - ../src/images/thalassia/main.jpg
-  - ../src/images/thalassia/BAWL.png
-  - ../src/images/thalassia/timeline.png
-  - ../src/images/thalassia/sketch.jpg
-  - ../src/images/thalassia/sketch2.jpg
-  - ../src/images/thalassia/sketch3.jpg
-  - ../src/images/thalassia/location.jpg
-  - ../src/images/thalassia/setup.jpeg
-  - ../src/images/thalassia/testing.jpeg
-  - ../src/images/thalassia/testing3.jpeg
-  - ../src/images/thalassia/camera.jpeg
-  - ../src/images/thalassia/install.jpg
+  - "../src/images/snapshot/snapshot.png"
 ---
-import {getImage, GatsbyImage} from 'gatsby-plugin-image';
-import demo1 from '../src/images/thalassia/interaction1.mp4';
-import water from '../src/images/thalassia/water.mp4';
-import particle from '../src/images/thalassia/interactive.mp4';
-import final from '../src/images/thalassia/combined.mp4';
-import interaction from '../src/images/thalassia/interactionfinal.mp4';
-import overview from '../src/images/thalassia/overview.mp4';
-
-## Thalassia is an interactive projection piece that explores the ideas of hallucination and solipsism under varying degrees of pressure underwater. ##
-
-<br/>
-
-As you immerse yourself in the deep sea, your perception of the environment begins to shift. Can you control the tide? Was that a manatee you just saw or a mermaid? Experience the distortion of reality through the ever-changing nature of the deep sea.
-
-**Role:** Interactive design, Water noise effect <br/>
-**Duration: **4 weeks (Nov 2 - Dec 3 2021) <br/>
-**Tools:** After Effects, Blender, Intel RealSense D435, Photoshop, Touchdesigner <br/>
-**Team: ** Ajunie Virk, Ashley Kim, Vivian Noh <br/>
-**Musician: ** Kyle Steindler
-
-<br/><br/>
+import { getImage, GatsbyImage } from "gatsby-plugin-image";
+import { Link } from "gatsby";
+import {
+  infogrid,
+  overview,
+  closerLineHeight,
+  infos,
+  info,
+  orange,
+  subTitle,
+  threeGrid,
+  threeGrid2,
+  elem2,
+} from "../src/pages/works/WorkPage.module.css";
+import poster from "../src/images/thalassia/BAWL.png";
+import timeline from "../src/images/thalassia/timeline.png";
+import water from "../src/images/thalassia/water.mp4";
+import particle from "../src/images/thalassia/interactive.mp4";
 
 
+
+<div className={infogrid}>
+<div className={overview}>
 <div>
-<GatsbyImage alt="Thalassia at the exhibition" image={getImage(props.local[0])} />
+
+**Overview**
+
 </div>
-<br/>
+<div className={closerLineHeight}>
+Thalassia is an interactive projection piece that explores the ideas of hallucination and solipsism under varying degrees of pressure underwater. As you immerse yourself in the deep sea, your perception of the environment begins to shift. Can you control the tide? Was that a manatee you just saw or a mermaid? Experience the distortion of reality through the ever-changing nature of the deep sea.
 
-<br/><br/>
+</div>
+</div>
 
-## Background ##
-*Thalassia* was produced for the collaborative exhibition called **"Between Air and Waterlines"**. The exhibition presented more than six collaborative works by **more than 50 animators, dancers, and musicians** in the evening of December 3, 2021.
-
-<br/>
+<div className={infos}>
+<div className={info}>
 <div>
-<GatsbyImage alt="Thalassia at the exhibition" image={getImage(props.local[1])} />
+
+**Team ** 
 </div>
-<br/>
+<div className={closerLineHeight}> 
+Ashley Kim <br/> Ajunie Virk <br/> Vivian Noh 
+</div>
+</div>
+<div className={info}> 
+<div>
 
-<br/><br/>
+**Role**
+</div>
+<div className={closerLineHeight}> 
+Interaction Design <br/> Visual Effect 
+</div>
+</div>
+<div className={info}>
+<div>
 
-## Concept Ideation ##
-As a team of three, we began ideating for the overarching theme of our piece. Wanting to create an immersive environment that's different than what we experience in our daily lives, I proposed creating an **immersive underwater environment**. Other team members agreed to the concept, and we start narrowing down the narrative of the piece by researching how underwater is depicted in different media and genres.
+**Duration **
 
-<br/><br/>
+</div>
+<div className={closerLineHeight}> 
+Nov 2 - Dec 3, 2021 <br/> (1 month)
+</div>
+</div>
+<div className={info}>
+<div>
 
-## Research ##
+**Tool **
+
+</div>
+<div className={closerLineHeight}> 
+After Effects, Blender <br/> Intel RealSense D435 <br/> Photoshop <br/>Touchdesigner
+</div>
+</div>
+</div>
+</div>
+
+
+<div className={subTitle}>
+Background
+</div>
+<div style="margin-bottom:3rem;">
+<i>Thalassia</i> was produced for the collaborative exhibition called <i>Between Air and Waterlines </i>. The exhibition presented more than six collaborative works by <b>more than 50 animators, dancers, and musicians</b> in the evening of December 3, 2021.
+</div>
+<div>
+<img
+    style="width:100%;margin-bottom:3rem;"
+    src={poster}
+    alt={"poster of exhibition 'Between Air and Waterlines'"}
+/>
+</div>
+
+<div className={subTitle}>
+Concept Ideation
+</div>
+<div style="margin-bottom:3rem;">
+As a team of three, we began ideating for the overarching theme of our piece. Wanting to create an immersive environment that's different than what we experience in our daily lives, I proposed creating an <b>immersive underwater environment</b>. Other team members agreed to the concept, and we start narrowing down the narrative of the piece by researching how underwater is depicted in different media and genres.
+</div>
+
+<div className={subTitle}>
+Research
+</div>
+<div style="margin-bottom:3rem;">
 Through the research, we noticed that underwater has been used in various context with different feel for centuries. Below are examples of how underwater has been portrayed in certain fields and media:
 
-#### Greek Mythology ####
-Since Greek mythology explains the creations and stories of different Earth elements, numerous characters from Greek mythology were related to the body of water. Homer's *Odyssey* is a representative piece of literature that unfolds the adventure of Greek hero Odysseus. Calypso is a sea nymph who detained Odysseus for seven years, while Sirens are man-bird creatures who lure nearby sailors with their enchanting music to shipwreck on the rocky coast of their island. Poseidon is a famous god of the sea, and Kraken is a legendary sea monster of gigantic sized cephalopod-like creature that often appears in the Scandinavian folklore. 
+<h2 style="margin-top:3rem;">
+Greek Mythology
+</h2>
+<div style="padding-left:3rem;">
+Since Greek mythology explains the creations and stories of different Earth elements, numerous characters from Greek mythology were related to the body of water. Homer's <i>Odyssey</i> is a representative piece of literature that unfolds the adventure of Greek hero Odysseus. Calypso is a sea nymph who detained Odysseus for seven years, while Sirens are man-bird creatures who lure nearby sailors with their enchanting music to shipwreck on the rocky coast of their island. Poseidon is a famous god of the sea, and Kraken is a legendary sea monster of gigantic sized cephalopod-like creature that often appears in the Scandinavian folklore. 
 
-From the Greek mythological stories and characters, we gained the impression that underwater is often portrayed as a **realm of curiosity, enchantment, and danger**.
+From the Greek mythological stories and characters, we gained the impression that underwater is often portrayed as a <b className={orange}>realm of curiosity</b>, <b className={orange}>enchantment</b>, and <b className={orange}>danger</b>.
+</div>
 
-<br/>
-
-#### Underwater Organisms ####
+<h2 style="margin-top:3rem;">
+Underwater Organisms
+</h2>
+<div style="padding-left:3rem;">
 Adapting to the higher pressured deep ocean habitat, underwater organisms have unique body features that helps them survive better. Survival mechanisms similar to that of the land organisms like camouflage can be found amongst the underwater organisms as well, but they also have unique underwater features that are distinct to those in the land. Blobfish, for example, are well-known for their melting look after being pulled up rapidly by the fishers. However, they look totally different in their natural habitat, which is more than 3,000 feet below the sea level. Anglerfish are famous for their method of predation in the deep sea. They have bioluminescent lures protruding from their heads to attract prey to come near them. Prey fish would mistaken the lights and approach the anglerfish without being on alert. Humans also have mistaken a number of underwater organisms in the past, and mistaking manatees for mermaids is the most well-known fun fact introduced at the aquariums. 
 
-From researching various underwater organisms, we learned that **misinterpretation** is the repeating theme in both underwater survivalship and human understanding of deep ocean organisms.
+From researching various underwater organisms, we learned that <b className={orange}>misinterpretation</b> is the repeating theme in both underwater survivalship and human understanding of deep ocean organisms.
+</div>
 
-<br/>
-
-#### Mysteries ####
+<h2 style="margin-top:3rem;">
+Mysteries
+</h2>
+<div style="padding-left:3rem;">
 Some of the famous mysteries around the world are related to the deep ocean. Bermuda Triangle, for instance, is a mythical section of the Atlantic Ocean roughly bounded by Miami, Bermuda and Puerto Rico. It is a notorious region where dozens of ships and airplanes have disappeared in the past. Atlantis is a fictional city mentioned in Plato's literature *Timaeus and Critias* that is well-known as the sunken city. 
 
-Underwater related mysteries gave us similar impression as the Greek mythology research, where the underwater has been portrayed as a place that's **full of wonders and danger**.
+Underwater related mysteries gave us similar impression as the Greek mythology research, where the underwater has been portrayed as a place that's <b className={orange}>full of wonders and danger</b>.
+</div>
 
-<br/>
+<h2 style="margin-top:3rem;">
+Media
+</h2>
+<div style="padding-left:3rem;">
+Since the exhibition would be held indoor on land, we had to find a way to recreate the underwater feel inside a building. Computer graphics and visual effects used in media often uses shots on land as the base footage, so we researched how the underwater scenes in movies depict the feel of water. Through the scenes from <i>Harry Potter</i> and <i>Miss Peregrine's Home for Peculiar Children</i>, we noticed that <b className={orange}>blue green tint, air bubbles, and water caustics</b> are used to visually persuade the underwater scene. Billie Eilish's music video for <i>Ilomilo</i> is a moving image animation set in a deep ocean, which we gained the inspiration of <b className={orange}>sinking movement direction</b> from.
+</div>
 
-#### Media ####
-Since the exhibition would be held indoor on land, we had to find a way to recreate the underwater feel inside a building. Computer graphics and visual effects used in media often uses shots on land as the base footage, so we researched how the underwater scenes in movies depict the feel of water. Through the scenes from "Harry Potter" and "Miss Peregrine's Home for Peculiar Children", we noticed that **blue green tint, air bubbles, and water caustics** are used to visually persuade the underwater scene. Billie Eilish's music video for *Ilomilo* is a moving image animation set in a deep ocean, which we gained the inspiration of **sinking movement direction** from.
+<h2 style="margin-top:3rem;">
+Video Games
+</h2>
+<div style="padding-left:3rem;">
+For the interactivity aspect of the project, we also looked up how underwater themed games have designed their player experience. Some of the games we viewed are <i>Subnautica</i>, a survival game, <i>Reveal the Deep</i>, a short exploration game, <i>Soma</i>, a survival game with mini puzzles, and <i>Lumione</i>, an exploration game. Many of the games that gave immersive experience was developed in a first person shooter game style, where the user gains <b className={orange}>full control of what to see and where to go</b>.
+</div>
+</div>
 
-<br/>
 
-#### Video Games ####
-For the interactivity aspect of the project, we also looked up how underwater themed games have designed their player experience. Some of the games we viewed are "Subnautica", a survival game, "Reveal the Deep", a short exploration game, "Soma", a survival game with mini puzzles, and "Lumione", an exploration game. Many of the games that gave immersive experience was developed in a first person shooter game style, where the user gains **full control of what to see and where to go**.
+<div className={subTitle}>
+Concept Finalization
+</div>
+<div style="margin-bottom:3rem;">
+Combining what we found through the research, we decided to create an <b>interative underwater environment</b> that revolves around the theme of <b className={orange}>pressure</b>, <b className={orange}>shape-shifting</b>, and <b className={orange}>distortion of reality</b>. 
+</div>
 
-<br/><br/>
+<div className={subTitle}>
+Production
+</div>
+<div style="margin-bottom:3rem;">
+Maximizing each of the member's strength, I was in charge of <b>project management</b>, <b>interaction design</b>, and <b>installation design</b>.
 
-## Concept Finalization ##
-Combining what we found through the research, we decided to create an **interative underwater environment** that revolves around the theme of **pressure, shape-shifting, and distortion of reality**. 
-
-<br/><br/>
-
-## Production ##
-Maximizing each of the member's strength, I was in charge of **project management, interaction design, and installation design**.
-
-#### Project Management ####
+<h2 style="margin-top:3rem;">
+Project Management
+</h2>
+<img
+    style="width:100%;margin-bottom:1rem;"
+    src={timeline}
+    alt={"Timeline of Thalassia production"}
+/>
 <div>
-<GatsbyImage alt="Thalassia at the exhibition" image={getImage(props.local[2])} />
-</div>
-<br/>
-
-We first developed a overarching timeline together to **set checkpoints as a smaller deadlines**. Using the progress bar on the far right to indicate where in the timeline we're at, I kept track of individual works and the deadlines for other related documents that needs to be handed to others out of our team like the material purchase list. 
-
-<br/>
-
-#### Interaction Design ####
-
-<div className='three-grid'>
-  <video autoplay='true' loop muted disablePictureInPicture controlsList="nodownload" playsinline allowfullscreen="false" className='video'><source src={water} type="video/mp4" /></video>
-
-  <div className='elem2'>
-
-  Using the noise effect, I made a **water caustics motion** to be used as one of the foundation motions for the interaction design.
-  </div>
+We first developed a overarching timeline together to <b>set checkpoints as a smaller deadlines</b>. Using the progress bar on the far right to indicate where in the timeline we're at, I kept track of individual works and the deadlines for other related documents that needs to be handed to others out of our team like the material purchase list. 
 </div>
 
-<div className='three-grid2'>
-  <div className='elem2'>
+<h2 style="margin-top:3rem;">
+Interaction Design
+</h2>
+<div className={threeGrid}>
+<video
+    autoplay='true' loop muted disablePictureInPicture controlsList="nodownload" playsinline allowfullscreen="false" style="margin-right:1rem; width:100%; height:100%; display:flex;border-radius:20px;">
+<source src={water} alt={"Water caustics effect made with Touchdesigner"}type="video/mp4" /></video>
+<div className={elem2}>
+We first developed a overarching timeline together to <b>set checkpoints as a smaller deadlines</b>. Using the progress bar on the far right to indicate where in the timeline we're at, I kept track of individual works and the deadlines for other related documents that needs to be handed to others out of our team like the material purchase list. 
+</div>
+</div>
 
-  Using the particle effects and depth camera input, I created an interactive particle effect that **shifts in location based on the detected motion**. In a static state, the particles are set to **slowly move towards the top**, mimicking the movements of air bubbles rising to the surface of the water. 
-  </div>
-  
-  <video autoplay='true' loop muted disablePictureInPicture controlsList="nodownload" playsinline allowfullscreen="false" className='video'><source src={particle} type="video/mp4" /></video>
+<div className={threeGrid2}>
+<div className={elem2}>
+Using the particle effects and depth camera input, I created an interactive particle effect that <b>shifts in location based on the detected motion</b>. In a static state, the particles are set to <b>slowly move towards the top</b>, mimicking the movements of air bubbles rising to the surface of the water. 
+</div>
+<video
+    autoplay='true' loop muted disablePictureInPicture controlsList="nodownload" playsinline allowfullscreen="false" style="margin-right:1rem; width:100%; height:100%; display:flex;border-radius:20px;">
+<source src={particle} alt={"Camera based interactive particle effect made with Touchdesigner"}type="video/mp4" /></video>
+</div>
+
 
 </div>
 
-<div className='three-grid'>
-
-  <video autoplay='true' loop muted disablePictureInPicture controlsList="nodownload" playsinline allowfullscreen="false" className='video'><source src={demo1} type="video/mp4" /></video>
-
-  <div className='elem2'>
-
-  Combining the interactive particles, depth camera input, and water caustics noise, I finalized the interaction layout. The final version focused on **recreating the air bubbles that form as an object moves through the water**.
-
-  </div>
+<div className={subTitle}>
+Exhibition
+</div>
+<div style="margin-bottom:3rem;">
 
 </div>
 
-<div className='three-grid2'>
-  <div className='elem2'>
-
-  Once the 2D and 3D contents have been merged and ready, I laid the **interactive water caustics layer on top of the merged animation**. The shape-shifting silhouettes are made in Blender 3D by Ajunie, and the wavy coral reefs and thalassias are made in After Effects and Photoshop by Vivian.
-  </div>
-  
-  <video autoplay='true' loop muted disablePictureInPicture controlsList="nodownload" playsinline allowfullscreen="false" className='video'><source src={final} type="video/mp4" /></video>
+<div className={subTitle}>
+Reflection
+</div>
+<div style="margin-bottom:3rem;">
 
 </div>
-<br/>
-<div className='two-grid'>
-  <div style='padding:1rem 0.5rem 0 0 ;'>
-  <GatsbyImage alt="Thalassia at the exhibition" image={getImage(props.local[9])} />
-  </div>
-  <div style='padding:1rem 0 0 0.5rem;'>
-  <GatsbyImage alt="Thalassia at the exhibition" image={getImage(props.local[8])} />
-  </div>
-</div>
-<br/>
-
-We then **tested the combined interaction content with the projector**. Based on how we observed the content looked in the projection, we made a **final color adjustment** to express the hue and saturation we worked with on screen.
-
-<br/><br/>
-
-#### Installation Design ####
-<div className='three-grid'>
-  <div>
-  <GatsbyImage alt="Thalassia at the exhibition" image={getImage(props.local[6])} />
-  </div>
-  <div className='elem2'>
-
-  Among the large T-shaped space of the Great Hall, we requested one of the wings for our installation. We were assigned of the **right wing sector of the hall**, which has two doors facing each other and four statues as shown in the photo. 
-  </div>
-</div>
-
-<div className='two-grid'>
-  <div className='elem2'>
-
-Based on the assigned location, I quickly made **four sketches of our installation visual** and two idea sketch for how to secure the devices like projectors and cameras during the exhibition. 
-
-From the top left and clockwise, the sketches are a view from the entrance, a view looking into the right wing (like the photo above), a view of the floor, and a view when facing the projection in parallel.
-  
-  </div>
-  <div>
-  <GatsbyImage alt="Thalassia at the exhibition" image={getImage(props.local[4])} />
-  </div>
-</div>
-
-<div className='three-grid'>
-  <div style='padding:.5rem;margin:auto;'>
-    <GatsbyImage alt="Thalassia at the exhibition" image={getImage(props.local[5])} />
-  </div>
-  <div style='padding:.5rem;margin:auto;'>
-    <GatsbyImage alt="Thalassia at the exhibition" image={getImage(props.local[3])} />
-  </div>
-</div>
-<div className='elem2'>
-
-We also came up with the inital installation plan as the diagram on paper. However, through the projector testing, we noticed that the width of the **hall isn't long enough** to place two short-throw projectors such that the projections cover the wall. Hence, we made the modification as the diagram on the black background. Now each projector is planned to place **on top of the wooden podium across from the wall it's projecting to** so that it still minimizes the audience's shadow while the projection covers the wall.
-</div>
-<div className='three-grid'>
-  <div>
-  <GatsbyImage alt="Thalassia at the exhibition" image={getImage(props.local[7])} />
-  </div>
-  <div className='elem2'>
-
-  On the day of the exhibition, we **set up the projectors** on top of the wooden podium built by professor Johannes DeYoung and **covered the depth camera tripod with the mesh fabric** to add to a underwater coral-like feel. I'm the one on the ladder adjusting the projector in this photo!
-  </div>
-</div>
-<br/>
-
-Below are additional installation shots.
-<div className='two-grid'>
-  <div style='padding:.5rem .5rem 0 0;margin:auto;'>
-  <GatsbyImage alt="Thalassia at the exhibition" image={getImage(props.local[10])} />
-  </div>
-  <div style='padding:.5rem 0 0 .5rem;margin:auto;'>
-  <GatsbyImage alt="Thalassia at the exhibition" image={getImage(props.local[11])} />
-  </div>
-</div>
-
-<br/><br/><br/>
-
-## Exhibition ##
-
-<div className='three-grid'>
-
-  <video autoplay='true' loop muted disablePictureInPicture controlsList="nodownload" playsinline allowfullscreen="false" className='video'><source src={overview} type="video/mp4" /></video>
-
-  <div className='elem2'>
-<br/>
-
-Once the exhibition started, the **music performances were held according to the schedule**. All visuals are accompanied by a piece of music, and they were all on display even if the musicians of that group weren't performing. All audience is free to come and go throughout the exhibition hours and is invited to interact with any of the pieces. 
-  </div>
-
-</div>
-<div className='three-grid2'>
-  <div className='elem2'>
-
-This is an example of how the audience's **movement is tracked real-time and rendered** as a water caustics movement. Through the vague yet distinct human shaped water caustics, the audience are invited to **think about the difference between what their eyes see and their brain recognizes**. 
-  </div>
-  <video autoplay='true' loop muted disablePictureInPicture controlsList="nodownload" playsinline allowfullscreen="false" className='video'><source src={interaction} type="video/mp4" /></video>
-</div>
-
-<br/>
-
-<br/><br/>
-
-## Reflection ##
-I enjoyed learning more about the depth camera and designing interactivity using noise and camera input data. Many viewers were **amazed and showed great interest** in their silhouette appearing as part of water caustics. Although there were various aspects that I had to compromise due to the location specific limitation, I'm proud of our work and installation. Through this project, I was able to practice my project management skills, especially on **deciding which aspect of the project to prioritize given an abrupt time and space limit**. Since the interactivity gained high interest during the event, my team and I are planning to have another exhibition in a smaller exhibition space where the audience can fully immerse themselves surrounded by the underwater visuals. 
-
-I'd like to express my appreciation to professor Johannes DeYoung, Rebecca Shapass, professor Golan Levin, and Bill Rodgers for their generous support in bringing this project together.  
