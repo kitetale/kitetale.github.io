@@ -5,13 +5,177 @@ hero_img: "../src/images/snapshot/snapshot_hero.png"
 hero_img_alt: "One output of snapshot taken in a bedroom"
 hero_img_description: "Snapshot Example"
 local_imgs:
-- "../src/images/snapshot/snapshot.png"
+  - "../src/images/snapshot/snapshot.png"
 ---
-## Snapshot is a Kinect-based project that displays a composite image of what was captured over time through depth.  ##
-<br/>
-Each layer that builds up the image contains the outline of objects captured at different depth range at different time. The layers are organized by time, meaning the oldest capture is at the background and the newest capture is at the foreground.
-<br/>
+import { getImage, GatsbyImage } from "gatsby-plugin-image";
+import { Link } from "gatsby";
+import {
+  infogrid,
+  overview,
+  closerLineHeight,
+  infos,
+  info,
+  orange,
+  subTitle,
+} from "../src/pages/works/WorkPage.module.css";
+import depthCam from "../src/images/snapshot/depthCam.png";
+import pointCloud from "../src/images/snapshot/pointCloud.gif";
+import depthInfo from "../src/images/snapshot/depthInfo.gif";
+import buckets from "../src/images/snapshot/bucket.gif";
+import allViews from "../src/images/snapshot/demo_allview.gif";
+import final from "../src/images/snapshot/snapshot.gif";
+import exhibition1 from "../src/images/snapshot/display.jpg";
+import exhibition2 from "../src/images/snapshot/print.jpg";
+import exhibition3 from "../src/images/snapshot/morePrints.jpg";
+import exhibition4 from "../src/images/snapshot/printing.gif";
 
-**Tool:** openFrameworks, Kinect, Thermal Printer <br/>
-**Duration:** 2 weeks (Nov.22 - Dec.6.2022) <br/> 
 
+<div className={infogrid}>
+<div className={overview}>
+<div>
+
+**Overview**
+
+</div>
+<div className={closerLineHeight}>
+Snapshot is a Kinect-based project that displays a composite image of what was captured over time through depth. Each layer that builds up the image contains the outline of objects captured at different depth range at different time. The layers are organized by time: The oldest capture is at the background and the newest capture is at the foreground.
+
+</div>
+</div>
+
+<div className={infos}>
+<div className={info}>
+<div>
+
+**Duration **
+
+</div>
+<div className={closerLineHeight}> 
+Nov 22 - Dec 6,2022 <br/> (2 weeks)
+</div>
+</div>
+
+<div className={info}>
+<div>
+
+**Tool **
+
+</div>
+<div className={closerLineHeight}> 
+openFrameworks <br/> Kinect <br/> Thermal Printer
+</div>
+</div>
+</div>
+</div>
+
+
+<div className={subTitle}>
+Inspiration
+</div>
+<div style="margin-bottom:3rem;">
+Extending the from <i>Travel Over Time</i> project, I wanted to further find a way to capture a location over time.
+Depending on the time of the day, the same location may be empty or extremely crowded. 
+Sometimes an unexpected passes by the location, but it would be only seen at that specific time. 
+Wondering what the output would look like if each depth layer is the capture of the same location from different point of time, 
+I developed a program that separately saves the kinect input image by depth range and compiles randomly selected images per layer 
+from the past in a chronological order.
+</div>
+
+<div className={subTitle}>
+Process
+</div>
+<div className={infos} style="padding:0;">
+<div style="margin:auto;width:80%;">
+I first used Kinect to get the depth data of the scene &#8594;
+</div>
+<img
+    style="width:100%;"
+    src={depthCam}
+    alt={"depth data image from Kinect camera"}
+/>
+</div>
+
+<div className={infos} style="padding:0;">
+<img 
+    style="width:100%;"
+    src={pointCloud}
+    alt={"point cloud created from depth data obtained from Kinect camera"}
+/>
+<div style="margin:auto;width:80%;"> &#8592; Then I created point cloud with the depth information as z </div>
+</div>
+
+<div className={infos} style="padding:0;">
+<div style="margin:auto;width:80%;">
+I then divided the points into 6 buckets based on their depth range with HSB color value, which is also based on depth &#8594;
+</div>
+<img
+    style="width:100%;"
+    src={depthInfo}
+    alt={"point cloud points divided into 6 buckets, sorted by color"}
+/>
+</div>
+
+<div className={infos} style="padding:0;">
+<img
+    style="width:100%;"
+    src={buckets}
+    alt={"point cloud points above put into triangular mesh by connecting adjacent three points"}
+/>
+<div style="margin:auto;width:80%;"> &#8592; I also created triangular mesh out of points per bucket </div>
+</div>
+
+<div className={infos} style="padding:0;">
+<div style="margin:auto;width:80%;">
+I wrote a function that would automatically save the data per layer every certain time interval 
+(e.g. every minute, every 10 seconds, etc.)
+
+These are different views of Kinect &#8594;
+
+(Starting with top left and clock-wise: depth data, RGB data, object outlines, compiled depth buckets in grayscale, individual bucket in grayscale)
+</div>
+<img
+    style="width:100%;"
+    src={allViews}
+    alt={"different views and data obtained from Kinect camera. Starting with top left and clock-wise: depth data, RGB data (normal camera), object outlines, compiled depth buckets in grayscale, individual bucket in grayscale."}
+/>
+</div>
+
+<div className={subTitle} style="margin-top:3rem;">
+How It works
+</div>
+<div style="margin-bottom:3rem;">
+Upon pressing a button to capture, the program generates 6 random numbers and sorts them in order to pull captured layers in chronological order. It then combines the layers all together by taking the biggest pixel value across 6 layer images. Once the image is constructed, it frames in a polaroid template with location and timeframe (also saved and retrieved in the same manner as the layers) below the image.
+</div>
+<div style="margin:auto;justify-content:center;display:flex;">
+<img
+    style="width:40%; box-shadow:0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);"
+    src={final}
+    alt={"Example snapshot outputs."}
+/>
+</div>
+
+<div className={subTitle} style="margin-top:3rem;">
+Exhibition Installation
+</div>
+<div style="margin:auto;display:flex;flex-direction: row;flex-wrap:wrap;justify-content:center;">
+<img
+    style="width:40%; box-shadow:0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);margin-right:1rem;margin-bottom:1rem;"
+    src={exhibition1}
+    alt={"Exhibition of Snapshot at The STUDIO for Creative Inquiry."}
+/>
+<img
+    style="width:40%; box-shadow:0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);margin-right:1rem;margin-bottom:1rem;"
+    src={exhibition4}
+    alt={"Exhibition of Snapshot at The STUDIO for Creative Inquiry."}
+/>
+<img
+    style="width:40%; box-shadow:0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);margin-right:1rem;margin-bottom:1rem;"
+    src={exhibition2}
+    alt={"Exhibition of Snapshot at The STUDIO for Creative Inquiry."}
+/>
+<img
+    style="width:40%; box-shadow:0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);margin-right:1rem;margin-bottom:1rem;"
+    src={exhibition3}
+    alt={"Exhibition of Snapshot at The STUDIO for Creative Inquiry."}
+/>
+</div>
