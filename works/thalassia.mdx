@@ -25,6 +25,8 @@ import poster from "../src/images/thalassia/BAWL.png";
 import timeline from "../src/images/thalassia/timeline.png";
 import water from "../src/images/thalassia/water.mp4";
 import particle from "../src/images/thalassia/interactive.mp4";
+import combine from "../src/images/thalassia/interaction1.mp4";
+import combined from "../src/images/thalassia/combined.mp4";
 
 
 
@@ -198,6 +200,24 @@ Using the particle effects and depth camera input, I created an interactive part
 <video
     autoplay='true' loop muted disablePictureInPicture controlsList="nodownload" playsinline allowfullscreen="false" style="margin-right:1rem; width:100%; height:100%; display:flex;border-radius:20px;">
 <source src={particle} alt={"Camera based interactive particle effect made with Touchdesigner"}type="video/mp4" /></video>
+</div>
+
+<div className={threeGrid}>
+<video
+    autoplay='true' loop muted disablePictureInPicture controlsList="nodownload" playsinline allowfullscreen="false" style="margin-right:1rem; width:100%; height:100%; display:flex;border-radius:20px;">
+<source src={combine} alt={"Water caustics effect combined with interactive particle effect made with Touchdesigner"}type="video/mp4" /></video>
+<div className={elem2}>
+Combining the interactive particles, depth camera input, and water caustics noise, I finalized the interaction layout. The final version focused on <b>recreating the air bubbles that form as an object moves through the water</b>.
+</div>
+</div>
+
+<div className={threeGrid2}>
+<div className={elem2}>
+Once the 2D and 3D contents have been merged and ready, I laid the <b>interactive water caustics layer on top of the merged animation</b>. The shape-shifting silhouettes are made in Blender 3D by Ajunie, and the wavy coral reefs and thalassias are made in After Effects and Photoshop by Vivian.
+</div>
+<video
+    autoplay='true' loop muted disablePictureInPicture controlsList="nodownload" playsinline allowfullscreen="false" style="margin-right:1rem; width:100%; height:100%; display:flex;border-radius:20px;">
+<source src={combined} alt={"Camera based interactive particle effect made with Touchdesigner"}type="video/mp4" /></video>
 </div>
 
 
