@@ -5,17 +5,40 @@ hero_img: "../src/images/blinded/Blinded_stillshot.png"
 hero_img_alt: "Stillshot from 'Blinded', a short film."
 hero_img_description: "Stillshot from 'Blinded', a short film."
 local_imgs:
-- ../src/images/blinded/Blinded_stillshot.png
+  - ../src/images/blinded/Blinded_stillshot.png
 ---
-import {getImage, GatsbyImage} from 'gatsby-plugin-image';
-import {Link} from 'gatsby';
-import {infogrid, overview, closerLineHeight, infos, info, orange, subTitle} from "../src/pages/works/WorkPage.module.css";
+
+import { getImage, GatsbyImage } from "gatsby-plugin-image";
+import { Link } from "gatsby";
+import {
+  infogrid,
+  overview,
+  closerLineHeight,
+  infos,
+  info,
+  orange,
+  subTitle,
+  threeGrid,
+  threeGrid2,
+  elem2
+} from "../src/pages/works/WorkPage.module.css";
+import aero from "../src/images/blinded/aero.mp4";
+import aeroTest from "../src/images/blinded/aero_test.mp4";
+import ball from "../src/images/blinded/ball.mp4";
+import dress from "../src/images/blinded/dress.mp4";
+import koala from "../src/images/blinded/turntable.mp4";
+import initialStory from "../src/images/blinded/storyboard.png";
+import moodboard from "../src/images/blinded/moodboard.png";
+import light from "../src/images/blinded/trees.gif";
+import light2 from "../src/images/blinded/house.gif";
+import wind from "../src/images/blinded/tree_Sway.mp4";
 
 <div className={infogrid}>
 <div className={overview}>
 <div>
 
-**Overview** 
+**Overview**
+
 </div>
 <div className={closerLineHeight}>
 'Blinded' is an original short animation film about wildlife disruption due to wildfire caused by climate change. Motivated by bringing <b className={orange}>greater awareness to wildfire and climate change</b> around the world, this short film aims to help the audience be more conscious of individual acts and energy consumptions. Check below for <b className={orange}> more concrete ways you can contribute</b> to slow down climate change and save wildlife & ecosystems starting today.
@@ -27,7 +50,8 @@ import {infogrid, overview, closerLineHeight, infos, info, orange, subTitle} fro
 <div className={info}>
 <div>
 
-**Team ** 
+**Team **
+
 </div>
 <div className={closerLineHeight}> 
 Ashley Kim <br/> Nina Duan <br/> Justin Lee <br/> Magda Gourinchas <br/> Liam P. Mulligan 
@@ -38,6 +62,7 @@ Ashley Kim <br/> Nina Duan <br/> Justin Lee <br/> Magda Gourinchas <br/> Liam P.
 <div>
 
 **Role**
+
 </div>
 <div className={closerLineHeight}> 
 Storyboard <br/> Environment Design <br/> Character Pipeline<br/> Visual Effects<br/> Film Composition
@@ -47,7 +72,8 @@ Storyboard <br/> Environment Design <br/> Character Pipeline<br/> Visual Effects
 <div className={info}>
 <div>
 
-**Duration ** 
+**Duration **
+
 </div>
 <div className={closerLineHeight}> 
 April 1 – May 9, 2022 <br/> (1 month)
@@ -57,7 +83,8 @@ April 1 – May 9, 2022 <br/> (1 month)
 <div className={info}>
 <div>
 
-**Tool ** 
+**Tool **
+
 </div>
 <div className={closerLineHeight}> 
 Maya <br/> Premiere Pro
@@ -66,23 +93,165 @@ Maya <br/> Premiere Pro
 </div>
 </div>
 
+<div style="padding:56.25% 0 0 0;position:relative;">
+  <iframe
+    src="https://player.vimeo.com/video/707676175?h=996b635a2e"
+    style="position:absolute;top:0;left:0;width:100%;height:100%;"
+    frameborder="0"
+    allow="autoplay; fullscreen; picture-in-picture"
+    allowfullscreen
+  ></iframe>
+</div>
+<script src="https://player.vimeo.com/api/player.js"></script>
+<p style="text-align:right;">
+  <a href="https://vimeo.com/707676175">Blinded (2022)</a> from{" "}
+  <a href="https://vimeo.com/user78570088">Ashley Kim</a> on Vimeo.
+</p>
 
-<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/707676175?h=996b635a2e" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
-<p style="text-align:right;"><a href="https://vimeo.com/707676175">Blinded (2022)</a> from Ashley Kim on Vimeo.</p>
-
-<br/>
+<br />
 
 <div className={subTitle}>
-Things you can do starting today to save wildlife & ecosystems
+  Things you can do starting today to save wildlife & ecosystems
 </div>
 <li> Use renewable energy. </li>
 <li> Reduce energy use </li>
 <li> Respect and protect green spaces </li>
 <li> Cut down meat and dairy consumption </li>
 <li> Support rewilding and environmental projects </li>
-<br/><br/><br/>
-
-Original film by Ashley Kim, Nina Duan, Justin Lee, Magda Gourinchas
-Original score by Liam P. Mulligan
+<br />
+<br />
+Original film by Ashley Kim, Nina Duan, Justin Lee, Magda Gourinchas Original
+score by Liam P. Mulligan
 
 Special Thanks to James Duesing, Jessica Hodgins, Andrei Shpilenok, Joey Clarke, Maggie Huang, John Namgung, Australian Wildlife Conservancy, and Carnegie Mellon University School of Art.
+
+<div className={subTitle} style="margin-top:3rem;">
+  Making-of <i>Blinded</i>
+</div>
+<div style="padding:56.25% 0 0 0;position:relative;">
+  <iframe
+    src="https://player.vimeo.com/video/786121761?h=8e2ae1b451"
+    style="position:absolute;top:0;left:0;width:100%;height:100%;"
+    frameborder="0"
+    allow="autoplay; fullscreen; picture-in-picture"
+    allowfullscreen
+  ></iframe>
+</div>
+<script src="https://player.vimeo.com/api/player.js"></script>
+<p style="text-align:right;">
+  <a href="https://vimeo.com/786121761">Making-Of Blinded (2022)</a> from{" "}
+  <a href="https://vimeo.com/user78570088">Ashley Kim</a> on Vimeo.
+</p>
+
+<div className={subTitle} style="margin-top:3rem;">
+Process Snapshot
+</div>
+<div>
+<div className={threeGrid}>
+<img
+    style="width:100%;margin-bottom:3rem;border-radius: 25px;"
+    src={initialStory}
+    alt={"Initial storyboard of Blinded"}
+/>
+<div className={elem2}>
+I first developed the storyboard inspired by the sad news of Australian forest fire and the lack of habitat the wild Koalas experience due to climate change. <br/>
+At the time of story development, I was watching a drama called <i>Nevertheless</i>, which depicted and utilized butterfly as a magical/mystical yet dangerous metaphor. This drama inspired me to use butterfly in a similar sense for the short film.
+</div>
+</div>
+
+<div className={threeGrid2}>
+<div className={elem2}>
+We then collected relevant images online and created our moodboard for the short film. We even watched live stream of Koalas in San Diego zoo!
+</div>
+<img
+    style="width:100%;margin-bottom:3rem;border-radius: 25px;"
+    src={moodboard}
+    alt={"Moodboard for Blinded"}
+/>
+</div>
+
+<div className={threeGrid}>
+<video
+    autoplay='true' loop muted disablePictureInPicture controlsList="nodownload" playsinline allowfullscreen="false" style="margin-right:1rem; width:100%; height:100%; display:flex;border-radius:20px;">
+<source src={koala} alt={"Different smoke pattern generation"}type="video/mp4" /></video>
+<div className={elem2}>
+<b>Koala character design turntable</b> <br/> 
+Head model : Justin Lee <br/>
+Body model : Ashley Kim <br/>
+XGen Fur & Texture : Nina Duan <br/>
+<br/>
+Did you know Koalas have two thumbs on their front paws only?
+</div>
+</div>
+</div>
+
+<div className={subTitle} style="margin-top:3rem;">
+Visual Effect Practice : Aero
+</div>
+<div>
+<div className={threeGrid}>
+<video
+    autoplay='true' loop muted disablePictureInPicture controlsList="nodownload" playsinline allowfullscreen="false" style="margin-right:1rem; width:100%; height:100%; display:flex;border-radius:20px;">
+<source src={aero} alt={"Purple smoke moving along the path defined by the NURBS curve"}type="video/mp4" /></video>
+<div className={elem2}>
+Directing smoke movement path using NURBS curve.
+</div>
+</div>
+
+<div className={threeGrid2}>
+<div className={elem2}>
+Smoke trail simulation with change in acceleration and velocity.
+</div>
+<video
+    autoplay='true' loop muted disablePictureInPicture controlsList="nodownload" playsinline allowfullscreen="false" style="margin-right:1rem; width:100%; height:100%; display:flex;border-radius:20px;">
+<source src={ball} alt={"Tree sway simulation using nCloth in Maya"}type="video/mp4" /></video>
+</div>
+</div>
+
+<div className={threeGrid}>
+<video
+    autoplay='true' loop muted disablePictureInPicture controlsList="nodownload" playsinline allowfullscreen="false" style="margin-right:1rem; width:100%; height:100%; display:flex;border-radius:20px;">
+<source src={aeroTest} alt={"Different smoke pattern generation"}type="video/mp4" /></video>
+<div className={elem2}>
+Generating different smoke path by changing starting mesh and its rotation in xyz.
+</div>
+</div>
+
+<div className={subTitle} style="margin-top:3rem;">
+Visual Effect Practice : nCloth
+</div>
+<div>
+<div className={threeGrid2}>
+<div className={elem2}>
+Dress sway simulation using nCloth
+</div>
+<video
+    autoplay='true' loop muted disablePictureInPicture controlsList="nodownload" playsinline allowfullscreen="false" style="margin-right:1rem; width:100%; height:100%; display:flex;border-radius:20px;">
+<source src={dress} alt={"Dress sway simulation using nCloth in Maya"}type="video/mp4" /></video>
+</div>
+
+<div className={threeGrid}>
+<video
+    autoplay='true' loop muted disablePictureInPicture controlsList="nodownload" playsinline allowfullscreen="false" style="margin-right:1rem; width:100%; height:100%; display:flex;border-radius:20px;">
+<source src={wind} alt={"Tree sway simulation using nCloth in Maya"}type="video/mp4" /></video>
+<div className={elem2}>
+Tree + leaves motion simulation using nCloth
+</div>
+</div>
+</div>
+
+<div className={subTitle} style="margin-top:3rem;">
+  Visual Effect Practice : Volumetric Lighting
+</div>
+<div className={threeGrid} style="grid-template-columns:1fr 1fr;">
+  <img
+    style="width:95%;margin-bottom:1rem;margin-right:1.5rem;box-shadow:0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);"
+    src={light}
+    alt={"Volumetric lighting test on environment, forest"}
+  />
+  <img
+    style="width:95%;margin-bottom:1rem;margin-left:1.5rem;box-shadow:0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);"
+    src={light2}
+    alt={"Volumetric lighting test on main target object, house"}
+  />
+</div>

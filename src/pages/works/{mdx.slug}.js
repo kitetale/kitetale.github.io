@@ -42,7 +42,7 @@ const WorkPage = ({ data }) => {
       </div>
       <footer className={footer}>(ง˙∇˙)ว © 2023 Ashley Kim (ว˙∇˙)ง</footer>
       <footer className={footDescrip}>
-        Built with Gatsby {"&"} React! Last updated in January 2023.
+        Built with Gatsby {"&"} React! Website under construction.
       </footer>
     </div>
   );
