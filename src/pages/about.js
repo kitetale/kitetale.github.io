@@ -30,7 +30,7 @@ const AboutPage = () => {
 
         <div className={content}>
           <div className={title}>
-            <div className={hello}>"Hello! I'm Ashley."</div>
+            <div className={hello}>Hello! I'm Ashley.</div>
             ABOUT
           </div>
           <div className={frame}>
@@ -74,7 +74,7 @@ const AboutPage = () => {
       </div>
       <footer className={footer}>(ง˙∇˙)ว © 2023 Ashley Kim (ว˙∇˙)ง</footer>
       <footer className={footDescrip}>
-        Built with Gatsby {"&"} React! Last updated in January 2023.
+        Built with Gatsby {"&"} React! Last updated on December 30, 2022.
       </footer>
     </div>
   );

@@ -1,53 +1,35 @@
 import * as React from "react"
 import { Link } from "gatsby"
+import AppHeader from "../component/AppHeader/AppHeader";
+import AppFooter from "../component/AppFooter/AppFooter";
+import {overall, content2, fullsize} from "./AboutPage.module.css";
+import Questions from "../component/three-question";
 
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
 
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
+
+const aStyles = {
+  color: '#ffa53e'
 }
 
 // markup
 const NotFoundPage = () => {
   return (
-    <main style={pageStyles}>
-      <title>Not found</title>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry{" "}
-        <span role="img" aria-label="Pensive emoji">
-          😔
-        </span>{" "}
-        we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
+    <div>
+      <div className={overall}>
+        <AppHeader />
+        <div className={fullsize}>
+          <Questions/>
+        </div>
+        <div className={content2}>
+        <title>Not found</title>
+        <h1>Page not found</h1>
+        <h3>
+          Sorry, the page you're trying to access either doesn't exist or is currently under construction. <br/>Please try again in a few days or <a style={aStyles}href="mailto:kitetale248@gmail.com">contact me </a> about the project you're looking for!
+        </h3>
+        </div> 
+      </div>
+      <AppFooter/>
+    </div>
   )
 }
 

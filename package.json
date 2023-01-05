@@ -12,13 +12,22 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "deploy": "gatsby build && gh-pages -d public -b main"
   },
   "dependencies": {
     "@carbon/react": "^1.6.0",
     "@fontsource/imbue": "^4.5.7",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
+    "@react-three/cannon": "6.5.0",
+    "@react-three/csg": "^1.1.5",
+    "@react-three/drei": "^8.16.4",
+    "@react-three/fiber": "^7.0.24",
+    "@react-three/postprocessing": "2.7.0",
+    "@react-three/rapier": "^0.6.4",
+    "@types/three": "0.146.0",
+    "gatsby": "^4.1.1",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-image": "^2.21.0",
     "gatsby-plugin-mdx": "^3.20.0",
@@ -26,23 +35,18 @@
     "gatsby-plugin-sharp": "^4.21.0",
     "gatsby-source-filesystem": "^4.21.0",
     "gatsby-transformer-sharp": "^4.21.0",
-    "react-helmet": "^6.1.0",
-    "react-router-dom": "^6.3.0",
-    "react-three-fiber": "^6.0.13",
-    "@react-three/drei": "^8.16.4",
-    "@react-three/fiber": "^7.0.24",
-    "@react-three/csg": "^1.1.5",
-    "@react-three/rapier": "^0.6.4",
-    "@react-three/postprocessing": "2.7.0",
-    "@react-three/cannon": "6.5.0",
-    "@types/three": "0.146.0",
-    "gatsby": "^4.1.1",
+    "lamina": "1.1.23",
+    "leva": "0.9.34",
     "maath": "^0.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
+    "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
-    "three": "^0.134.0",
-    "leva": "0.9.34",
-    "lamina": "1.1.23"
+    "react-three-fiber": "^6.0.13",
+    "three": "^0.134.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
   }
 }
