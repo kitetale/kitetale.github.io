@@ -15,10 +15,16 @@ import {
   footDescrip,
 } from "./WorkPage.module.css";
 import AppHeader from "../../component/AppHeader/AppHeader";
+import {Helmet} from 'react-helmet';
+import favicon from "../../images/favicon.png";
 
 const WorkPage = ({ data }) => {
   return (
     <div>
+      <Helmet>
+        <link rel="icon" type="image/png" href={favicon} />
+        <title>Ashley Kim | {data.mdx.frontmatter.title}</title>
+      </Helmet>
       <div className={overall}>
         <AppHeader />
 

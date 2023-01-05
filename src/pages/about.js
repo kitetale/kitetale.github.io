@@ -21,10 +21,16 @@ import github from "../images/github.svg";
 import linkedin from "../images/linkedin.svg";
 import AppHeader from "../component/AppHeader/AppHeader";
 import AppFooter from "../component/AppFooter/AppFooter";
+import {Helmet} from 'react-helmet';
+import favicon from "../images/favicon.png";
 
 const AboutPage = () => {
   return (
     <div>
+      <Helmet>
+        <link rel="icon" type="image/png" href={favicon} />
+        <title>Ashley Kim | About</title>
+      </Helmet>
       <div className={overall}>
         <AppHeader />
 

@@ -10,10 +10,17 @@ import {
 } from "./ResumePage.module.css";
 import resume from "../images/AshleyKimResume.png";
 import AppHeader from "../component/AppHeader/AppHeader";
+import {Helmet} from 'react-helmet';
+import favicon from "../images/favicon.png";
+
 
 const ResumePage = () => {
   return (
     <div>
+      <Helmet>
+        <link rel="icon" type="image/png" href={favicon} />
+        <title>Ashley Kim | Resume</title>
+      </Helmet>
       <div className={overall}>
         <AppHeader />
 

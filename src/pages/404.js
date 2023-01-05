@@ -4,7 +4,8 @@ import AppHeader from "../component/AppHeader/AppHeader";
 import AppFooter from "../component/AppFooter/AppFooter";
 import {overall, content2, fullsize} from "./AboutPage.module.css";
 import Questions from "../component/three-question";
-
+import {Helmet} from 'react-helmet';
+import favicon from "../images/favicon.png";
 
 
 const aStyles = {
@@ -15,6 +16,10 @@ const aStyles = {
 const NotFoundPage = () => {
   return (
     <div>
+      <Helmet>
+        <link rel="icon" type="image/png" href={favicon} />
+        <title>Ashley Kim | 404</title>
+      </Helmet>
       <div className={overall}>
         <AppHeader />
         <div className={fullsize}>

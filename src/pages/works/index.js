@@ -24,10 +24,16 @@ import AppHeader from "../../component/AppHeader/AppHeader";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { Link, graphql } from "gatsby";
 import { Grid } from "@react-three/postprocessing";
+import {Helmet} from 'react-helmet';
+import favicon from "../../images/favicon.png";
 
 const ProjectPage = ({ data }) => {
   return (
     <div>
+      <Helmet>
+        <link rel="icon" type="image/png" href={favicon} />
+        <title>Ashley Kim | Works</title>
+      </Helmet>
       <div className={overall}>
         <AppHeader />
         <div className={content}>
