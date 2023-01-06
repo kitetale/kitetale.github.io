@@ -19,6 +19,9 @@ import {Helmet} from 'react-helmet';
 import favicon from "../../images/favicon.png";
 
 const WorkPage = ({ data }) => {
+  const title_col = {
+    color: data.mdx.frontmatter.title_color
+  }
   return (
     <div>
       <Helmet>
@@ -37,7 +40,7 @@ const WorkPage = ({ data }) => {
           image={getImage(data.mdx.frontmatter.hero_img)}
           alt={data.mdx.frontmatter.hero_img_alt}
         />
-        <h1 className={title3}>{data.mdx.frontmatter.title}</h1>
+        <h1 className={title3} style={title_col}>{data.mdx.frontmatter.title}</h1>
       </div>
       <div className={overall}>
         <div className={content}>
@@ -68,6 +71,7 @@ export const query = graphql`
         hero_img_alt
         hero_img_description
         title
+        title_color
         local_imgs {
           childrenImageSharp {
             gatsbyImageData
