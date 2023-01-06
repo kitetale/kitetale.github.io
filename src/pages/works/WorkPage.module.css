@@ -92,7 +92,7 @@ body{
   font-size: 30px;
   font-weight: 600;
   padding: 1rem 0;
-  border-bottom: 3px solid #FF8A00!important;
+  border-bottom: 3px solid #FF8A00;
   width:fit-content;
   margin-bottom: 2rem;
 }
@@ -136,7 +136,7 @@ li{
   padding-bottom: 1rem;
 }
 
-.three-grid, .three-grid2 {
+.three-grid, .three-grid2, .two-grid {
   position:relative;
   margin: auto;
   margin-bottom: 3rem;
@@ -150,6 +150,11 @@ li{
 }
 .three-grid2 {
   grid-template-columns: 3fr 4fr;
+}
+.two-grid {
+  grid-template-columns: 1fr 1fr;
+  gap:2rem;
+  width:95%;
 }
 .elem2{
   margin: auto;
@@ -389,6 +394,9 @@ li{
     width:auto;
     max-width: 900px;
     vertical-align:center;
+  }
+  .two-grid{
+    grid-template-columns: 1fr;
   }
   .three-grid {
     grid-template-rows: 2fr 1fr;
