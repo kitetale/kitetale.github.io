@@ -1,4 +1,6 @@
-body {
+body{
+  margin:0;
+  overflow-x: hidden;
   font-family: Lato, Avenir, Montserrat, Roboto, Helvetica Neue, Arial,
     sans-serif;
 }

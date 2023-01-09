@@ -19,6 +19,7 @@ import {
   info,
   orange,
   subTitle,
+  twoGrid,
   threeGrid,
   threeGrid2,
   elem2
@@ -150,11 +151,11 @@ Process Snapshot
 <div>
 <div className={threeGrid}>
 <img
-    style="width:100%;margin-bottom:3rem;border-radius: 25px;"
+    style="width:100%;border-radius: 25px;"
     src={initialStory}
     alt={"Initial storyboard of Blinded"}
 />
-<div className={elem2}>
+<div className={elem2} style="margin-top:0rem;">
 I first developed the storyboard inspired by the sad news of Australian forest fire and the lack of habitat the wild Koalas experience due to climate change. <br/>
 At the time of story development, I was watching a drama called <i>Nevertheless</i>, which depicted and utilized butterfly as a magical/mystical yet dangerous metaphor. This drama inspired me to use butterfly in a similar sense for the short film.
 </div>
@@ -165,7 +166,7 @@ At the time of story development, I was watching a drama called <i>Nevertheless<
 We then collected relevant images online and created our moodboard for the short film. We even watched live stream of Koalas in San Diego zoo!
 </div>
 <img
-    style="width:100%;margin-bottom:3rem;border-radius: 25px;"
+    style="width:100%;border-radius: 25px;"
     src={moodboard}
     alt={"Moodboard for Blinded"}
 />
@@ -244,14 +245,14 @@ Tree + leaves motion simulation using nCloth
 <div className={subTitle} style="margin-top:3rem;">
   Visual Effect Practice : Volumetric Lighting
 </div>
-<div className={threeGrid} style="grid-template-columns:1fr 1fr;">
+<div className={twoGrid}>
   <img
-    style="width:95%;margin-bottom:1rem;margin-right:1.5rem;box-shadow:0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);"
+    style="width:95%;margin:auto;margin-bottom:1rem;box-shadow:0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);"
     src={light}
     alt={"Volumetric lighting test on environment, forest"}
   />
   <img
-    style="width:95%;margin-bottom:1rem;margin-left:1.5rem;box-shadow:0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);"
+    style="width:95%;margin:auto;margin-bottom:1rem;box-shadow:0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);"
     src={light2}
     alt={"Volumetric lighting test on main target object, house"}
   />

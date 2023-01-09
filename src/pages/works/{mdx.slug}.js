@@ -13,46 +13,50 @@ import {
   descrip,
   footer,
   footDescrip,
+  noFlow,
 } from "./WorkPage.module.css";
 import AppHeader from "../../component/AppHeader/AppHeader";
-import {Helmet} from 'react-helmet';
+import { Helmet } from "react-helmet";
 import favicon from "../../images/favicon.png";
 
 const WorkPage = ({ data }) => {
   const title_col = {
-    color: data.mdx.frontmatter.title_color
-  }
+    color: data.mdx.frontmatter.title_color,
+  };
   return (
-    <div>
+    <div className={noFlow}>
       <Helmet>
         <link rel="icon" type="image/png" href={favicon} />
         <title>Ashley Kim | {data.mdx.frontmatter.title}</title>
       </Helmet>
-
+      <div className={noFlow}>
         <AppHeader />
 
         <h1 className={title2}>{data.mdx.frontmatter.title}</h1>
         <h2 className={descrip}>{data.mdx.frontmatter.description}</h2>
- 
-      <div className={hero_img}>
-        <GatsbyImage
-          className={fullsize}
-          image={getImage(data.mdx.frontmatter.hero_img)}
-          alt={data.mdx.frontmatter.hero_img_alt}
-        />
-        <h1 className={title3} style={title_col}>{data.mdx.frontmatter.title}</h1>
-      </div>
-      <div className={overall}>
-        <div className={content}>
-          <MDXRenderer local={data.mdx.frontmatter.local_imgs}>
-            {data.mdx.body}
-          </MDXRenderer>
+
+        <div className={hero_img}>
+          <GatsbyImage
+            className={fullsize}
+            image={getImage(data.mdx.frontmatter.hero_img)}
+            alt={data.mdx.frontmatter.hero_img_alt}
+          />
+          <h1 className={title3} style={title_col}>
+            {data.mdx.frontmatter.title}
+          </h1>
         </div>
+        <div className={overall}>
+          <div className={content}>
+            <MDXRenderer local={data.mdx.frontmatter.local_imgs}>
+              {data.mdx.body}
+            </MDXRenderer>
+          </div>
+        </div>
+        <footer className={footer}>(ง˙∇˙)ว © 2023 Ashley Kim (ว˙∇˙)ง</footer>
+        <footer className={footDescrip}>
+          Built with Gatsby {"&"} React! Website under construction.
+        </footer>
       </div>
-      <footer className={footer}>(ง˙∇˙)ว © 2023 Ashley Kim (ว˙∇˙)ง</footer>
-      <footer className={footDescrip}>
-        Built with Gatsby {"&"} React! Website under construction.
-      </footer>
     </div>
   );
 };
