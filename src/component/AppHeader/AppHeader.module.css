@@ -54,6 +54,11 @@ body{
   margin-left: 5rem;
 }
 
+
+.menuShow {
+  display: none;
+}
+
 label .menu{
   position: absolute;
   right: -100px;
@@ -162,19 +167,31 @@ label .hamburger:after { bottom: -10px; }
 
 
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 830px) {
   .navLinkItem a {
     margin-left: 4rem;
+  }
+  .appHeader {
+    padding: 0.5rem;
+    padding-bottom: 0rem;
   }
 }
 @media only screen and (max-width: 750px) {
   .navLinkItem a {
     margin-left: 3rem;
   }
+  .appHeader {
+    padding: 0.5rem;
+    padding-bottom: 0rem;
+  }
 }
 @media only screen and (max-width: 700px) {
   .navLinkItem a {
     margin-left: 2rem;
+  }
+  .appHeader {
+    padding: 0.5rem;
+    padding-bottom: 0rem;
   }
 }
 
@@ -188,6 +205,9 @@ label .hamburger:after { bottom: -10px; }
   }
   .logo {
     max-width: 160px;
+  }
+  .menuShow {
+    display: flex;
   }
 
 }

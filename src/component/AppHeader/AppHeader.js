@@ -7,6 +7,7 @@ import {
   logo,
   words,
   logoUnderline,
+  menuShow,
   menu,
   hamburger,
 } from "./AppHeader.module.css";
@@ -40,10 +41,10 @@ const AppHeader = () => {
         </div>
       </div>
 
-      <label>
+      <label className={menuShow}>
         <input type="checkbox" />
-        <span class={menu}>
-          <span class={hamburger}></span>
+        <span className={menu}>
+          <span className={hamburger}></span>
         </span>
         <ul>
           <li>
