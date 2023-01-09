@@ -28,12 +28,12 @@ const WorkPage = ({ data }) => {
         <link rel="icon" type="image/png" href={favicon} />
         <title>Ashley Kim | {data.mdx.frontmatter.title}</title>
       </Helmet>
-      <div className={overall}>
+
         <AppHeader />
 
         <h1 className={title2}>{data.mdx.frontmatter.title}</h1>
         <h2 className={descrip}>{data.mdx.frontmatter.description}</h2>
-      </div>
+ 
       <div className={hero_img}>
         <GatsbyImage
           className={fullsize}
