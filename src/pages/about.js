@@ -8,6 +8,7 @@ import {
   photo,
   aboutMe,
   connect,
+  center,
   connectLogo,
   footDescrip,
   footer,
@@ -36,11 +37,11 @@ const AboutPage = () => {
 
         <div className={content}>
           <div className={title}>
-            <div className={hello}>Hello! I'm Ashley.</div>
-            ABOUT
+            <span className={hello}>Hello! I'm Ashley.</span>
+            <span>ABOUT</span>
           </div>
           <div className={frame}>
-            <div>
+            <div className={center}>
               <img src={me} alt="Photo of Ashley Kim" className={photo} />
             </div>
             <div className={aboutMe}>

@@ -1,4 +1,3 @@
-
 .overall {
   font-family: Lato, Avenir, Montserrat, Roboto, Helvetica Neue, Arial,
     sans-serif;
@@ -8,17 +7,18 @@
   height: 100%;
 }
 
-.content, .content2 {
+.content,
+.content2 {
   max-width: 1440px;
   padding: 0rem 3.5rem;
   margin: auto;
 }
 
-.content2{
-  background-color: white; 
+.content2 {
+  background-color: white;
   opacity: 0.8;
-  padding-top:1rem;
-  padding-bottom:1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .title {
@@ -54,7 +54,7 @@
   z-index: -1;
 }
 
-h3{
+h3 {
   margin-top: 3rem;
   font-size: 20px;
   font-family: Avenir, Lato, Montserrat;
@@ -90,20 +90,77 @@ h3{
   margin-bottom: 1rem;
 }
 
-.connectLogo{
-  width:100px;
+.connectLogo {
+  width: 100px;
 }
 
-.footer{
-  padding: 75px 50px 0px 50px; 
+.footer {
+  padding: 75px 50px 0px 50px;
   text-align: center;
-  font-size:0.9rem;
-  margin:auto;
+  font-size: 0.9rem;
+  margin: auto;
 }
 .footDescrip {
-  color:#778899;
+  color: #778899;
   text-align: center;
-  font-size:0.9rem;
+  font-size: 0.9rem;
   padding: 0px 50px 25px 50px;
-  margin:auto;
+  margin: auto;
+}
+
+@media only screen and (max-width: 1022px) {
+  .overall {
+    overflow-x: hidden;
+  }
+  .title {
+    font-size: 110px;
+    flex-flow: wrap;
+    flex-direction: column-reverse;
+  }
+  .title3 {
+    right: 20px;
+    bottom: 20px;
+    font-size: 100px;
+  }
+  .hello {
+    width: 100%;
+    margin-top: -40px;
+    text-align: center;
+    font-size: 30px;
+  }
+  .content {
+    padding: 0 1rem;
+    max-width: 100vw;
+  }
+  .frame {
+    display: flex;
+    max-width: 100vw;
+    flex-flow: wrap;
+  }
+  .center {
+    margin: auto;
+  }
+  .photo {
+    margin: 0;
+  }
+  .aboutMe p {
+    margin: auto;
+    margin-top: 1rem;
+    text-align: center;
+
+  }
+  .aboutMe h3 {
+    margin:3rem auto 1rem;
+    max-width: 70%;
+    text-align: center;
+  }
+  .aboutMe {
+    margin-top: 1rem;
+  }
+  .connect{
+    max-width: 70%;
+    margin:auto;
+    justify-content: center;
+  }
+  
 }

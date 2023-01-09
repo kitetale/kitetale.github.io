@@ -90,3 +90,17 @@ a:hover:after {
   padding: 0px 50px 25px 50px;
   margin:auto;
 }
+
+@media only screen and (max-width: 650px) {
+  .overall{
+    overflow-x: hidden;
+  }
+  .title{
+    font-size: 110px;
+  }
+  .title3{
+    right:20px;
+    bottom:20px;
+    font-size: 100px;
+  }
+}
