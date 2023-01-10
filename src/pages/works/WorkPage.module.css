@@ -173,6 +173,62 @@ li{
   margin: auto;
   padding: 0 3rem;
 }
+
+
+.projects{
+  margin:auto;
+  margin-top:9rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-weight: 600;
+  font-size: 30px;
+  border-bottom: 3px solid rgb(255, 138, 0);
+  width:fit-content;
+  padding-bottom: 1rem;
+}
+.others{
+  padding:3rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width:100%;
+  max-height: min-content;
+}
+.other{
+  width:100%;
+  aspect-ratio: 16/9;
+  display: block;
+  opacity:0.6;
+  transition: opacity 0.3s;
+}
+.relative{
+  position: relative;
+}
+.prevtext, .nexttext{
+  position:absolute;
+  margin:auto;
+  top:70%;
+}
+.prevtext{
+  left:30px;
+}
+.nexttext{
+  right:30px;
+}
+.relative h3{
+  text-transform: uppercase;
+  font-family: "Imbue", "Impact", "Times New Roman", Times, serif;
+  font-size:60px;
+}
+.relative:hover .other {
+  opacity: 1;
+  box-shadow:0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+  transition: opacity 0.3s;
+}
+.relative:hover:after {
+  width:0%;
+}
+
 /* -------------------------------------------------------------------------- */
 
 .carousel {
@@ -383,6 +439,11 @@ article{
     padding-bottom: 1rem;
   }
 
+  .relative h3{
+    font-size:40px;
+    top:65%;
+  }
+
   
   .three-grid, .three-grid2 {
     margin: auto;
@@ -438,6 +499,13 @@ article{
     font-size: 90px;
     line-height: normal;
   }
+  .others{
+    grid-template-columns: 1fr;
+  }
+  .relative h3{
+    top:60%;
+  }
+
   .descrip{
     font-size:20px;
     padding:0;

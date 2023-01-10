@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { Link, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import {
@@ -11,6 +11,12 @@ import {
   title2,
   hero_img,
   descrip,
+  projects,
+  others,
+  other,
+  prevtext,
+  nexttext,
+  relative,
   footer,
   footDescrip,
   noFlow,
@@ -22,6 +28,12 @@ import favicon from "../../images/favicon.png";
 const WorkPage = ({ data }) => {
   const title_col = {
     color: data.mdx.frontmatter.title_color,
+  };
+  const next_col = {
+    color: data.mdx.frontmatter.next_color,
+  };
+  const prev_col = {
+    color: data.mdx.frontmatter.prev_color,
   };
   return (
     <div className={noFlow}>
@@ -51,6 +63,25 @@ const WorkPage = ({ data }) => {
               {data.mdx.body}
             </MDXRenderer>
           </div>
+          <h2 className={projects}>View Other Projects</h2>
+          <div className={others}>
+            <Link className={relative} to={`/works/${data.mdx.frontmatter.prev_link}`}>
+              <GatsbyImage
+                className={other}
+                image={getImage(data.mdx.frontmatter.prev_img)}
+                alt={`hero image of ${data.mdx.frontmatter.prev}`}
+              />
+              <h3 className={prevtext} style={prev_col}>{data.mdx.frontmatter.prev}</h3>
+            </Link>
+            <Link className={relative} to={`/works/${data.mdx.frontmatter.next_link}`}>
+              <GatsbyImage
+                className={other}
+                image={getImage(data.mdx.frontmatter.next_img)}
+                alt={`hero image of ${data.mdx.frontmatter.next}`}
+              />
+              <h3 className={nexttext} style={next_col}>{data.mdx.frontmatter.next}</h3>
+            </Link>
+          </div>
         </div>
         <footer className={footer}>(ง˙∇˙)ว © 2023 Ashley Kim (ว˙∇˙)ง</footer>
         <footer className={footDescrip}>
@@ -76,8 +107,19 @@ export const query = graphql`
         hero_img_description
         title
         title_color
-        local_imgs {
-          childrenImageSharp {
+        next
+        next_link
+        next_color
+        next_img {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+        prev
+        prev_link
+        prev_color
+        prev_img {
+          childImageSharp {
             gatsbyImageData
           }
         }
