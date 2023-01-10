@@ -10,7 +10,7 @@ body{
   margin: auto;
   max-width: 1440px;
   position: relative;
-  height: 90vh;
+  /* height: 90vh; */
   overflow-x: hidden;
 }
 h1 {
@@ -21,6 +21,7 @@ h1 {
 h2 {
   font-size: 26px;
   line-height: 40px;
+  font-weight: 400;
 }
 .fullsize {
   background-size: cover;
@@ -49,16 +50,38 @@ h2 {
   display: none;
 }
 
+@media only screen and (max-width: 1022px) {
+  .msg{
+    width:85%;
+    margin:auto;
+  }
+}
+
 @media only screen and (max-width: 650px) {
   .notice {
-    display: block;
+    /* display: block; */
+    display:none;
     margin: auto;
     padding: 3rem 0;
     justify-content: center;
     text-align: center;
     width:80%;
   }
-  .msg {
-    display: none;
+  .msg{
+    width:85%;
+    font-family: Lato, Avenir, Montserrat, Roboto, Helvetica Neue, Arial,
+    sans-serif;
+  }
+  h1{
+    font-size: 30px;
+    font-family: Montserrat,Lato, Avenir, Roboto, Helvetica Neue, Arial,
+    sans-serif;
+  }
+  h2{
+    font-size:20px;
+    line-height: 28px;
+  }
+  .overall{
+    height: 100vh;
   }
 }

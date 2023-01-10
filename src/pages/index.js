@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import AppHeader from "../component/AppHeader/AppHeader";
 import AppFooter from "../component/AppFooter/AppFooter";
 import {
@@ -13,13 +13,24 @@ import favicon from "../images/favicon.png";
 import ThreeLazy from "../component/three-lazy";
 import Shapes from "../component/three-main";
 import Balls from "../component/three-balls";
+import BallFalling from "../component/three-balls2";
 //import Type from '../component/type-cloud';
-import {Helmet} from 'react-helmet';
+import { Helmet } from "react-helmet";
 
 const LandingPage = () => {
   const aStyles = {
     color: "#ffa53e",
   };
+  const isBrowser = () => typeof window !== "undefined"
+  const [deviceSize, changeDeviceSize] = useState(isBrowser() &&window.innerWidth>1022);
+  useEffect(() => {
+    const resizeW = () => changeDeviceSize(window.innerWidth>1022);
+
+    window.addEventListener("resize", resizeW); // Update the width on resize
+
+    return () => window.removeEventListener("resize", resizeW);
+  });
+
   return (
     <div>
       <Helmet>
@@ -29,7 +40,7 @@ const LandingPage = () => {
       <div className={overall}>
         <AppHeader />
         <div className={fullsize}>
-          <Balls />
+          {deviceSize ? <Balls /> : <BallFalling />}
         </div>
         <div className={msg}>
           <h1>Hello! I'm Ashley &#128526;</h1>
