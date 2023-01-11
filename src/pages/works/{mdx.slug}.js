@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { MDXRenderer } from "gatsby-plugin-mdx";
@@ -17,6 +17,8 @@ import {
   prevtext,
   nexttext,
   relative,
+  topbutton,
+  toparrow,
   footer,
   footDescrip,
   noFlow,
@@ -24,6 +26,7 @@ import {
 import AppHeader from "../../component/AppHeader/AppHeader";
 import { Helmet } from "react-helmet";
 import favicon from "../../images/favicon.png";
+import arrow from "../../images/arrow.svg";
 
 const WorkPage = ({ data }) => {
   const title_col = {
@@ -65,23 +68,46 @@ const WorkPage = ({ data }) => {
           </div>
           <h2 className={projects}>View Other Projects</h2>
           <div className={others}>
-            <Link className={relative} to={`/works/${data.mdx.frontmatter.prev_link}`}>
+            <Link
+              className={relative}
+              to={`/works/${data.mdx.frontmatter.prev_link}`}
+            >
               <GatsbyImage
                 className={other}
                 image={getImage(data.mdx.frontmatter.prev_img)}
                 alt={`hero image of ${data.mdx.frontmatter.prev}`}
               />
-              <h3 className={prevtext} style={prev_col}>{data.mdx.frontmatter.prev}</h3>
+              <h3 className={prevtext} style={prev_col}>
+                {data.mdx.frontmatter.prev}
+              </h3>
             </Link>
-            <Link className={relative} to={`/works/${data.mdx.frontmatter.next_link}`}>
+            <Link
+              className={relative}
+              to={`/works/${data.mdx.frontmatter.next_link}`}
+            >
               <GatsbyImage
                 className={other}
                 image={getImage(data.mdx.frontmatter.next_img)}
                 alt={`hero image of ${data.mdx.frontmatter.next}`}
               />
-              <h3 className={nexttext} style={next_col}>{data.mdx.frontmatter.next}</h3>
+              <h3 className={nexttext} style={next_col}>
+                {data.mdx.frontmatter.next}
+              </h3>
             </Link>
           </div>
+
+          <a
+            href="javascript:window.scrollTo({top: 0, behavior: 'smooth'});"
+            className={relative}
+          >
+            <div className={topbutton}>
+              <img
+                src={arrow}
+                className={toparrow}
+                alt="Scroll to Top button"
+              />
+            </div>
+          </a>
         </div>
         <footer className={footer}>(ง˙∇˙)ว © 2023 Ashley Kim (ว˙∇˙)ง</footer>
         <footer className={footDescrip}>
