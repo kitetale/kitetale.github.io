@@ -63,16 +63,16 @@ const AboutPage = () => {
               <h3>You can reach me through..</h3>
               <div className={connect}>
                 <a href="mailto:kitetale248@gmail.com">
-                  <img src={email} alt="kitetale248@gmail.com" />
+                  <img src={email} className={connectLogo} alt="kitetale248@gmail.com" />
                 </a>
                 <a href="https://www.instagram.com/kitetale/">
-                  <img src={insta} alt="Instagram: @kitetale" />
+                  <img src={insta} className={connectLogo} alt="Instagram: @kitetale" />
                 </a>
                 <a href="https://github.com/kitetale">
-                  <img src={github} alt="Github: @kitetale" />
+                  <img src={github} className={connectLogo} alt="Github: @kitetale" />
                 </a>
                 <a href="https://www.linkedin.com/in/ashleykim8170">
-                  <img src={linkedin} alt="LinkedIn: /ashleykim8170" />
+                  <img src={linkedin} className={connectLogo} alt="LinkedIn: /ashleykim8170" />
                 </a>
               </div>
             </div>
