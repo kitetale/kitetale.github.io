@@ -287,6 +287,11 @@ li{
   margin:0;
 }
 
+.image{
+  width:40%; 
+  box-shadow:0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+
 /* -------------------------------------------------------------------------- */
 
 .carousel {
@@ -502,6 +507,11 @@ article{
     top:65%;
   }
 
+  .image{
+    width:80%; 
+    box-shadow:0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+  }
+
   
   .three-grid, .three-grid2 {
     margin: auto;
@@ -562,6 +572,10 @@ article{
   }
   .relative h3{
     top:60%;
+  }
+
+  .image{
+    width:100%;
   }
 
   .descrip{

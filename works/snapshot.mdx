@@ -20,8 +20,12 @@ import {
   infogrid,
   overview,
   closerLineHeight,
+  threeGrid,
+  threeGrid2,
+  elem2,
   infos,
   info,
+  image,
   orange,
   subTitle,
 } from "../src/pages/works/WorkPage.module.css";
@@ -80,7 +84,9 @@ openFrameworks <br/> Kinect <br/> Thermal Printer
 Inspiration
 </div>
 <div style="margin-bottom:3rem;">
-Extending the from <i>Travel Over Time</i> project, I wanted to further find a way to capture a location over time.
+
+Extending the from [ <i>Travel Over Time </i> ](https://github.com/kitetale/Travel-Over-Time)
+project, I wanted to further find a way to capture a location over time.
 Depending on the time of the day, the same location may be empty or extremely crowded. 
 Sometimes an unexpected passes by the location, but it would be only seen at that specific time. 
 Wondering what the output would look like if each depth layer is the capture of the same location from different point of time, 
@@ -91,9 +97,9 @@ from the past in a chronological order.
 <div className={subTitle}>
 Process
 </div>
-<div className={infos} style="padding:0;">
-<div style="margin:auto;width:80%;">
-I first used Kinect to get the depth data of the scene &#8594;
+<div className={threeGrid} style="padding-bottom:0.5rem;">
+<div style="margin:auto;width:80%;padding-bottom:0.5rem;">
+I first used Kinect to get the depth data of the scene
 </div>
 <img
     style="width:100%;"
@@ -102,18 +108,18 @@ I first used Kinect to get the depth data of the scene &#8594;
 />
 </div>
 
-<div className={infos} style="padding:0;">
+<div className={threeGrid2} style="padding-bottom:0.5rem;">
 <img 
     style="width:100%;"
     src={pointCloud}
     alt={"point cloud created from depth data obtained from Kinect camera"}
 />
-<div style="margin:auto;width:80%;"> &#8592; Then I created point cloud with the depth information as z </div>
+<div style="margin:auto;width:80%;padding-bottom:0.5rem;"> Then I created point cloud with the depth information as z </div>
 </div>
 
-<div className={infos} style="padding:0;">
-<div style="margin:auto;width:80%;">
-I then divided the points into 6 buckets based on their depth range with HSB color value, which is also based on depth &#8594;
+<div className={threeGrid} style="padding-bottom:0.5rem;">
+<div style="margin:auto;width:80%;padding-bottom:0.5rem;">
+I then divided the points into 6 buckets based on their depth range with HSB color value, which is also based on depth
 </div>
 <img
     style="width:100%;"
@@ -122,21 +128,21 @@ I then divided the points into 6 buckets based on their depth range with HSB col
 />
 </div>
 
-<div className={infos} style="padding:0;">
+<div className={threeGrid2} style="padding-bottom:0.5rem;">
 <img
     style="width:100%;"
     src={buckets}
     alt={"point cloud points above put into triangular mesh by connecting adjacent three points"}
 />
-<div style="margin:auto;width:80%;"> &#8592; I also created triangular mesh out of points per bucket </div>
+<div style="margin:auto;width:80%;padding-bottom:0.5rem;"> I also created triangular mesh out of points per bucket </div>
 </div>
 
-<div className={infos} style="padding:0;">
-<div style="margin:auto;width:80%;">
+<div className={threeGrid} style="padding-bottom:0.5rem;">
+<div style="margin:auto;width:80%;padding-bottom:0.5rem;">
 I wrote a function that would automatically save the data per layer every certain time interval 
 (e.g. every minute, every 10 seconds, etc.)
 
-These are different views of Kinect &#8594;
+These are different views of Kinect:
 
 (Starting with top left and clock-wise: depth data, RGB data, object outlines, compiled depth buckets in grayscale, individual bucket in grayscale)
 </div>
@@ -155,7 +161,7 @@ Upon pressing a button to capture, the program generates 6 random numbers and so
 </div>
 <div style="margin:auto;justify-content:center;display:flex;">
 <img
-    style="width:40%; box-shadow:0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);"
+    className={image}
     src={final}
     alt={"Example snapshot outputs."}
 />
