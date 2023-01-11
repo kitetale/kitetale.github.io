@@ -14,6 +14,7 @@ import {
   workCardImg,
   overlayTitle,
   workCardDescription,
+  description,
   smaller,
   footer,
   footDescrip,
@@ -58,8 +59,7 @@ const ProjectPage = ({ data }) => {
                     </div>
                     <div className={workCardDescription}>
                       <h2 className={smaller}>{node.frontmatter.title}</h2>
-                      {node.frontmatter.description}
-                      <p> </p>
+                      <p className={description}> {node.frontmatter.description}</p>
                     </div>
                   </div>
                 </Link>
