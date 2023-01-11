@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   overall,
   content,
@@ -16,6 +16,10 @@ import {
   workCardDescription,
   description,
   smaller,
+  relative,
+  noshow,
+  topbutton,
+  toparrow,
   footer,
   footDescrip,
 } from "./WorkPage.module.css";
@@ -27,8 +31,21 @@ import { Link, graphql } from "gatsby";
 import { Grid } from "@react-three/postprocessing";
 import {Helmet} from 'react-helmet';
 import favicon from "../../images/favicon.png";
+import arrow from "../../images/arrow.svg";
 
 const ProjectPage = ({ data }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  // Show button when page is scrolled upto given distance
+  const toggleVisibility = () => {
+    if (window.pageYOffset > 800) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", toggleVisibility);
+  }, []);
   return (
     <div>
       <Helmet>
@@ -64,6 +81,18 @@ const ProjectPage = ({ data }) => {
                   </div>
                 </Link>
               </div>
+              <a
+            href="javascript:window.scrollTo({top: 0, behavior: 'smooth'});"
+            className={isVisible?relative:noshow}
+          >
+            <div className={topbutton}>
+              <img
+                src={arrow}
+                className={toparrow}
+                alt="Scroll to Top button"
+              />
+            </div>
+          </a>
             </article>
           ))}
         </div>

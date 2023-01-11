@@ -1,0 +1,360 @@
+---
+title: "FastPharm"
+description: "Responsive web design for delivery orders from a local pharamcy."
+title_color: "#5B74F7"
+hero_img: "../src/images/fastpharm/cover.jpeg"
+hero_img_alt: "list of FastPharm website and mobile pages design images"
+hero_img_description: "list of FastPharm website and mobile pages design images"
+next: "Blinded"
+next_link: "blinded"
+next_color: "#e8e8e8"
+next_img: "../src/images/blinded/Blinded_stillshot.png"
+prev: "Spin Dashboard"
+prev_link: "spin"
+prev_color: "#2A2A2A"
+prev_img: "../src/images/spin/main1.png"
+---
+
+import { getImage, GatsbyImage } from "gatsby-plugin-image";
+import { Link } from "gatsby";
+import {
+  infogrid,
+  overview,
+  closerLineHeight,
+  infos,
+  info,
+  orange,
+  subTitle,
+  twoGrid,
+  threeGrid,
+  threeGrid2,
+  video,
+  elem2,
+} from "../src/pages/works/WorkPage.module.css";
+import plan from "../src/images/fastpharm/plan.png";
+import procon from "../src/images/fastpharm/prosandcons2.png";
+import procon2 from "../src/images/fastpharm/prosandcons.png";
+import cjm from "../src/images/fastpharm/customerjourneymap.png";
+import userflow from "../src/images/fastpharm/userflow.png";
+import paper from "../src/images/fastpharm/lowfi.png";
+import wireframe from "../src/images/fastpharm/wireframe.png";
+import midfi from "../src/images/fastpharm/midfi.png";
+import search from "../src/images/fastPharm/symptomsearch.mp4";
+import rec from "../src/images/fastPharm/productrec.mp4";
+import realtime from "../src/images/fastPharm/realtimechat.mp4";
+
+<div className={infogrid}>
+<div className={overview}>
+<div>
+
+**Overview**
+
+</div>
+<div className={closerLineHeight}>
+In a world where everything can be easily ordered and delivered to the front of one's door with a couple of button presses, ordering a delivery from a local pharmacy should not be any harder. However, to a surprise, ordering a delivery from a local pharamcy is <b> not as common as ordering deliveries from a supermarket or a restaurant </b>   -- whenever pharmaceutical products are in need, people typically go to the pharmacy in person or ask a friend a favor. Although delivery apps for local pharmacies are not widely used or well-known, it is obvious that such a service would be highly beneficial for increasing efficiency and convenience, just as other delivery apps do.
+
+Interested in <b> investigating the public's interaction and experience with pharmacy delivery apps </b>, we researched and designed a responsive user interface for the online pharmacy delivery order platform.
+
+</div>
+</div>
+
+<div className={infos}>
+<div className={info}>
+<div>
+
+**Team **
+
+</div>
+<div className={closerLineHeight}> 
+Ashley Kim <br/> Michelle Lu <br/> Preethi Surapaneni
+</div>
+</div>
+<div className={info}> 
+<div>
+
+**Role**
+
+</div>
+<div className={closerLineHeight}> 
+UI/UX design <br/> UX research <br/> pitch presentation
+</div>
+</div>
+<div className={info}>
+<div>
+
+**Duration **
+
+</div>
+<div className={closerLineHeight}> 
+Nov. 9 - Dec. 9, 2021 <br/> (1 month)
+</div>
+</div>
+<div className={info}>
+<div>
+
+**Tool **
+
+</div>
+<div className={closerLineHeight}> 
+Figma
+</div>
+</div>
+</div>
+</div>
+
+<div className={subTitle} style="border-bottom: 3px solid #5B74F7;margin-bottom:3rem;">
+Challenge
+</div>
+<div style="width:fit-content;margin:auto;margin-bottom:3rem;">
+<p style="border-left: solid 1rem;padding:1rem 0;border-color: #5B74F7;background-color:#E3E6F8;height:fit-content;margin:0;">
+
+> How can we improve the user experience of the online pharmacy delivery application for a wider usage?
+
+</p>
+</div>
+<div style="margin-bottom:3rem;">
+The best way to learn about current user's experience is through interviews with the current users. Hence, to capture users' current experience and identify the opportunities for improvement, we seeked for several users who have ordered a pharmaceutical products delivery from an online platform to hear about their personal experience with the applications. Finding the rapid research participants was much harder than we expected, as more people than we thought never used or heard any pharmacy delivery applications. 
+</div>
+
+<div className={subTitle} style="border-bottom: 3px solid #5B74F7;">
+  Early Stage Rapid Research
+</div>
+<div style="margin-bottom:3rem;">
+  Since well-defined goals, plans, and actions serve as a clear guideline
+  throughout the design process, we first developed our own prior to conducting
+  interviews. We followed the following diagram in developing the responsive
+  application:
+  <img
+    style="width:100%;margin:3rem auto 2rem;"
+    src={plan}
+    alt={
+      "Plan for UIUX design: 1.Pre-survey 2. Interview 3. Analyze 4. Prototype 5. User Testing"
+    }
+  />
+  Once we developed a set of interview questions, we asked four users of
+  existing platforms about their delivery order experience. Through the
+  interviews, various advantages and disadvantages of pharmacy delivery
+  applications have emerged, which we organized into a chart shown below:
+  <img
+    style="width:100%;margin:3rem auto 2rem;"
+    src={procon}
+    alt={"Pros and Cons of current delivery system"}
+  />
+  Such insights then allowed us to think of potential social and material
+  concerns to keep in mind while designing an inclusive and user-friendly
+  interface:
+  <img
+    style="width:100%;margin:3rem auto 0rem;"
+    src={procon2}
+    alt={"Pros and Cons of current delivery system"}
+  />
+</div>
+
+<div className={subTitle} style="border-bottom: 3px solid #5B74F7;">
+  Stakeholders
+</div>
+<div style="margin-bottom:3rem;">
+  Based on our rapid research findings, we defined our primary target users to
+  be{" "}
+  <b>
+    those who are unable to visit the pharmacy in person due to various reasons
+  </b>{" "}
+  including busy schedule, sudden sickness, and lack of transportation. We have
+  narrowed our target users as such because many of the interviewees and the
+  disadvantages had to do with navigating through the over-the-counter products.
+  In order to develop a solution that thoroughly addresses the problems within
+  our focus, we have noted but did not included the users who are in need of
+  prescription orders as part of our target audience.
+</div>
+
+<div className={subTitle} style="border-bottom: 3px solid #5B74F7;">
+Scenarios & Storyboard
+</div>
+<div style="margin-bottom:3rem;">
+Considering the situations that our research participants were in when ordering a delivery from the local pharamacy, we produced three distinct scenarios and storyboards regarding how the users may solve their issues using our application interface.
+
+Three scenarios each revolved around the following wants respectively:
+
+</div>
+<div style="width:100%;margin:auto;margin-bottom:1rem;">
+<p style="font-weight:600;border-left: solid 1rem;padding:0.1rem 0;border-color: #5B74F7;background-color:#E3E6F8;height:fit-content;margin:0;">
+
+> "I wish I didn't have to do my own research to figure out what kind of medicine would work the best to fix my symptoms."
+
+</p>
+</div>
+<div style="width:100%;margin:auto;margin-bottom:1rem;">
+<p style="font-weight:600;border-left: solid 1rem;padding:0.1rem 0;border-color: #5B74F7;background-color:#E3E6F8;height:fit-content;margin:0;">
+
+> "I wish I could talk to the pharmacist for their opinion while browsing through the products."
+
+</p>
+</div>
+<div style="width:100%;margin:auto;margin-bottom:3rem;">
+<p style="font-weight:600;border-left: solid 1rem;padding:0.1rem 0;border-color: #5B74F7;background-color:#E3E6F8;height:fit-content;margin:0;">
+
+> "I wish I could easily see all products related to a specific category so that I don't have to look products up one by one."
+
+</p>
+</div>
+
+<div className={subTitle} style="border-bottom: 3px solid #5B74F7;">
+Customer Journey Map & Area of Focus
+</div>
+<div style="margin-bottom:3rem;">
+We then developed customer journey maps for each interviewees, as well as the collective customer journey map for our target user groups. We decided to focus our solutions on <b> improving over-the-counter products search </b>.
+
+[(View individual customer journey maps)](https://drive.google.com/file/d/1ay1Z2IqZXA5t5ACP7p-ULNl6r7BlXIUF/view?usp=sharing)
+
+<img
+    style="width:100%;margin:1rem auto 0rem;box-shadow:0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);"
+    src={cjm}
+    alt={"Customer Journey Map"}
+/>
+</div>
+
+<div className={subTitle} style="border-bottom: 3px solid #5B74F7;">
+User Flow
+</div>
+<div style="margin-bottom:3rem;">
+Upon gathering necessary information into a single project design brief document, we mapped out the user flow to have a clear understanding of how the elements should be laid out on the screen.
+
+[View design brief](https://drive.google.com/file/d/1n2rUbYNUxSDD0c1wnpkOkPhGkKEe1o8X/view)
+
+<img
+    style="width:100%;margin:1rem auto 0rem;box-shadow:0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);"
+    src={userflow}
+    alt={"Userflow chart of FastPharm"}
+/>
+</div>
+
+<div className={subTitle} style="border-bottom: 3px solid #5B74F7;">
+Low-Fidelity Paper Prototypes
+</div>
+<div style="margin-bottom:3rem;">
+Paper prototypes have its merit in that they're <b>a cheap and easy way to gain valuable user insights about the initial design ideation</b>. With the wireframes and user flow in mind, we quickly produced paper prototypes for the think aloud user testing.
+
+[View full paper prototypes](https://drive.google.com/file/d/1i6m9AfDjrX9eUJcoINMa3wT-rH3dIVJY/view?usp=sharing)
+
+<img
+    style="width:100%;margin:1rem auto 0rem;"
+    src={paper}
+    alt={"Paper prototype low-fidelity mockup of FastPharm"}
+/>
+</div>
+
+<div className={subTitle} style="border-bottom: 3px solid #5B74F7;">
+Think Aloud User Testing
+</div>
+<div style="margin-bottom:3rem;">
+Using our user scenarios and paper prototypes, we conducted two think aloud user testing with two groups of three. The participants <b>overall natrually followed our intended userflow</b> and were able to easily navigate the interace to achieve the given scenario's goal.
+
+We also gained great feedback and suggestions in the process of user testing. Because we were able to hear the user's thinking process as they navigate through the interface, we learned that <b>simplifying the navigation bar</b> and <b>adding more filters</b> to the products listing page would improve the user experience.
+
+</div>
+
+<div className={subTitle} style="border-bottom: 3px solid #5B74F7;">
+  Wireframes
+</div>
+<div style="margin-bottom:3rem;">
+  Combining the user flow, paper prototypes, and insights from think aloud user
+  testing, we created wireframes for our low-fidelity interface design. Part of
+  the wireframes were used as the intended flow for the think aloud user
+  testing, which is shown below:
+  <img
+    style="width:100%;margin:1rem auto 0rem;"
+    src={wireframe}
+    alt={"Wireframe for FastPharm app"}
+  />
+</div>
+
+<div className={subTitle} style="border-bottom: 3px solid #5B74F7;">
+Mid-Fidelity Prototypes
+</div>
+<div style="margin-bottom:3rem;">
+Reminding ourselves of the metaphor <b><i>"Content is like water"</i></b>, we started with a mobile version of the interface then expanded to the desktop version.
+
+<img
+  style="width:100%;margin:1rem auto 0rem;"
+  src={midfi}
+  alt={"Mid-fidelity mockup for FastPharm"}
+/>
+
+In the prototyping portion of the project, I was mainly in charge of designing the mobile version of the FastPharm. Since our phones nowadays all have the scrolling interaction that has become intuitive to the mobile users, we utilized the vertical layout for the categories and product browsing pages on mobile.
+
+For the desktop version, we redesigned the product browsing pages on the desktop screen to display the product cards in a horizontal manner. Such decision was made in consideration of the extra space the desktop platform offers compared to the mobile platform.
+We further utilized the extra space by placing the list of all categories on the side to help the user navigate the extensive catalog of products; however, in our hierarchy of importance, we did not consider this a high-priority feature, which is why it was left out of the mobile design.
+
+<b> View mid-fidelity prototypes: </b>
+
+[Mobile](https://www.figma.com/proto/6A4bW0zTqCpvDDmHeW24X7/Untitled?node-id=16%3A1059&scaling=scale-down&page-id=16%3A174&starting-point-node-id=16%3A1055) &nbsp;&nbsp;|&nbsp;&nbsp; [Desktop](https://www.figma.com/proto/6A4bW0zTqCpvDDmHeW24X7/Untitled?node-id=16%3A1720&scaling=scale-down&page-id=16%3A1709&starting-point-node-id=16%3A1720&show-proto-sidebar=1)
+
+</div>
+
+<div className={subTitle} style="border-bottom: 3px solid #5B74F7;">
+Hi-Fidelity Prototypes
+</div>
+<div style="margin-bottom:1rem;">
+With our mid-fidelity prototypes, we asked three different groups of three to four college students for their impressions and feedback. We asked college students because they satisfy our target user group, which is "those who cannot go to the pharmacy in person due to varying reason including busy schedule." Based on their feedback, we made 3 major design changes: customized detailed symptoms input search, product recommendations criteria transparency, and real-time chat with local pharmacist. 
+</div>
+<div className={threeGrid2}>
+
+<video style="border-radius: 60px;" autoplay='true' loop muted disablePictureInPicture controlsList="nodownload" playsinline allowfullscreen="false" className={video}> <source src={search} type="video/mp4" /> </video>
+
+<div className={elem2}>
+<h3>Customized Search by Symptoms</h3>
+One of the feedback we received was to have the platform <b>suggest product recommendations based on additional information</b> as well like the duration or the severity of the symptoms. Previously, we only prompted the users to input what types of symptoms they were experiencing, which wasn't specific enough to provide customized search experience.
+
+Hence, our high-fidelity design asks the users to indicate the duration of the symptoms using the dropdown selections, as well as the severity of the symptoms in a scale of three. Such additional information will then be used to determine the common type of illness with the indicated set of symptoms, which allows the users to have <b>a personalized product search experience</b>.To secure user's health, we also included a caution that states should the user in need of a serious medical help, they should dial 911 immediately.
+</div>
+</div>
+
+<div className={threeGrid}>
+<div className={elem2}>
+<h3> More Informed Product Recommendation </h3>
+In order to help users make a more informed purchase using our platform, we inlcuded 2 new features to help <b> increase transparency regarding how the website is recommending</b> the products. 
+  
+The first is the type of sickness suggestor at the top that informs the users that they <b>may be having a specific sickness</b> based on their symptoms input. By using the predictive nuanced languages like <i>might</i> and including the sentences like <i>if symptoms persist, please seek professional medical assistance</i>, we clarified that what this platform suggests isn't a confirmed diagnosis by a doctor or a pharmacist. 
+
+The second feature is to <b>provide additional recommendations among the products that have been filtered</b> by symptoms based on the highest rating, the best value, and the fastest relief. We ideated such that the highest rating would be based on the user review, while the best value and the fastest relief would be based on the pharmacists' recommendation. 
+
+Similar to other ecommerce platforms like Amazon, we wanted to help our users <b>make easier and more accurate decisions</b> by providing helpful information and metrics.
+</div>
+
+<video style="border-radius: 70px;" autoplay='true' loop muted disablePictureInPicture controlsList="nodownload" playsinline allowfullscreen="false" className={video}> <source src={rec} type="video/mp4" /> </video>
+
+</div>
+<div className={threeGrid2}>
+
+<video style="border-radius: 80px;" autoplay='true' loop muted disablePictureInPicture controlsList="nodownload" playsinline allowfullscreen="false" className={video}> <source src={realtime}  type="video/mp4" /> </video>
+
+<div className={elem2}>
+<h3>Real-time Chat with the Local Pharmacist </h3>
+Should the users not know what to get even through the three different ways of product search mechenisms, they can directly have a chat with the local pharamacist using the chat feature on our platform. We included this feature to <b>provide greater flexibility to the users</b>, as humans are far more complex than what a machine can cover. 
+
+Although we designed this interface with <b>accessibility in mind</b> (as we stated in our design brief), there still may be aspects that is easier or only can be solved by human to human interaction. This feature is intended for such, so <b>should the users have any questions to ask the pharmacists or would like to hear their opinions</b>, they have the choice to do so. 
+</div>
+</div>
+
+
+
+<div className={subTitle} style="border-bottom: 3px solid #5B74F7;">
+Interactive Prototype
+</div>
+<div style="margin-bottom:3rem;">
+
+Interact with the mobile prototype below or view our desktop prototype [here](https://www.figma.com/proto/6A4bW0zTqCpvDDmHeW24X7/Untitled?node-id=22%3A6226&scaling=scale-down&page-id=22%3A2536&starting-point-node-id=22%3A6226).
+</div>
+<div style="display:flex;margin:auto;margin-bottom:3rem;">
+<iframe style="justify-content:center;border: 1px solid rgba(0, 0, 0, 0);margin:auto;max-width:600px;width:100%;aspect-ratio: 3/4;" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2F6A4bW0zTqCpvDDmHeW24X7%2FUntitled%3Fnode-id%3D22%253A3926%26scaling%3Dscale-down%26page-id%3D16%253A2535%26starting-point-node-id%3D22%253A3922"></iframe>
+</div>
+
+<div className={subTitle} style="border-bottom: 3px solid #5B74F7;">
+Reflection & Takeaways
+</div>
+<div style="margin-bottom:3rem;">
+This project was a great opportunity to <b>brush over the general process of a UI/UX design development</b>. This was also the first time I've tried paper prototyping, which I experienced its merit in that it is disposable and easy to make without any particular skills in advance. Previous to this project, I thought paper prototyping is not as useful in gaining user insights due to the playful feel the paper craft naturally contains, or as shareable compared to the quick (in my opinion) mockups on interface design tools like Figma or Adobe XD. Despite my worries, <b>paper prototypes brought valuable user insights</b> during the think aloud user testing sessions. Personally, I don't think I'd be using paper prototypes as often for the clearer communication purpose (oftentimes one's handwriting isn't legible to all). However, with the experience of conducting think aloud user testing using the paper prototype, I think <b>I'll be able to quickly mock up a design using paper prototype when needed</b> -- It sure is a useful skill to have!
+
+Overall, I <b>enjoyed trying new methods</b> throughout the process of developing a responsive web design for the pharmacy delivery platform. Focusing on a specific portion of the design, in this case improving a search mechenism, definitely allowed us to visually communicate with others and give a firm understanding of how other parts of the platform may be designed in the pitch. If chance in the future, I’d like to explore integrating other features that we discussed during ideation like notification system and prescription scanning feature.
+
+</div>
