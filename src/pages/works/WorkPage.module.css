@@ -203,6 +203,9 @@ li{
 }
 .relative{
   position: relative;
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s, opacity 0.5s linear;
 }
 .prevtext, .nexttext{
   position:absolute;
@@ -251,6 +254,10 @@ li{
   background-color:rgba(253, 170, 36, 1);
   opacity: 1;
   transition: opacity 0.5s;
+}
+.noshow{
+  opacity: 0;
+  visibility: hidden;
 }
 #back-to-top {
   display: none;

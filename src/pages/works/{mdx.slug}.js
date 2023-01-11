@@ -19,6 +19,7 @@ import {
   relative,
   topbutton,
   toparrow,
+  noshow,
   footer,
   footDescrip,
   noFlow,
@@ -38,6 +39,19 @@ const WorkPage = ({ data }) => {
   const prev_col = {
     color: data.mdx.frontmatter.prev_color,
   };
+  const [isVisible, setIsVisible] = useState(false);
+  // Show button when page is scrolled upto given distance
+  const toggleVisibility = () => {
+    if (window.pageYOffset > 800) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", toggleVisibility);
+  }, []);
+
   return (
     <div className={noFlow}>
       <Helmet>
@@ -98,7 +112,7 @@ const WorkPage = ({ data }) => {
 
           <a
             href="javascript:window.scrollTo({top: 0, behavior: 'smooth'});"
-            className={relative}
+            className={isVisible?relative:noshow}
           >
             <div className={topbutton}>
               <img
