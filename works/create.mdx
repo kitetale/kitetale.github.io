@@ -1,0 +1,193 @@
+---
+title: "Cre·​ate"
+description: "Cre·​ate is a participatory interactive video installation that invites the audience to create their own butterfly that follows the path of their hands."
+title_color: "#565252"
+hero_img: "../src/images/create/main.jpeg"
+hero_img_alt: "An example look of a created butterfly"
+hero_img_description: "An example look of a created butterfly"
+next: "Thalassia"
+next_link: "thalassia"
+next_color: "#DBFFF9"
+next_img: "../src/images/thalassia/main.jpg"
+prev: "Snapshot"
+prev_link: "snapshot"
+prev_color: "#565252"
+prev_img: "../src/images/snapshot/snapshot_hero.png"
+---
+import { getImage, GatsbyImage } from "gatsby-plugin-image";
+import { Link } from "gatsby";
+import {
+  infogrid,
+  overview,
+  closerLineHeight,
+  threeGrid,
+  threeGrid2,
+  elem2,
+  infos,
+  info,
+  image,
+  orange,
+  subTitle,
+} from "../src/pages/works/WorkPage.module.css";
+import challenge from "../src/images/create/challenge.png";
+import hand from "../src/images/create/handtrace.gif";
+import butterfly from "../src/images/create/butterfly.gif";
+import createDemo from "../src/images/create/demo.gif";
+import dev from "../src/images/create/devview.gif";
+import pipeline from "../src/images/create/pipeline.png";
+import createinstall1 from "../src/images/create/installation1.gif";
+import createinstall2 from "../src/images/create/installation2.gif";
+
+<div className={infogrid}>
+<div className={overview}>
+<div>
+
+**Overview**
+
+</div>
+<div className={closerLineHeight}>
+Cre·​ate (verb) is a participatory video installation that invites the audience to create their own butterfly that follows the path of their hands using their hands. Regardless of background, anyone can create a butterfly of their own that flies along a distinctive path they defined.
+
+</div>
+</div>
+
+<div className={infos}>
+<div className={info}>
+<div>
+
+**Duration **
+
+</div>
+<div className={closerLineHeight}> 
+Oct 20 - Nov 1,2022 <br/> (2 weeks)
+</div>
+</div>
+
+<div className={info}>
+<div>
+
+**Tool **
+
+</div>
+<div className={closerLineHeight}> 
+Blender <br/> Mediapipe <br/> OpenCV <br/> Python
+</div>
+</div>
+</div>
+</div>
+
+
+<div className={subTitle} style="margin-bottom:1rem;">
+Inspiration
+</div>
+<div style="display:flex; justify-content:center;">
+<img
+    style="width:100%;max-width:1022px;margin:0 auto 4rem;"
+    src={challenge}
+    alt={"Designing an interaction that captures the act of creation"}
+/>
+</div>
+<div style="margin-bottom:3rem;">
+As AI based art generation tools like Dall-E become more accessible to the public, I started to wonder what it means to create. What makes one to be the author of the creation? If an audience prompted the software like Dall-E, which is developed by another person, and the software generates the artwork, does this work created by the audience or a developer or the software? Through this project, I wanted to explore what makes creation belong to an individual and how much of an authorship do the viewers take into consideration when seeing a collection of generated creations.
+</div>
+
+
+<div className={subTitle}>
+Process
+</div>
+<div className={threeGrid}>
+<img
+    style="width:100%;border-radius:20px;max-width:1022px;margin:auto;"
+    src={hand}
+    alt={"ML based real-time hand tracking visual"}
+/>
+<div className={elem2}>
+Since creations are often <b>made with hands</b>, I decided to capture the movement of the creator’s hand during the act of creation. I also decided to make this an interactive audience participatory project instead of a project focusing on an artisan’s hands to challenge the general public’s misbelief in art making that only artists can make art.
+</div>
+</div>
+
+<div className={threeGrid2}>
+<div className={elem2}>
+For the object the users would be generating with a simple gesture, I created a <b>butterfly</b> mesh with a mirrored wing flipping animation in Blender. I used <b>color ramp</b> in shader editor so that each generation would give a different color of butterfly. 
+
+I randomized the color with intention of giving a bit of diversity in the generated butterflies, but now that I’m looking back, perhaps I should have the butterflies to <b>take the creator’s visual information</b> like hand image as part of the generation so that each butterfly can be more customized to the creator. 
+
+</div>
+<img
+    style="width:100%;border-radius:20px;max-width:1022px;margin:auto;"
+    src={butterfly}
+    alt={"ML based real-time hand tracking visual"}
+/>
+</div>
+
+<div style="background:#E6F6E6;border-radius:20px;margin:auto;margin-bottom:3rem; padding:2rem 1rem;">
+<h2><i>Why Butterfly?</i></h2>
+
+I chose butterfly as the main object because <b>creation starts with one’s idea</b>. Butterflies symbolize <b>metamorphosis</b> or <b>soul/mind</b> in many cultures, which fits well to this project’s exploration of capturing the act of creation (bringing an idea to the physical space).
+</div>
+
+<div className={threeGrid}>
+<img
+    style="width:100%;border-radius:20px;max-width:1022px;margin:auto;"
+    src={createDemo}
+    alt={"Demo of an audience interacting with Create"}
+/>
+<div className={elem2}>
+I placed a pedestal with a webcam in the center of the room facing the projected wall. The user can <b>move their hand</b> as much as they want under the webcam, and when they’re ready to create a new butterfly, all they have to do is <b>make a fist then open it</b> as if they’re showing something.
+</div>
+</div>
+
+
+<div className={threeGrid2}>
+<div className={elem2}>
+This developing view of the interaction above shows how a <b>new butterfly mesh is generated</b> and added to the animation upon the detection of the fist open motion.
+
+</div>
+<img
+    style="width:100%;border-radius:20px;max-width:1022px;margin:auto;"
+    src={dev}
+    alt={"Behind the scene of Create in action"}
+/>
+</div>
+
+
+<div className={subTitle}>
+Capture System Pipeline
+</div>
+<img
+    style="margin:2rem auto;width:100%;"
+    src={pipeline}
+    alt={"Capture System pipeline for Create"}
+/>
+<div style="margin-bottom:3rem;">
+When the audience is ready to create a new butterfly that would be following their hand trace, they would close their fingers to <b>make a fist then open up the hand to release</b> the butterfly. The path a new butterfly follows would be determined by the trace of audience’s thumb root joint. Upon the audience opening their fist, the path data would be <b>written to a file</b>, which would then be read by Blender python at each frame to <b>generate a new butterfly with an animation key points</b> of the hand path locations. I limited the path list length so that Blender won’t freeze importing and creating large number of frame key points.
+</div>
+
+
+<div className={subTitle}>
+Installation Views
+</div>
+<div style="display:grid; grid-template-columns:1fr 1fr;width:100%;gap:1rem;margin:auto; margin-bottom:3rem;">
+<img
+    style="margin:auto;max-height:600px;border-radius:20px;"
+    src={createinstall1}
+    alt={"Installation viewe of Create"}
+/>
+<img
+    style="margin:auto;max-height:600px;border-radius:20px;"
+    src={createinstall2}
+    alt={"Installation viewe of Create"}
+/>
+</div>
+
+
+<div className={subTitle}>
+Reflection
+</div>
+<div>
+Despite my initial prediction that the viewers would be able to easily identify the butterfly they created based on the trace they drew by moving their hand, I realized this wasn’t the case especially if there are more butterflies flying around on screen. 
+
+As I mentioned earlier, I wish I made the function to generate butterflies with more customization so that anyone can easily find their creation while also appreciating the overall harmony of their work being part of those of many others. Even though this project was a great opportunity for me to learn and explore mediapipe and hand tracking using open cv, I also realized I could’ve utilized the hand tracking data more than just gather a past locations of a specific point of the hand. 
+
+If I work on this project again, I would also take the data of how people move their hands in addition to where they move their hands. I think exploring how would bring more interesting insights to people in time, as different people move their bodies in a different manner even if they’re prompted to do the same movement.
+</div>
