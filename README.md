@@ -2,12 +2,14 @@
   Ashley's Portfolio Website
 </h1>
 <p align="center">
-  Yes, I'm making this again, and I will finish it this summer (2022)
+  Yes, I'm making this again, and <s>I will finish it this summer (2022)</s> I will finish before January (2023) ends.
 </p>
 
 ## 🚀 Quick start
 
 Run `gatsby develop` to host locally (will be running at http://localhost:8000)
+
+Run `gatsby develop -H 0.0.0.0` to host locally + over wifi (will be running at http://ip_address:8000)
 
 Run `gatsby build` to deploy website!
 
