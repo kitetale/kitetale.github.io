@@ -99,7 +99,7 @@ const ProjectPage = ({ data }) => {
       </div>
       <footer className={footer}>(ง˙∇˙)ว © 2023 Ashley Kim (ว˙∇˙)ง</footer>
       <footer className={footDescrip}>
-        Built with Gatsby {"&"} React! Last updated on January 8, 2023. <br/> More projects to be added shortly.
+        Built with Gatsby {"&"} React! Last updated on January 12, 2023. <br/> More projects to be added shortly.
       </footer>
     </div>
   );
@@ -107,7 +107,7 @@ const ProjectPage = ({ data }) => {
 
 export const query = graphql`
   query {
-    allMdx {
+    allMdx (sort: {fields: frontmatter___order, order: ASC}){
       nodes {
         frontmatter {
           description
