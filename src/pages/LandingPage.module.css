@@ -14,7 +14,8 @@ body{
   overflow-x: hidden;
 }
 h1 {
-  font-family: Montserrat;
+  font-family: Montserrat,Lato, Avenir, Montserrat, Roboto, Helvetica Neue, Arial,
+  sans-serif;
   font-size: 40px;
   margin: 1rem 0;
 }

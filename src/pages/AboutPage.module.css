@@ -42,7 +42,8 @@ body{
 }
 
 .hello {
-  font-family: Montserrat;
+  font-family: Montserrat,Lato, Avenir, Montserrat, Roboto, Helvetica Neue, Arial,
+  sans-serif;
   font-size: 60px;
   margin: 0 0 0.5rem 0;
   line-height: 68px;
