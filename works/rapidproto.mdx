@@ -1,0 +1,221 @@
+---
+title: "Rapid Prototyping"
+description: "Rapid prototyping projects including Arduino, CAD, woodworking, and metalworking"
+title_color: "#F2F2F2"
+order: 21
+hero_img: "../src/images/rapid-proto/moon_bunnies_d.JPG"
+hero_img_alt: "Moon Bunnies CAD rendering"
+hero_img_description: "Moon Bunnies CAD rendering"
+next: "Morph"
+next_link: "morph"
+next_color: "#F2F2F2"
+next_img: "../src/images/morph/main.png"
+prev: "Cre·​ate"
+prev_link: "create"
+prev_color: "#565252"
+prev_img: "../src/images/create/main.jpeg"
+---
+import { getImage, GatsbyImage } from "gatsby-plugin-image";
+import { Link } from "gatsby";
+import {
+  infogrid,
+  overview,
+  closerLineHeight,
+  twoGrid,
+  threeGrid,
+  threeGrid2,
+  imgGrid,
+  elem2,
+  infos,
+  info,
+  image,
+  image2,
+  orange,
+  subTitle,
+  video2
+} from "../src/pages/works/WorkPage.module.css";
+
+import gear1 from "../src/images/rapid-proto/mechenism_a.jpg";
+import gear2 from "../src/images/rapid-proto/mechenism_b.jpg";
+import gear_anim from "../src/images/rapid-proto/mechenism.mp4";
+
+import rhino1 from "../src/images/rapid-proto/chair_a.jpg";
+import rhino2 from "../src/images/rapid-proto/chair_b.jpg";
+import rhino3 from "../src/images/rapid-proto/wavyArc_a.jpg";
+import rhino5 from "../src/images/rapid-proto/exterior_a.jpg";
+import rhino6 from "../src/images/rapid-proto/exterior_b.jpg";
+import rhino7 from "../src/images/rapid-proto/exterior_c.jpg";
+
+import mb1 from "../src/images/rapid-proto/moon_bunnies_a.jpg";
+import mb2 from "../src/images/rapid-proto/moon_bunnies_b.jpg";
+import mb3 from "../src/images/rapid-proto/moon_bunnies_c.jpg";
+import mb4 from "../src/images/rapid-proto/moon_bunnies_d.jpg";
+import mb5 from "../src/images/rapid-proto/moon_bunnies_e.jpg";
+import mb6 from "../src/images/rapid-proto/moon_bunnies_f.jpg";
+import mb_anim from "../src/images/rapid-proto/Animation.mp4";
+
+import led_gg from "../src/images/rapid-proto/gg.png";
+import led_smile from "../src/images/rapid-proto/smiley.png";
+import led_arrows from "../src/images/rapid-proto/arrows.gif";
+import led_ok from "../src/images/rapid-proto/ok.gif";
+import led_snake from "../src/images/rapid-proto/snake.gif";
+
+
+<div className={subTitle}>
+Rhino Grasshopper
+</div>
+<div style="margin-bottom:3rem;">
+A set of practice renderings made with Rhino 3D Grasshopper plugin.
+</div>
+<div className={imgGrid}>
+<img
+    className={image2}
+    src={rhino1}
+    alt={"Rhino Grasshopper rendering"}
+/>
+<img
+    className={image2}
+    src={rhino2}
+    alt={"Rhino Grasshopper rendering"}
+/>
+<img
+    className={image2}
+    src={rhino3}
+    alt={"Rhino Grasshopper rendering"}
+/>
+<img
+    className={image2}
+    src={rhino5}
+    alt={"Rhino Grasshopper rendering"}
+/>
+<img
+    className={image2}
+    src={rhino6}
+    alt={"Rhino Grasshopper rendering"}
+/>
+<img
+    className={image2}
+    src={rhino7}
+    alt={"Rhino Grasshopper rendering"}
+/>
+</div>
+
+
+
+<div className={subTitle}>
+Gear Mechenism
+</div>
+<div className={imgGrid}>
+<img
+    className={image2}
+    src={gear1}
+    alt={"Gear Mechenism rendering"}
+/>
+<img
+    className={image2}
+    src={gear2}
+    alt={"Gear Mechenism rendering"}
+/>
+</div>
+<div>
+
+> 'Intended as a substitute for the crank. Reciprocating rectilinear motion of the double rack gives a continuous rotary motion to the center gear. The teeth on the rack act upon those of the two semi-circular toothed sectors, and the spur-gears attached to the sectors operate upon the center gear. The two stops on the rack shown by dotted lines are caught by the curved piece on the center gear, and lead the toothed sectors alternately into gear with the double rack.' 
+
+</div>
+<div style="text-align:center; margin-bottom:3rem;">
+
+> \- no.123 from 507 Mechanical Movements \-
+
+</div>
+
+<video
+    autoplay='true' loop muted disablePictureInPicture controlsList="nodownload" playsinline allowfullscreen="false" className={video2} style="margin-bottom:3rem;">
+<source src={gear_anim} alt={"Gear Mechenism simulation animation"}type="video/mp4" /></video>
+
+
+
+<div className={subTitle}>
+Moon Bunnies
+</div>
+<div className={imgGrid}>
+<img
+    className={image2}
+    src={mb1}
+    alt={"Moon Bunnies CAD rendering"}
+/>
+<img
+    className={image2}
+    src={mb2}
+    alt={"Moon Bunnies CAD rendering"}
+/>
+<img
+    className={image2}
+    src={mb3}
+    alt={"Moon Bunnies CAD rendering"}
+/>
+<img
+    className={image2}
+    src={mb4}
+    alt={"Moon Bunnies CAD rendering"}
+/>
+<img
+    className={image2}
+    src={mb5}
+    alt={"Moon Bunnies CAD rendering"}
+/>
+<img
+    className={image2}
+    src={mb6}
+    alt={"Moon Bunnies CAD rendering"}
+/>
+</div>
+<div style="margin-bottom:3rem;">
+This is a model of an automaton that uses cams and gears to bring life to the two moon bunnies making rice cakes using Jeolgu, the gray pot in the middle. 
+I was inspired by a Korean traditional fable about rabbits living in the moon making rice cakes. The automaton mimics the motion of hitting a rice cake dough in a Jeolgu (a type of traditional Korean mortar and pestle set).
+</div>
+<video
+    autoplay='true' loop muted disablePictureInPicture controlsList="nodownload" playsinline allowfullscreen="false" style="margin-bottom:3rem;" className={video2}>
+<source src={mb_anim} alt={"Moon bunnies simulation animation"} type="video/mp4" /></video>
+
+
+
+<div className={subTitle}>
+Ardunio-controlled 8x8 LED 
+</div>
+<div className={imgGrid}>
+<img
+    className={image2}
+    src={led_smile}
+    alt={"8x8 LED test : smile"}
+/>
+<img
+    className={image2}
+    src={led_ok}
+    alt={"8x8 LED test : ok"}
+/>
+<img
+    className={image2}
+    src={led_arrows}
+    alt={"8x8 LED + buttons test : arrows"}
+/>
+</div>
+<h2 style="margin-top:3rem;text-align:center;">
+Snake Game
+</h2>
+<div className={imgGrid}>
+<img
+    className={image2}
+    src={led_snake}
+    alt={"8x8 LED snake game example play"}
+/>
+<img
+    className={image2}
+    src={led_gg}
+    alt={"End of game screen, 8x8 LED snake game"}
+/>
+</div>
+<div>
+I wrote a code for wrap-around snake game in Ardunio. 
+The four buttons are controlled by one analog pin. 
+Which button is pressed is detected by the amount of current flowing to the analog pin, as the buttons are sequentially connected with resistors. The end state shows 'GG' and an arrow pointing at the reset button for another round of game. This version of the game doesn't have a concrete win state, but it can be easily added by modifying few lines of code.  
+</div>
