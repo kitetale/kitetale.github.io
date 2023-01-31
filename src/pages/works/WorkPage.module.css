@@ -35,9 +35,10 @@ body{
 
 .hero_img{
   position:relative;
+  display: flex;
 }
 
-.overall {
+.overall, .overall2 {
   font-family: Lato, Avenir, Montserrat, Roboto, Helvetica Neue, Arial,
     sans-serif;
   margin: auto;
@@ -47,6 +48,9 @@ body{
   font-size: 20px;
   line-height:1.5;
   overflow-x: hidden;
+}
+.overall2{
+  max-width: 1050px;
 }
 
 .content {
@@ -357,6 +361,7 @@ li{
   margin: 1rem auto;
   display: flex;
   flex-flow: row wrap;
+  /* max-width: 1050px; */
 }
 article{
   width:50%;

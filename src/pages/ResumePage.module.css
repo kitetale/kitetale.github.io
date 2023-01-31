@@ -4,12 +4,21 @@ body{
   font-family: Lato, Avenir, Montserrat, Roboto, Helvetica Neue, Arial,
     sans-serif;
 }
-.content {
+.content, .content2 {
   max-width: 1440px;
   padding: 0rem 3.5rem;
   margin: auto;
   font-family: Lato, "Lato", Inter, "Inter", "Open Sans", Calibri,
     "Trebuchet MS", sans-serif;
+}
+.content2{
+  max-width: 1000px;
+}
+h2{
+  margin-bottom:1rem;
+}
+p{
+  margin-bottom:3rem;
 }
 
 .overall {

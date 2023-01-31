@@ -4,9 +4,9 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import {
   overall,
+  overall2,
   content,
   fullsize,
-  top,
   title3,
   title2,
   hero_img,
@@ -51,6 +51,12 @@ const WorkPage = ({ data }) => {
   useEffect(() => {
     window.addEventListener("scroll", toggleVisibility);
   }, []);
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior : "smooth"
+    });
+  };
 
   return (
     <div className={noFlow}>
@@ -74,12 +80,14 @@ const WorkPage = ({ data }) => {
             {data.mdx.frontmatter.title}
           </h1>
         </div>
-        <div className={overall}>
+        <div className={overall2}>
           <div className={content}>
             <MDXRenderer local={data.mdx.frontmatter.local_imgs}>
               {data.mdx.body}
             </MDXRenderer>
           </div>
+        </div>
+        <div className={overall}>
           <h2 className={projects}>View Other Projects</h2>
           <div className={others}>
             <Link
@@ -110,8 +118,9 @@ const WorkPage = ({ data }) => {
             </Link>
           </div>
 
-          <a
-            href="javascript:window.scrollTo({top: 0, behavior: 'smooth'});"
+          <div
+            // href="javascript:window.scrollTo({top: 0, behavior: 'smooth'});"
+            onClick={scrollToTop}
             className={isVisible?relative:noshow}
           >
             <div className={topbutton}>
@@ -121,7 +130,7 @@ const WorkPage = ({ data }) => {
                 alt="Scroll to Top button"
               />
             </div>
-          </a>
+          </div>
         </div>
         <footer className={footer}>(ง˙∇˙)ว © 2023 Ashley Kim (ว˙∇˙)ง</footer>
         <footer className={footDescrip}>
