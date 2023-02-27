@@ -99,7 +99,7 @@ const ProjectPage = ({ data }) => {
       </div>
       <footer className={footer}>(ง˙∇˙)ว © 2023 Ashley Kim (ว˙∇˙)ง</footer>
       <footer className={footDescrip}>
-        Built with Gatsby {"&"} React! Last updated on January 12, 2023. <br/> More projects to be added shortly.
+        Built with Gatsby {"&"} React! Last updated on January 15, 2023. <br/> Please contact me if you'd like to see other works engaging certain skills or tools.
       </footer>
     </div>
   );

@@ -45,7 +45,7 @@ const LandingPage = () => {
         <div className={msg}>
           <h1>Hello! I'm Ashley &#128526;</h1>
           <h2>
-            I’m an interaction designer and a front-end developer who loves
+            I’m an interaction designer and an immersive engineer who loves
             visual effects, problem solving, and storytelling.
           </h2>
         </div>
