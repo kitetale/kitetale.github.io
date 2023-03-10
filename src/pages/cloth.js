@@ -38,12 +38,16 @@ const ClothSimulation = () => {
             height="800px"
             className={center}
           ></canvas>
+          <div id="resetButton"></div>
+          <div className={center}>
+          Checkout more details of this project on &nbsp; 
+            <a href="https://github.com/kitetale/Spring-Mass-Cloth-sim"> GitHub</a>.
+          </div>
         </div>
       </div>
       <footer className={footer}>(ง˙∇˙)ว © 2023 Ashley Kim (ว˙∇˙)ง</footer>
       <footer className={footDescrip}>
-        Built with Gatsby {"&"} React! Checkout more details of this project on
-        <a href="https://github.com/kitetale/Spring-Mass-Cloth-sim">GitHub</a>.
+        Built with Gatsby {"&"} React! Last updated on March 10, 2023.
       </footer>
     </div>
   );

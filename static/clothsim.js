@@ -278,7 +278,30 @@ function playSimulation(){
     window.requestAnimationFrame(draw);
 }
 
-// window.playSimulation = playSimulation;
+let btn = document.createElement("button");
+btn.innerHTML = "Restart";
+btn.onclick = function () {
+  playSimulation();
+};
+btn.style.margin = "3rem auto";
+btn.style.display = "flex";
+btn.style.padding = "0.5rem 1rem";
+btn.style.border = "2px solid #ff8a00";
+btn.style.borderRadius = "10px";
+btn.style.backgroundColor = "white";
+
+btn.addEventListener("mouseenter", (event) => {
+    btn.style.cursor = "pointer";
+    btn.style.backgroundColor = "#ff8a00";
+    btn.style.color = "white";
+});
+btn.addEventListener("mouseleave", (event) => {
+    btn.style.backgroundColor = "white";
+    btn.style.color = "black";
+    btn.style.cursor = "default";
+});
+
+document.getElementById("resetButton").appendChild(btn);
 
 // --------------------------- INTERACTION -------------------------------------
 let getMouseCoords = (e) => {
