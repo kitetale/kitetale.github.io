@@ -54,7 +54,7 @@ const technicalanimation = () => {
                First paper presentations today. Again, I find these paper presentations really crucial and useful, as I get to have exposures to various techniques out there without having to fully dive into the paper and all the math. The non-Euclidean space paper was highly interesting, as I've seen its applications across various video games but didn't really know much about the concept and math behind it. I also wouldn't have known about it since I couldn't tell that the paper discussed such a topic only from the title. (i.e. I didn't know such portal effect and dimension changing was called non-Euclidean space...)
             </p>
 
-            <h2>February 13, 2023 (Wed)</h2>
+            <h2>February 13, 2023 (Mon)</h2>
             <p>
                As also an art student, I think having a time dedicated for sharing works is useful for future projects. Although it wasn't a crit session for people to give ideas on how to improve on the project, viewing others' works gave me a good sense of what the individual strengths of this class is. It was also a session that reminded me of how the artists and the developers view and operate the tools differently.
             </p>
@@ -64,7 +64,7 @@ const technicalanimation = () => {
                I don't think I ever looked into how cloth simulation works behind the scene. It was quiet a fresh idea for me to see that the cloth simulation is a collection of spring phyiscs intertwined. I see how this would intuitively work since cloth also has a tendancy to go back to its original stable state upon stretching it out. I wonder who first came up with this idea to simulate cloth.
             </p>
 
-            <h2>February 20, 2023 (Wed)</h2>
+            <h2>February 20, 2023 (Mon)</h2>
             <p>
               I think cloth collision is one of the effects/simulations that can convey so many different types by just tweeking a few paramenters. There exits so many types and feels of fabric in this world, and I think that's what makes cloth simulation both the hardest and the easiest to make. As long as we make sure the cloth doesn't get caught in the movement of the rig and creates an artifact, cloth simulation can already look somewhat natural enough to convey the idea of cloth.
             </p>
@@ -74,9 +74,14 @@ const technicalanimation = () => {
               Talking about different ways of collision offset/detection methods reminded me of Computer Graphics light ray and particle collision parts. Since we already went over and had to implement as part of the Computer Graphics course, checking whether collision has occurred and going forward/back in the timestep to place the object at the boarder was the most straightforward idea to understand. I also happened to make (a few of rigid-body collision effects in Houdini)[https://www.instagram.com/kitetale/], and I was very surprised by how accurate Houdini's code dealt with collision. 
             </p>
 
-            <h2>February 27, 2023 (Wed)</h2>
+            <h2>February 27, 2023 (Mon)</h2>
             <p>
               Among the papers presented today, I found the cloth prediction one very interesting. I learned so much through this class that Neural Network has been the state of the art method for various types of simulations and animation techniques. It really reminded me of how AI is integrating into all industries to improve the techniques. Yarn-level cloth simulation was also cool to learn about, as I haven't really thought about how different patterns of weaving influence how the overall cloth interacts with itself and other objects. I'm not sure if it's a trend in CMU or everywhere, but I also have noticed that a lot more people are now interested in the algorithmic textile. 
+            </p>
+
+            <h2>March 1, 2023 (Wed)</h2>
+            <p>
+              Seeing previous final projects today was so intriguing and inspiring. I was not only able to understand what's expected for the final project, but also guage the diversity in topics and methods that I could implement for the final project. I think I want to do some sort of particle simulation, probably particle simulation that mimics fluid simulation. The water ripple one and rigid body contact seemed very fun to play with and relatively easy to implement. Snow simulation was also interesting -- I remember seeing snow simulation test videos for Frozen from Art, Animation, and Technology class. Perhaps I could do a wrecking ball/angry bird collision on snow-like particles. I'm still not sure what I would be working on for the final project, so my plan would be coming up with several ideas and narrow it down to one during the meeting with professor.
             </p>
         </div>
     </div>

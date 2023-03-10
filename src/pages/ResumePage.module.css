@@ -1,32 +1,34 @@
-body{
-  margin:0;
+body {
+  margin: 0;
   overflow-x: hidden;
   font-family: Lato, Avenir, Montserrat, Roboto, Helvetica Neue, Arial,
     sans-serif;
 }
-.content, .content2 {
+.content,
+.content2 {
   max-width: 1440px;
   padding: 0rem 3.5rem;
   margin: auto;
   font-family: Lato, "Lato", Inter, "Inter", "Open Sans", Calibri,
     "Trebuchet MS", sans-serif;
 }
-.content2{
+.content2 {
   max-width: 1000px;
 }
-h2{
-  margin-bottom:1rem;
+h2 {
+  margin-bottom: 1rem;
 }
-p{
-  margin-bottom:3rem;
+p {
+  margin-bottom: 3rem;
 }
 
 .overall {
-  font-family: Lato,Avenir,Montserrat,Roboto,Helvetica Neue,Arial,sans-serif;
+  font-family: Lato, Avenir, Montserrat, Roboto, Helvetica Neue, Arial,
+    sans-serif;
   margin: auto;
   max-width: 1440px;
   position: relative;
-  height:100%;
+  height: 100%;
 }
 .title {
   font-family: "Imbue", "Impact", "Times New Roman", Times, serif;
@@ -62,6 +64,20 @@ p{
   color: #878787;
 }
 
+.centerTitle {
+  text-align: center;
+}
+.centerButton {
+  margin: 3rem auto;
+  display: flex;
+  padding: 0.5rem 1rem;
+  border-color: #ff8a00;
+  border-radius: 10px;
+  background-color: white;
+  font-family: Lato, Avenir, Montserrat, Roboto, Helvetica Neue, Arial,
+    sans-serif;
+}
+
 a {
   color: #878787;
   text-decoration: none;
@@ -69,11 +85,10 @@ a {
   padding-bottom: 5px;
   position: relative;
 }
-a:hover{
+a:hover {
   color: #000;
 }
-a:after {    
-  
+a:after {
   background: none repeat scroll 0 0 transparent;
   bottom: 0;
   content: "";
@@ -81,41 +96,40 @@ a:after {
   height: 2px;
   left: 50%;
   position: absolute;
-  background: #FF8A00;
+  background: #ff8a00;
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
 }
-a:hover:after { 
-  color: #FF8A00;
-  width: 100%; 
-  left: 0; 
+a:hover:after {
+  color: #ff8a00;
+  width: 100%;
+  left: 0;
 }
 
-
-.footer{
-  padding: 75px 50px 0px 50px; 
+.footer {
+  padding: 75px 50px 0px 50px;
   text-align: center;
-  font-size:0.9rem;
-  margin:auto;
+  font-size: 0.9rem;
+  margin: auto;
 }
 .footDescrip {
-  color:#778899;
+  color: #778899;
   text-align: center;
-  font-size:0.9rem;
+  font-size: 0.9rem;
   padding: 0px 50px 25px 50px;
-  margin:auto;
+  margin: auto;
 }
 
 @media only screen and (max-width: 650px) {
-  .overall{
+  .overall {
     overflow-x: hidden;
   }
-  .title{
+  .title {
     font-size: 110px;
   }
-  .title3{
-    right:20px;
-    bottom:20px;
+  .title3 {
+    right: 20px;
+    bottom: 20px;
     font-size: 100px;
   }
   .resumeStyle {
