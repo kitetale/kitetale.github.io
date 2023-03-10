@@ -249,9 +249,15 @@ class Cloth{
     }
 }
 
-const canvas = document.getElementById("canvas");
+let canvas = document.createElement("canvas");
+canvas.width = "1000";
+canvas.height = "800";
+canvas.style.display = "flex";
+canvas.style.margin = "auto";
+// const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 canvas.style.border = "1px solid black";
+document.getElementById("canvas").appendChild(canvas);
 
 // let p1 = new Particle([100.0,100.0,1.0],ctx);
 // p1.draw();

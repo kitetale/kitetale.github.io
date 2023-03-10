@@ -32,12 +32,13 @@ const ClothSimulation = () => {
             <h1>Cloth Simulation</h1>
             <p>by Ashley Kim (ayk2@andrew.cmu.edu)</p>
           </div>
-          <canvas
+          <div id="canvas"></div>
+          {/* <canvas
             id="canvas"
             width="1000px"
             height="800px"
             className={center}
-          ></canvas>
+          ></canvas> */}
           <div id="resetButton"></div>
           <div className={center}>
           Checkout more details of this project on &nbsp; 
