@@ -312,7 +312,7 @@ btn.addEventListener("mouseleave", (event) => {
 document.getElementById("resetButton").appendChild(btn);
 
 // ----------------------- ADD CONTROL BUTTONS / INPUTS ---------------------
-/*
+
 let rowInput = document.createElement("input");
 rowInput.type = "number";
 rowInput.value = "10";
@@ -327,6 +327,10 @@ colInput.style.display = "flex";
 rowInput.style.margin = "2rem 0.5rem";
 colInput.style.margin = "2rem 0.5rem";
 
+let h3 = document.createElement("h3");
+h3.style.margin = "2rem 0.5rem";
+document.getElementById("updateButton").appendChild(h3);
+h3.innerHTML = "Cloth Dimension: ";
 document.getElementById("updateButton").appendChild(rowInput);
 document.getElementById("updateButton").appendChild(colInput);
 
@@ -358,7 +362,7 @@ btn1.addEventListener("mouseleave", (event) => {
 });
 
 // document.getElementById("updateButton").appendChild(btn1);
-*/
+
 // --------------------------- INTERACTION -------------------------------------
 let getMouseCoords = (e) => {
     let canvasCoords = canvas.getBoundingClientRect()
