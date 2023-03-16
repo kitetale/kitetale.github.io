@@ -249,6 +249,46 @@ if (typeof window !== 'undefined' && window.document){
         }
     }
 
+
+    let cloth = new Cloth(userRowNum,userColNum,ctx);
+// ----------------------- ADD CONTROL BUTTONS / INPUTS ---------------------
+    let rowInput = document.createElement("input");
+    rowInput.type = "number";
+    rowInput.value = "10";
+    rowInput.id = "rowInputNum";
+    let colInput = document.createElement("input");
+    colInput.type = "number";
+    colInput.value = "10";
+    colInput.id = "colInputNum";
+
+    let btn1 = document.createElement("button");
+    btn1.innerHTML = "Update";
+    let userRowNum = document.getElementById("rowInputNum");
+    let userColNum = 10;
+    btn1.onclick = function () {
+        cloth = new Cloth(userRowNum,userColNum,ctx);
+        playSimulation();
+    };
+    btn1.style.margin = "3rem auto";
+    btn1.style.display = "flex";
+    btn1.style.padding = "0.5rem 1rem";
+    btn1.style.border = "2px solid #ff8a00";
+    btn1.style.borderRadius = "10px";
+    btn1.style.backgroundColor = "white";
+
+    btn1.addEventListener("mouseenter", (event) => {
+        btn.style.cursor = "pointer";
+        btn.style.backgroundColor = "#ff8a00";
+        btn.style.color = "white";
+    });
+    btn1.addEventListener("mouseleave", (event) => {
+        btn.style.backgroundColor = "white";
+        btn.style.color = "black";
+        btn.style.cursor = "default";
+    });
+
+   // document.getElementById("updateButton").appendChild(btn1);
+// ----------------------- ADD CANVAS ---------------------------------------
     let canvas = document.createElement("canvas");
     canvas.width = "1000";
     canvas.height = "800";
@@ -268,8 +308,6 @@ if (typeof window !== 'undefined' && window.document){
     // let s1 = new SpringForce(p1,p2,1,5,5,ctx);
     // s1.draw();
 
-    let cloth = new Cloth(5,5,ctx);
-
     function draw() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         cloth.simulation_step();
@@ -283,11 +321,11 @@ if (typeof window !== 'undefined' && window.document){
         cloth.reset();
         window.requestAnimationFrame(draw);
     }
-
+// ----------------------- RESET BUTTON --------------------------------------
     let btn = document.createElement("button");
     btn.innerHTML = "Restart";
     btn.onclick = function () {
-    playSimulation();
+        playSimulation();
     };
     btn.style.margin = "3rem auto";
     btn.style.display = "flex";
