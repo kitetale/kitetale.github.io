@@ -340,10 +340,11 @@ btn1.innerHTML = "Update";
 let userRowNum = document.getElementById("rowInputNum").value;
 let userColNum = document.getElementById("colInputNum").value;
 btn1.onclick = function () {
+    cloth.destroy();
     cloth = new Cloth(userRowNum,userColNum,ctx);
     playSimulation();
 };
-btn1.style.margin = "3rem auto";
+btn1.style.margin = "3rem 0.5rem";
 btn1.style.display = "flex";
 btn1.style.padding = "0.5rem 1rem";
 btn1.style.border = "2px solid #ff8a00";
@@ -351,17 +352,17 @@ btn1.style.borderRadius = "10px";
 btn1.style.backgroundColor = "white";
 
 btn1.addEventListener("mouseenter", (event) => {
-    btn.style.cursor = "pointer";
-    btn.style.backgroundColor = "#ff8a00";
-    btn.style.color = "white";
+    btn1.style.cursor = "pointer";
+    btn1.style.backgroundColor = "#ff8a00";
+    btn1.style.color = "white";
 });
 btn1.addEventListener("mouseleave", (event) => {
-    btn.style.backgroundColor = "white";
-    btn.style.color = "black";
-    btn.style.cursor = "default";
+    btn1.style.backgroundColor = "white";
+    btn1.style.color = "black";
+    btn1.style.cursor = "default";
 });
 
-// document.getElementById("updateButton").appendChild(btn1);
+document.getElementById("updateButton").appendChild(btn1);
 
 // --------------------------- INTERACTION -------------------------------------
 let getMouseCoords = (e) => {
