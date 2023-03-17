@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { withPrefix } from "gatsby";
 import {
   overall,
@@ -14,6 +14,12 @@ import { Helmet } from "react-helmet";
 import favicon from "../images/favicon.png";
 
 const ClothSimulation = () => {
+  useEffect(() => {
+    setTimeout(() => {
+      const myScript = require("../../static/clothsim");
+    }, 10);
+  }, []);
+
   return (
     <div>
       <Helmet>
@@ -23,7 +29,7 @@ const ClothSimulation = () => {
           type="text/javascript"
           charset="utf-8"
           src={withPrefix("/clothsim.js")}
-        ></script>
+        />
       </Helmet>
       <div className={overall}>
         <AppHeader />
@@ -32,17 +38,18 @@ const ClothSimulation = () => {
             <h1>Cloth Simulation</h1>
             <p>by Ashley Kim (ayk2@andrew.cmu.edu)</p>
           </div>
+          <div id="updateButton" className={centerButton}></div>
+          <div id="parameters" className={centerButton}></div>
+          <div id="displayOptions" className={centerButton}></div>
           <div id="canvas"></div>
-          {/* <canvas
-            id="canvas"
-            width="1000px"
-            height="800px"
-            className={center}
-          ></canvas> */}
           <div id="resetButton"></div>
           <div className={center}>
-          Checkout more details of this project on &nbsp; 
-            <a href="https://github.com/kitetale/Spring-Mass-Cloth-sim"> GitHub</a>.
+            Checkout more details of this project on &nbsp;
+            <a href="https://github.com/kitetale/Spring-Mass-Cloth-sim">
+              {" "}
+              GitHub
+            </a>
+            .
           </div>
         </div>
       </div>

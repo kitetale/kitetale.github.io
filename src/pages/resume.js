@@ -33,7 +33,7 @@ const ResumePage = () => {
           />
           <div className={center}>
             <div></div>
-            <a href="https://drive.google.com/file/d/1-HE9i8McCy_238XSWvyiCgoOfMsv2CR7/view?usp=sharing">
+            <a href="https://drive.google.com/file/d/18mvJBMwDNY9SyWRLQwCf8Dq-AFJDI0-A/view?usp=sharing">
               Download PDF
             </a>
             <div></div>

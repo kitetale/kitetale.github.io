@@ -66,13 +66,13 @@ p {
 
 .centerTitle {
   text-align: center;
+  margin:0;
 }
 .centerButton {
-  margin: 3rem auto;
+  margin: 1rem auto;
   display: flex;
-  padding: 0.5rem 1rem;
-  border-color: #ff8a00;
-  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
   background-color: white;
   font-family: Lato, Avenir, Montserrat, Roboto, Helvetica Neue, Arial,
     sans-serif;

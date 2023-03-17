@@ -1,6 +1,5 @@
 // make sure we don't use random variable values -- instead say what's undefined
-'use strict'; 
-
+//'use strict'; 
 let maxWidth = 650;
 let maxHeight = 480;
 let padding = 50;
@@ -33,6 +32,8 @@ function vec3div(a,s){
 function vec3dot(a,b){
     return (a[0]*b[0]+a[1]*b[1]+a[2]*b[2]);
 }
+
+let pt_mass = 1;
 // --------------------------- PARTICLE -------------------------------
 class Particle {
     constructor(ConstructPos,ctx){
@@ -40,7 +41,7 @@ class Particle {
         this.m_Position = ConstructPos;
         this.m_Velocity = [0.0,0.0,0.0];
         this.m_ForceAccumulator = [0.0,0.0,0.0];
-        this.m_Mass = 1.0;
+        this.m_Mass = pt_mass;
         this.ctx = ctx;
     }
 
@@ -54,15 +55,15 @@ class Particle {
         let x = this.m_Position[0]/this.m_Position[2];
         let y = this.m_Position[1]/this.m_Position[2];
         
-		this.ctx.beginPath();
-		this.ctx.moveTo(x + r, y);
-		this.ctx.arc(x, y, r, 0, Math.PI * 2, false);
+        this.ctx.beginPath();
+        this.ctx.moveTo(x + r, y);
+        this.ctx.arc(x, y, r, 0, Math.PI * 2, false);
         this.ctx.fill();
     }
 
     clearForce() {
-	    //reset applied force on this particle
-	    this.m_ForceAccumulator = [0.0,0.0,0.0];
+        //reset applied force on this particle
+        this.m_ForceAccumulator = [0.0,0.0,0.0];
     }
 
 }
@@ -117,10 +118,11 @@ class SpringForce{
 let pVector = [];
 let fVector = [];
 const damp = 0.98;
+let displayPts = true;
 
 class Cloth{
-    constructor(rowN,colN,ctx){
-        this.dt = 0.1;
+    constructor(rowN,colN,ks_stretch,kd_stretch,ks_sheer,kd_sheer,ks_bend,kd_bend,dt,ctx){
+        this.dt = dt;
         this.rowN = rowN;
         this.colN = colN;
         this.ctx = ctx;
@@ -133,12 +135,12 @@ class Cloth{
         let rest_sheer = Math.sqrt(xOffset*xOffset+yOffset*yOffset);
         let rest_bend = Math.min(xOffset+xOffset,yOffset+yOffset);
 
-        let ks_stretch = 0.1;
-        let kd_stretch = 0.1;
-        let ks_sheer = 0.1;
-        let kd_sheer = 0.1;
-        let ks_bend = 0.1;
-        let kd_bend = 0.1;
+        this.ks_stretch = ks_stretch;
+        this.kd_stretch = kd_stretch;
+        this.ks_sheer = ks_sheer;
+        this.kd_sheer = kd_sheer;
+        this.ks_bend = ks_bend;
+        this.kd_bend = kd_bend;
 
         // particle construct
         for (let i=0; i<rowN; i++){
@@ -187,6 +189,12 @@ class Cloth{
 
     }
 
+    destroy(){
+        pVector=[];
+        fVector=[];
+        delete this;
+    }
+
     reset(){
         let size = pVector.length;
         for(let ii=0; ii<size; ii++){
@@ -196,8 +204,10 @@ class Cloth{
 
     draw(){
         let size = pVector.length;
-        for(let ii=0; ii<size; ii++){
-            pVector[ii].draw();
+        if (displayPts){
+            for(let ii=0; ii<size; ii++){
+                pVector[ii].draw();
+            }
         }
     
         size = fVector.length;
@@ -249,6 +259,9 @@ class Cloth{
     }
 }
 
+
+
+// ----------------------- ADD CANVAS ---------------------------------------
 let canvas = document.createElement("canvas");
 canvas.width = "1000";
 canvas.height = "800";
@@ -268,7 +281,7 @@ document.getElementById("canvas").appendChild(canvas);
 // let s1 = new SpringForce(p1,p2,1,5,5,ctx);
 // s1.draw();
 
-let cloth = new Cloth(5,5,ctx);
+let cloth = new Cloth(5,5,0.2,0.2,0.2,0.2,0.2,0.2,0.1,ctx);
 
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -279,15 +292,11 @@ function draw() {
 // cloth.draw();
 window.requestAnimationFrame(draw);
 
-function playSimulation(){
-    cloth.reset();
-    window.requestAnimationFrame(draw);
-}
-
+// ----------------------- RESET BUTTON --------------------------------------
 let btn = document.createElement("button");
 btn.innerHTML = "Restart";
 btn.onclick = function () {
-  playSimulation();
+    cloth.reset();
 };
 btn.style.margin = "3rem auto";
 btn.style.display = "flex";
@@ -308,6 +317,196 @@ btn.addEventListener("mouseleave", (event) => {
 });
 
 document.getElementById("resetButton").appendChild(btn);
+
+// ----------------------- ADD CONTROL BUTTONS / INPUTS ---------------------
+
+let rowInput = document.createElement("input");
+rowInput.type = "number";
+rowInput.value = "5";
+rowInput.id = "rowInputNum";
+rowInput.placeholder = "row";
+let colInput = document.createElement("input");
+colInput.type = "number";
+colInput.value = "5";
+colInput.id = "colInputNum";
+colInput.placeholder = "column";
+
+rowInput.style.display = "flex";
+colInput.style.display = "flex";
+rowInput.style.margin = "2rem 0.5rem 0.5rem";
+colInput.style.margin = "2rem 0.5rem 0.5rem";
+
+let h3 = document.createElement("h3");
+h3.style.margin = "2rem 0.5rem 0.5rem";
+document.getElementById("updateButton").appendChild(h3);
+h3.innerHTML = "Cloth Dimension: ";
+document.getElementById("updateButton").appendChild(rowInput);
+document.getElementById("updateButton").appendChild(colInput);
+
+
+let btn1 = document.createElement("button");
+btn1.innerHTML = "Update";
+let userRowNum = 5;
+let userColNum = 5;
+let ks_stretch = 0.2;
+let kd_stretch = 0.2;
+let ks_sheer = 0.2;
+let kd_sheer = 0.2;
+let ks_bend = 0.2;
+let kd_bend = 0.2;
+let dt = 0.1;
+btn1.onclick = function () {
+    cloth.destroy();
+    userRowNum = document.getElementById("rowInputNum").value;
+    userColNum = document.getElementById("colInputNum").value;
+    ks_stretch = document.getElementById("ks_stretch").value;
+    kd_stretch = document.getElementById("kd_stretch").value;
+    ks_sheer = document.getElementById("ks_sheer").value;
+    kd_sheer = document.getElementById("kd_sheer").value;
+    ks_bend = document.getElementById("ks_bend").value;
+    kd_bend = document.getElementById("kd_bend").value;
+    dt = document.getElementById("dt").value;
+
+    displayPts = document.getElementById("display_pts").checked;
+
+    cloth = new Cloth(userRowNum,userColNum,ks_stretch,kd_stretch,ks_sheer,kd_sheer,ks_bend,kd_bend,dt,ctx);
+};
+btn1.style.margin = "2rem 0.5rem 0.5rem";
+btn1.style.display = "flex";
+btn1.style.padding = "0.5rem 1rem";
+btn1.style.border = "2px solid #ff8a00";
+btn1.style.borderRadius = "10px";
+btn1.style.backgroundColor = "white";
+
+btn1.addEventListener("mouseenter", (event) => {
+    btn1.style.cursor = "pointer";
+    btn1.style.backgroundColor = "#ff8a00";
+    btn1.style.color = "white";
+});
+btn1.addEventListener("mouseleave", (event) => {
+    btn1.style.backgroundColor = "white";
+    btn1.style.color = "black";
+    btn1.style.cursor = "default";
+});
+
+document.getElementById("updateButton").appendChild(btn1);
+
+// STRETCH INPUTS
+let stretch_ks = document.createElement("input");
+stretch_ks.type = "number";
+stretch_ks.value = "0.2";
+stretch_ks.id = "ks_stretch";
+stretch_ks.placeholder="ks";
+stretch_ks.size = "5";
+stretch_ks.style.margin = "1rem 0.5rem 2rem";
+stretch_ks.style.width = "60px";
+let stretch_kd = document.createElement("input");
+stretch_kd.type = "number";
+stretch_kd.value = "0.2";
+stretch_kd.id = "kd_stretch";
+stretch_kd.placeholder="kd";
+stretch_kd.size = "5";
+stretch_kd.style.margin = "1rem 0.5rem 2rem";
+stretch_kd.style.width = "60px";
+let h3_stretch = document.createElement("h3");
+h3_stretch.style.margin = "1rem 0.5rem 2rem";
+
+document.getElementById("parameters").appendChild(h3_stretch);
+h3_stretch.innerHTML = "Stretch: ";
+document.getElementById("parameters").appendChild(stretch_ks);
+document.getElementById("parameters").appendChild(stretch_kd);
+
+// SHEER INPUTS
+let sheer_ks = document.createElement("input");
+sheer_ks.type = "number";
+sheer_ks.value = "0.2";
+sheer_ks.id = "ks_sheer";
+sheer_ks.placeholder="ks";
+sheer_ks.size = "5";
+sheer_ks.style.margin = "1rem 0.5rem 2rem";
+sheer_ks.style.width = "60px";
+let sheer_kd = document.createElement("input");
+sheer_kd.type = "number";
+sheer_kd.value = "0.2";
+sheer_kd.id = "kd_sheer";
+sheer_kd.placeholder="kd";
+sheer_kd.size = "5";
+sheer_kd.style.margin = "1rem 0.5rem 2rem";
+sheer_kd.style.width = "60px";
+let h3_sheer = document.createElement("h3");
+h3_sheer.style.margin = "1rem 0.5rem 2rem 2.5rem";
+
+document.getElementById("parameters").appendChild(h3_sheer);
+h3_sheer.innerHTML = "Sheer: ";
+document.getElementById("parameters").appendChild(sheer_ks);
+document.getElementById("parameters").appendChild(sheer_kd);
+
+// BEND INPUTS
+let bend_ks = document.createElement("input");
+bend_ks.type = "number";
+bend_ks.value = "0.2";
+bend_ks.id = "ks_bend";
+bend_ks.placeholder="ks";
+bend_ks.size = "5";
+bend_ks.style.margin = "1rem 0.5rem 2rem";
+bend_ks.style.width = "60px";
+let bend_kd = document.createElement("input");
+bend_kd.type = "number";
+bend_kd.value = "0.2";
+bend_kd.id = "kd_bend";
+bend_kd.placeholder="kd";
+bend_kd.size = "5";
+bend_kd.style.margin = "1rem 0.5rem 2rem";
+bend_kd.style.width = "60px";
+let h3_bend = document.createElement("h3");
+h3_bend.style.margin = "1rem 0.5rem 2rem 2.5rem";
+
+document.getElementById("parameters").appendChild(h3_bend);
+h3_bend.innerHTML = "Bend: ";
+document.getElementById("parameters").appendChild(bend_ks);
+document.getElementById("parameters").appendChild(bend_kd);
+
+// dt INPUT
+let dt_input = document.createElement("input");
+dt_input.type = "number";
+dt_input.value = "0.1";
+dt_input.id = "dt";
+dt_input.placeholder="dt";
+dt_input.size = "5";
+dt_input.style.margin = "1rem 0.5rem 2rem";
+dt_input.style.width = "60px";
+let h3_dt = document.createElement("h3");
+h3_dt.style.margin = "1rem 0.5rem 2rem 2.5rem";
+document.getElementById("parameters").appendChild(h3_dt);
+h3_dt.innerHTML = "dt: ";
+document.getElementById("parameters").appendChild(dt_input);
+
+// DISPLAY OPTIONS
+let h3_pts_m = document.createElement("h3");
+h3_pts_m.style.margin = "0rem 0.5rem 2rem 0.5rem";
+document.getElementById("displayOptions").appendChild(h3_pts_m);
+h3_pts_m.innerHTML = "Particle Mass: ";
+let m_input = document.createElement("input");
+m_input.type = "number";
+m_input.value = "1";
+m_input.id = "mass";
+m_input.placeholder="dt";
+m_input.size = "5";
+m_input.style.margin = "0rem 0rem 2rem 0.5rem";
+m_input.style.width = "60px";
+document.getElementById("displayOptions").appendChild(m_input);
+
+
+let h3_pts = document.createElement("h3");
+h3_pts.style.margin = "0rem 0.5rem 2rem 2.5rem";
+document.getElementById("displayOptions").appendChild(h3_pts);
+h3_pts.innerHTML = "Display Points: ";
+let display_pts = document.createElement("input");
+display_pts.type = "checkbox";
+display_pts.checked = "true";
+display_pts.id = "display_pts";
+display_pts.style.margin = "0rem 0.5rem 2rem";
+document.getElementById("displayOptions").appendChild(display_pts);
 
 // --------------------------- INTERACTION -------------------------------------
 let getMouseCoords = (e) => {
