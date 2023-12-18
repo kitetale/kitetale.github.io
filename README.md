@@ -2,7 +2,7 @@
   Ashley's Portfolio Website
 </h1>
 <p align="center">
-  Yes, I'm making this again, and <s>I will finish it this summer (2022)</s> I will finish before January (2023) ends.
+  Planning to update this website sometime in the future..!
 </p>
 
 ## 🚀 Quick start
