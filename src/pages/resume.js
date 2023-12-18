@@ -28,12 +28,12 @@ const ResumePage = () => {
           <div className={title}>RESUME</div>
           <img
             src={resume}
-            alt="Ashley Kim resume (Dec.2022)"
+            alt="Ashley Kim Resume (last updated Aug 2023)"
             className={resumeStyle}
           />
           <div className={center}>
             <div></div>
-            <a href="https://drive.google.com/file/d/18mvJBMwDNY9SyWRLQwCf8Dq-AFJDI0-A/view?usp=sharing">
+            <a href="https://drive.google.com/file/d/12HvhqtBw0QVMOWU2qkhvCrFoYH-pDctN/view?usp=sharing">
               Download PDF
             </a>
             <div></div>
@@ -42,7 +42,7 @@ const ResumePage = () => {
       </div>
       <footer className={footer}>(ง˙∇˙)ว © 2023 Ashley Kim (ว˙∇˙)ง</footer>
       <footer className={footDescrip}>
-        Built with Gatsby {"&"} React! Last updated on January 8, 2023.
+        Built with Gatsby {"&"} React! Last updated on September 5, 2023.
       </footer>
     </div>
   );

@@ -46,10 +46,12 @@ const AboutPage = () => {
             </div>
             <div className={aboutMe}>
               <p>
-                I'm a senior at Carnegie Mellon University, studying Computer
-                Science and Arts with an additional major in Human-Computer
-                Interaction.
-              </p>
+                I'm an AR/VR engineer at Apple, working as part of the&nbsp; 
+                <a href="https://www.apple.com/apple-vision-pro/"> Vision
+                Products Group</a>. Previously, I was at Carnegie Mellon 
+                University studying Computer Science and Arts with an 
+                additional major in Human-Computer Interaction.
+            </p>
               <p>
                 Anything between Art and Computer Science is of my interest!
                 Among the vast range of Art and CS, I'm particularly drawn to
@@ -81,7 +83,7 @@ const AboutPage = () => {
       </div>
       <footer className={footer}>(ง˙∇˙)ว © 2023 Ashley Kim (ว˙∇˙)ง</footer>
       <footer className={footDescrip}>
-        Built with Gatsby {"&"} React! Last updated on January 8, 2023.
+        Built with Gatsby {"&"} React! Last updated on September 5, 2023.
       </footer>
     </div>
   );
